@@ -1,0 +1,30 @@
+#tieapp {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+
+#app-header {
+  text-align: center;
+  background: #44c4e7;
+  min-height: 80px;
+  flex: 0 0 auto;
+  /* only manually resize*/
+  padding: 10px;
+  width: 100%;
+}
+#app-body {
+  background-color: #ccffcc;
+  width: 100%;
+  min-height: 480px;
+  display: flex;
+  flex: 1 1 auto;
+}
+#app-footer {
+  text-align: center;
+  background: #44c4e7;
+  min-height: 80px;
+  width: 100%;
+  flex: 1 1 auto;
+}
