@@ -1,19 +1,31 @@
 .logo {
   margin-top: 0;
-  color:white;
+  color: white;
 }
-
 #headercenter {
   text-align: center;
   padding-top: 12px;
 }
-
-#headerright{
-    text-align:right;
+#headerright {
+  text-align: right;
 }
-
-
-.btn-success{
-    background-color: #ccffcc;
-    color:#34393d;
+.btn-success {
+  background-color: #ccffcc;
+  color: #34393d;
+}
+#language {
+  color: white;
+}
+.styled-select {
+  float: right;
+  height: 15px;
+  width: 50px;
+  margin-right: 20px;
+}
+.styled-select select {
+  background: white;
+  border: none;
+  font-size: 11px;
+  height: 29px;
+  width: 68px;
 }
