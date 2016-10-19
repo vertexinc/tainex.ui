@@ -14,6 +14,7 @@
   padding: 10px;
   width: 100%;
 }
+
 #app-body {
   background-color: #ccffcc;
   width: 100%;
@@ -21,6 +22,7 @@
   display: flex;
   flex: 1 1 auto;
 }
+
 #app-footer {
   text-align: center;
   background: #44c4e7;

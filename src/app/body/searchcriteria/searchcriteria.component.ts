@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-searchcriteria',
@@ -10,6 +10,13 @@ export class SearchcriteriaComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+  }
+
+  isExpanded = false;
+  @Input() title: string;
+
+  toggle(){
+    this.isExpanded = !this.isExpanded;
   }
 
 }

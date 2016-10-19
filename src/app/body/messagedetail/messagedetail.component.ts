@@ -11,7 +11,7 @@ export class MessagedetailComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    viewMode = 'map';
+    
   }
 
 }
