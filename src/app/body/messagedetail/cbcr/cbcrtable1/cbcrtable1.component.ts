@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-cbcrtable1',
+  selector: 'tieapp-cbcrtable1',
   templateUrl: './cbcrtable1.component.html',
   styleUrls: ['./cbcrtable1.component.css']
 })

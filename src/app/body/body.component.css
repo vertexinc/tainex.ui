@@ -10,7 +10,7 @@
   border: 2px solid #fff;
 }*/
 
-#app-searchcriteria {
+#tieapp-searchcriteria {
   min-height: 480px;
   min-width: 250px;
   background-color: #34393d;
@@ -40,11 +40,11 @@
   cursor: row-resize;
 }
 
-#app-messagelist {
+#tieapp-messagelist {
     height: 200px;
     min-height: 10px;
 }
 
-#app-messagedetail{
+#tieapp-messagedetail{
   min-height: 10px;
 }

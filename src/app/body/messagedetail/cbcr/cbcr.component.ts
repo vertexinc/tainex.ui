@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 
 @Component({
-  selector: 'app-cbcr',
+  selector: 'tieapp-cbcr',
   templateUrl: './cbcr.component.html',
   styleUrls: ['./cbcr.component.css']
 })

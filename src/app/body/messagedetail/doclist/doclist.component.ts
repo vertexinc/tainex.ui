@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-doclist',
+  selector: 'tieapp-doclist',
   templateUrl: './doclist.component.html',
   styleUrls: ['./doclist.component.css']
 })

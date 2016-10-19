@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'app-searchcriteria',
+  selector: 'tieapp-searchcriteria',
   templateUrl: './searchcriteria.component.html',
   styleUrls: ['./searchcriteria.component.css']
 })

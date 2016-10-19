@@ -5,7 +5,7 @@
 }
 
 
-#app-header {
+#tieapp-header {
 
   background: #44c4e7;
   min-height: 80px;
@@ -15,7 +15,7 @@
   width: 100%;
 }
 
-#app-body {
+#tieapp-body {
   background-color: #ccffcc;
   width: 100%;
   min-height: 500px;
@@ -23,7 +23,7 @@
   flex: 1 1 auto;
 }
 
-#app-footer {
+#tieapp-footer {
   text-align: center;
   background: #44c4e7;
   min-height: 20px;

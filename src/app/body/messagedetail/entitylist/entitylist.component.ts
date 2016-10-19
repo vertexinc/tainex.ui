@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-entitylist',
+  selector: 'tieapp-entitylist',
   templateUrl: './entitylist.component.html',
   styleUrls: ['./entitylist.component.css']
 })
