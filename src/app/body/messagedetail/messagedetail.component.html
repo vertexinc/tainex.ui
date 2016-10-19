@@ -1,3 +1,58 @@
+<!-- <ul class="nav nav-pills">
+
+  <li><a (click)="viewMode = 'map'">Map View</a></li>
+  <li><a (click)="viewMode = 'list'">List View</a></li>
+</ul>
+
+<div [ngSwitch]="viewMode">
+  <template [ngSwitchWhen]="'map'">Map View Content</template>
+  <template [ngSwitchWhen]="'list'">List View Content</template>
+</div> -->
+<!-- <div class="container">
+  <h3>Pills</h3>
+  <ul class="nav nav-pills">
+    <li class="active"><a href="#">Home</a></li>
+    <li><a href="#">Menu 1</a></li>
+    <li><a href="#">Menu 2</a></li>
+    <li><a href="#">Menu 3</a></li>
+  </ul>
+</div>
 <app-cbcr></app-cbcr>
 <app-doclist></app-doclist>
-<app-entitylist></app-entitylist>
+<app-entitylist></app-entitylist> -->
+<!-- Bootstrap CSS -->
+<!-- jQuery first, then Bootstrap JS. -->
+<!-- Nav tabs -->
+
+<ul class="nav nav-tabs" role="tablist">
+  <li class="nav-item">
+    <a class="nav-link active" href="#message" role="tab" data-toggle="tab">Message</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#docs" role="tab" data-toggle="tab">Docs</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#entity" role="tab" data-toggle="tab">Entity</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#table1" role="tab" data-toggle="tab">Table1</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#table2" role="tab" data-toggle="tab">Table2</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="#table3" role="tab" data-toggle="tab">Table3</a>
+  </li>
+</ul>
+
+<!-- Tab panes -->
+<div class="tab-content">
+  <div role="tabpanel" class="tab-pane fade in active" id="message">Message info here</div>
+  <div role="tabpanel" class="tab-pane fade" id="docs"><app-doclist></app-doclist></div>
+  <div role="tabpanel" class="tab-pane fade" id="entity"><app-entitylist></app-entitylist></div>
+  <div role="tabpanel" class="tab-pane fade" id="table1"><app-cbcrtable1></app-cbcrtable1></div>
+  <div role="tabpanel" class="tab-pane fade" id="table2"><app-cbcrtable2></app-cbcrtable2></div>
+  <div role="tabpane1" class="tab-pane fade" id="table3"><app-cbcrtable3></app-cbcrtable3></div>
+
+
+</div>

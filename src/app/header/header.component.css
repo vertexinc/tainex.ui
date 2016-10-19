@@ -1,0 +1,19 @@
+.logo {
+  margin-top: 0;
+  color:white;
+}
+
+#headercenter {
+  text-align: center;
+  padding-top: 12px;
+}
+
+#headerright{
+    text-align:right;
+}
+
+
+.btn-success{
+    background-color: #ccffcc;
+    color:#34393d;
+}
