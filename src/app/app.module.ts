@@ -17,6 +17,7 @@ import { Cbcrtable1Component } from './body/messagedetail/cbcr/cbcrtable1/cbcrta
 import { Cbcrtable2Component } from './body/messagedetail/cbcr/cbcrtable2/cbcrtable2.component';
 import { Cbcrtable3Component } from './body/messagedetail/cbcr/cbcrtable3/cbcrtable3.component';
 import { MessageComponent } from './body/messagedetail/message/message.component';
+import { SearchDetailComponent } from './body/searchcriteria/search-detail/search-detail.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { MessageComponent } from './body/messagedetail/message/message.component
     Cbcrtable1Component,
     Cbcrtable2Component,
     Cbcrtable3Component,
-    MessageComponent
+    MessageComponent,
+    SearchDetailComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,38 @@
 .zippy {
-           border: 1px solid #ccc;
-           border-radius: 2px;
-       }
+  border: 1px solid #ccc;
+  border-radius: 2px;
+}
+.zippy .zippy-title {
+  padding: 20px;
+  font-weight: bold;
+}
+.zippy .zippy-title:hover {
+  background: #ccffcc;
+  color: #34393d;
+  cursor: pointer;
+}
+.zippy .zippy-content {
+  padding: 20px;
+}
 
-       .zippy .zippy-title {
-           padding: 20px;
-           font-weight: bold;
-       }
+#inbox {
+  text-align: center;
+  border: 1px solid #fff;
+  height:130px;
+}
 
-       .zippy .zippy-title:hover{
-           background: #ccffcc;
-           color:  #34393d;
-           cursor: pointer;
-       }
+/*ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}*/
+.searchButton {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
 
-       .zippy .zippy-content {
-           padding: 20px;
-       }
+.btn-md{
+  width: 100px;
+  height:35px;
+
+}
