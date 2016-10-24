@@ -7,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-
+  showSearchCriteria=false;
   constructor() { }
 
   ngOnInit() {

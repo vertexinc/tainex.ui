@@ -1,10 +1,11 @@
 <div id='bodyContainer'>
-  <!-- <div id='tieapp-searchcriteria'>
+  <div *ngIf="showSearchCriteria" id='tieapp-searchcriteria'>
     <tieapp-searchcriteria title="Search By">
       <tieapp-search-detail></tieapp-search-detail>
     </tieapp-searchcriteria>
 
-  </div> -->
+  </div>
+  <a (click)="showSearchCriteria = !showSearchCriteria"> > </a>
   <div id="rightpanel">
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>

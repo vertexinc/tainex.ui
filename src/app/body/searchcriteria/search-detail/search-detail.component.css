@@ -9,13 +9,9 @@
   font-size: 12px;
   text-align: center;
 }
-
 .form-control.metrix {
-
   width: 60px;
-
 }
-
 #sel1 {
   height: 28px;
   width: 100px;
@@ -33,4 +29,12 @@
 }
 .ax {
   font-weight: bold;
+}
+th {
+  background: transparent;
+  color: black;
+}
+td {
+  background: transparent;
+  color: black;
 }

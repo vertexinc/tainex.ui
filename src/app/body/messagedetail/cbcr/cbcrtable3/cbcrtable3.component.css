@@ -3,3 +3,8 @@ table {
 
   width: 100%;
 }
+
+.headinfo {
+  text-align: center;
+  font-size: 12px;
+}

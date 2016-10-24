@@ -3,3 +3,13 @@ table {
 
   width: 100%;
 }
+
+#note {
+  text-align: center;
+  font-size: 9px;
+}
+
+.headinfo {
+  text-align: center;
+  font-size: 12px;
+}
