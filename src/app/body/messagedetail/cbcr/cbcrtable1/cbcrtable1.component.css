@@ -11,7 +11,7 @@ table {
 
   width: 100%;
 }
-th {
+/*th {
   background: #A5A5A5;
   border: 1px solid #fcfcfc;
   color: white;
@@ -35,4 +35,4 @@ tbody tr:nth-child(odd) {
 }
 tbody tr:nth-child(even) {
   background: #fcfcfc;
-}
+}*/
