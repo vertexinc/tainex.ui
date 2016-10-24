@@ -1,3 +1,53 @@
-<p>
-  doclist works!
-</p>
+<div class="row">
+  <div class="col-md-6">Tax Documents In Message:</div>
+  <div id="docbuttons" class="col-md-6">
+    <button type="button" class="btn btn-info">Attach ...</button>
+    <button type="button" class="btn btn-info">Detach ...
+    </button>
+  </div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Code</th>
+      <th>Title</th>
+      <th>Doc Type</th>
+      <th>Reporting Entity</th>
+      <th>Currency</th>
+      <th>Resident Country</th>
+      <th>Accounting Standard</th>
+      <th>Reporting Period</th>
+    </tr>
+  </thead>
+
+
+  <tbody class="member">
+    <!-- Generate auto increment td id later -->
+
+    <tr id="currentMsg1" class="clickable-row">
+      <th scope="row">CBCR_IndustryCo</th>
+      <td>doc13</td>
+      <td>Cbcr</td>
+      <td>IndustryCo</td>
+      <td>MXN</td>
+      <td>MX</td>
+      <td>MX GAAP</td>
+      <td>2014-12-31</td>
+      <!-- <td class="msgID"><%=tieMsg.getTieMsgId()%></td> -->
+
+    </tr>
+    <tr id="currentMsg1" class="clickable-row">
+      <th scope="row">EySampleCorp</th>
+      <td>doc14</td>
+      <td>Cbcr</td>
+      <td>RU=03389</td>
+      <td>USD</td>
+      <td>MX</td>
+      <td>US GAAP</td>
+      <td>2014-12-31</td>
+      <!-- <td class="msgID"><%=tieMsg.getTieMsgId()%></td> -->
+
+    </tr>
+
+  </tbody>
+</table>

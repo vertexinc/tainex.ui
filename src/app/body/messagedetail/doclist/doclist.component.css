@@ -1,0 +1,11 @@
+.member tr:hover {
+	background-color: #eff5dc;
+}
+
+.member {
+	counter-reset: tableCount;
+}
+
+.table {
+  font-size: 11px;
+}
