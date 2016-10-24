@@ -1,11 +1,22 @@
-.member tr:hover {
+.docbody tr:hover {
 	background-color: #eff5dc;
 }
 
-.member {
-	counter-reset: tableCount;
-}
 
-.table {
-  font-size: 11px;
+table {
+  /*table-layout: fixed;*/
+  width: 100%;
+}
+th, td {
+
+    overflow: hidden;
+  
+}
+#docbuttons{
+  text-align: right;
+}
+.btn {
+  height: 30px;
+  font-size: 12px;
+  vertical-align: middle;
 }

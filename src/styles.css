@@ -1,6 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
 
-table {
+/*table {
   width: 100%;
   table-layout: fixed;
   word-wrap: break-word;
@@ -8,4 +8,33 @@ table {
 th, td {
   vertical-align: top;
   text-align: left;
+}*/
+
+table {
+  border: 1px solid #fcfcfc;
+}
+th {
+  background: #A5A5A5;
+  border: 1px solid #fcfcfc;
+  color: white;
+  font-family: Calibri, Arial, sans;
+  font-weight: bold;
+  text-align: center;
+  vertical-align: middle;
+  border: .5pt solid windowtext;
+  font-size: 13px;
+}
+tbody td {
+  border: 1px solid #fcfcfc;
+  font-family: Calibri, Arial, sans;
+  padding: 4px;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 11px;
+}
+tbody tr:nth-child(odd) {
+  background: #d1d1d1;
+}
+tbody tr:nth-child(even) {
+  background: #fcfcfc;
 }

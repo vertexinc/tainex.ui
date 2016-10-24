@@ -1,12 +1,12 @@
-.member tr:hover {
-	background-color: #eff5dc;
+.msgbody tr:hover {
+  background-color: #eff5dc;
 }
-
-.member {
-	counter-reset: tableCount;
+table {
+  table-layout: fixed;
+  width: 800px;
 }
+th, td {
 
-.table {
-  font-size: 13px;
-
+    overflow: hidden;
+    width: 160px;
 }
