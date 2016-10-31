@@ -15,6 +15,12 @@
 }
 #language {
   color: white;
+  font-size: 11px;
+}
+#user {
+    color: white;
+    font-size:11px;
+
 }
 .styled-select {
   float: right;

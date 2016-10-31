@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
+import { HeaderService } from './header/header.service';
 import { MessagelistComponent } from './body/messagelist/messagelist.component';
 import { SearchcriteriaComponent } from './body/searchcriteria/searchcriteria.component';
 import { MessagedetailComponent } from './body/messagedetail/messagedetail.component';
@@ -42,7 +43,7 @@ import { SearchDetailComponent } from './body/searchcriteria/search-detail/searc
     FormsModule,
     HttpModule
   ],
-  providers: [],
+  providers: [HeaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

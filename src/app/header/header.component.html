@@ -1,12 +1,12 @@
-<div class="row">
+<div class="row" *ngIf="header">
   <div class="col-sm-4">
     <h2 class="logo">
-				<a >TIE<strong>app</strong></a> <span>
+				<a >TIE<strong>APP</strong></a> <span>
 					<h6>
 						<!-- <fmt:message key="label.For" /> -->
             For
 						<!-- <%=tieMainPage.getAppName()%> -->
-            Mexican SAT
+            {{header.name}}
 						<!--  %=session.getAttribute("tieapp")% -->
 						<!--%=((com.tie.app.TieSessionController)session.getAttribute("appname")).getMainPage().getAppName()%-->
 
@@ -17,6 +17,7 @@
     <button type="button" class="btn btn-success">Training</button>
   </div>
   <div class="col-sm-4" id='headerright'>
+    <div id="user">Hello {{header.userName}} !</div>
     <div id="language">Language</div>
     <div class="styled-select">
       <select class="form-control" id="sel1">

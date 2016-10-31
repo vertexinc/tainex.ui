@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { HeaderService } from './header.service';
+import { Header } from './header'
 
 @Component({
   selector: 'tieapp-header',
@@ -7,9 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  private header: Header;
+  
+  constructor(private _headerService: HeaderService) { }
 
   ngOnInit() {
+    this._headerService.getHeader()
+        .subscribe(headerInfo => {
+          this.header = {
+            name: headerInfo.name,
+            userName: headerInfo.email
+          }
+        });
   }
 
 }
