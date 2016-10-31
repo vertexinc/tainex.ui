@@ -11,7 +11,7 @@ export class SearchcriteriaComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  showSearch = false;
   isExpanded = false;
   @Input() title: string;
 

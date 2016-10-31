@@ -1,30 +1,30 @@
 <div id="inbox">
 
 
-    <div class="searchButton">
-      <button type="button" class="btn btn-primary btn-md">
+  <div class="searchButton">
+    <button type="button" class="btn btn-primary btn-md">
         Compose...
       </button>
-    </div>
+  </div>
 
 
-    <div class="searchButton">
-      <button type="button" class="btn btn-primary btn-md">
+  <div class="searchButton">
+    <button type="button" class="btn btn-primary btn-md">
         Inbox
       </button>
-    </div>
+  </div>
 
 
-    <div class="searchButton">
-      <button type="button" class="btn btn-primary btn-md">
+  <div class="searchButton">
+    <button type="button" class="btn btn-primary btn-md">
         Draft
       </button>
-    </div>
+  </div>
 
 
 </div>
 <div class="zippy">
-  <div class="zippy-title" (click)="toggle()">
+  <!-- <div class="zippy-title" (click)="toggle()">
     {{title}}
     <i class="pull-right glyphicon" [ngClass]="
       {
@@ -35,5 +35,18 @@
   </div>
   <div *ngIf="isExpanded" class="zippy-content">
     <ng-content></ng-content>
+  </div> -->
+  <button type="button" id = "searchBy" class="btn btn-primary btn-md">
+    Search By
+  </button>
+  <a id="expandIcon" (click)="showSearch = !showSearch">
+    <i *ngIf="!showSearch" class="fa fa-chevron-down" aria-hidden="true"></i>
+    <i *ngIf="showSearch" class="fa fa-chevron-up" aria-hidden="true"></i>
+  </a>
+
+  <div *ngIf="showSearch" id='showSearch'>
+
+      <tieapp-search-detail></tieapp-search-detail>
+
   </div>
 </div>

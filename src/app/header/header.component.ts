@@ -8,16 +8,17 @@ import { Header } from './header'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
+  isLoading = true;
   private header: Header;
-  
+
   constructor(private _headerService: HeaderService) { }
 
   ngOnInit() {
     this._headerService.getHeader()
         .subscribe(headerInfo => {
+          this.isLoading = false;
           this.header = {
-            name: headerInfo.name,
+            appName: headerInfo.name,
             userName: headerInfo.email
           }
         });

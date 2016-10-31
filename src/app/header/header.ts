@@ -1,4 +1,4 @@
 export interface Header {
-  name : string;
+  appName : string;
   userName : string;
 }

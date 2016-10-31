@@ -5,7 +5,10 @@
     </tieapp-searchcriteria>
 
   </div>
-  <a (click)="showSearchCriteria = !showSearchCriteria"> > </a>
+  <a (click)="showSearchCriteria = !showSearchCriteria">
+    <div *ngIf="!showSearchCriteria"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
+    <div *ngIf="showSearchCriteria"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
+   </a>
   <div id="rightpanel">
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>
