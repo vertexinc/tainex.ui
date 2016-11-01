@@ -5,6 +5,7 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { BodyComponent } from './body/body.component';
+import { TieMsgService } from './body/TieMsg.service';
 import { FooterComponent } from './footer/footer.component';
 import { HeaderComponent } from './header/header.component';
 import { HeaderService } from './header/header.service';
@@ -43,7 +44,7 @@ import { SearchDetailComponent } from './body/searchcriteria/search-detail/searc
     FormsModule,
     HttpModule
   ],
-  providers: [HeaderService],
+  providers: [HeaderService, TieMsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

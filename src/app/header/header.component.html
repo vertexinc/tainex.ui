@@ -1,31 +1,25 @@
 <!-- <div *ngIf="isLoading"><i class="fa fa-spinner fa-spin"></i></div> -->
- <div *ngIf="isLoading"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div>
+<div *ngIf="isLoading"><i class="fa fa-cog fa-spin fa-3x fa-fw"></i></div>
 <div class="row" *ngIf="header">
   <div class="col-sm-4">
     <h2 class="logo">
 				<a >TIE<strong>APP</strong></a> <span>
 					<h6>
-						<!-- <fmt:message key="label.For" /> -->
-            For
-						<!-- <%=tieMainPage.getAppName()%> -->
-            {{header.appName}}
-						<!--  %=session.getAttribute("tieapp")% -->
-						<!--%=((com.tie.app.TieSessionController)session.getAttribute("appname")).getMainPage().getAppName()%-->
-
-					</h6>
+            For  {{header.appName}}
+          </h6>
 				</span>
 			</h2></div>
+
   <div class="col-sm-4" id='headercenter'>
     <button type="button" class="btn btn-success">Training</button>
   </div>
+
   <div class="col-sm-4" id='headerright'>
     <div id="user">Hello {{header.userName}} !</div>
     <div id="language">Language</div>
     <div class="styled-select">
       <select class="form-control" id="sel1">
-        <option>EN</option>
-        <option>ES</option>
-        <option>CN</option>
+        <option *ngFor="let lan of header.language">{{lan}}</option>
       </select>
     </div>
   </div>

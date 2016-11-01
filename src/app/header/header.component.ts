@@ -18,8 +18,9 @@ export class HeaderComponent implements OnInit {
         .subscribe(headerInfo => {
           this.isLoading = false;
           this.header = {
-            appName: headerInfo.name,
-            userName: headerInfo.email
+            appName: headerInfo.appName,
+            userName: headerInfo.userName,
+            language: headerInfo.language
           }
         });
   }

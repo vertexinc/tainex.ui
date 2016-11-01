@@ -1,4 +1,4 @@
-
+<div  *ngIf="tieMsgs">
 <table>
   <thead>
     <tr>
@@ -10,27 +10,13 @@
     </tr>
   </thead>
   <tbody class="msgbody">
-    <tr class="">
-      <td>John</td>
-      <td>Cbcr1</td>
-      <td>This is Cbcr1</td>
-      <td>12-12-2015</td>
-      <td>Sent</td>
+    <tr class="" *ngFor="let tieMsg of tieMsgs">
+      <td>{{tieMsg.user}}</td>
+      <td>{{tieMsg.subject}}</td>
+      <td>{{tieMsg.description}}</td>
+      <td>{{tieMsg.date}}</td>
+      <td>{{tieMsg.status}}</td>
     </tr>
-    <tr class="">
-      <td>Mary</td>
-      <td>Cbcr2</td>
-      <td>This is Cbcr2</td>
-      <td>12-12-2015</td>
-      <td>Sent</td>
-    </tr>
-    <tr class="">
-      <td>Jack</td>
-      <td>Cbcr3</td>
-      <td>This is Cbcr3</td>
-      <td>12-12-2015</td>
-      <td>Sent</td>
-    </tr>
-
   </tbody>
 </table>
+</div>
