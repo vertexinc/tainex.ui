@@ -3,7 +3,8 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from './tieapp.component';
+import { TieappService } from './tieapp.service';
 import { BodyComponent } from './body/body.component';
 import { TieMsgService } from './body/TieMsg.service';
 import { FooterComponent } from './footer/footer.component';
@@ -44,7 +45,7 @@ import { SearchDetailComponent } from './body/searchcriteria/search-detail/searc
     FormsModule,
     HttpModule
   ],
-  providers: [HeaderService, TieMsgService],
+  providers: [TieappService,HeaderService, TieMsgService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,4 +1,4 @@
-<div id='tieapp'>
+<div id='tieapp' *ngIf="tieapp">
   <div id='tieapp-header'>
     <tieapp-header></tieapp-header>
   </div>
@@ -8,6 +8,6 @@
   </div>
 
   <div id='tieapp-footer'>
-    <tieapp-footer></tieapp-footer>
+    <tieapp-footer [footer]="tieapp.footer"></tieapp-footer>
   </div>
 </div>
