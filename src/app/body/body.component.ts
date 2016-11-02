@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,Input } from '@angular/core';
+import { Body } from "./body";
 
 @Component({
   selector: 'tieapp-body',
@@ -8,6 +8,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BodyComponent implements OnInit {
   showSearchCriteria=false;
+
+  @Input() body:Body;
   constructor() { }
 
   ngOnInit() {

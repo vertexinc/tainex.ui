@@ -1,4 +1,23 @@
 {
-  "body": "This is msglist from db",
-  "footer": "This is footer from database"
+  "header": {
+    "appName": "Mexican SAT",
+    "userName": "Marisol",
+    "language": ["en", "es", "zh", "fr"]
+  },
+  "body": {
+    "messagelist": [{
+      "user": "John",
+      "subject": "Cbcr1",
+      "description": "This is Cbcr1",
+      "date": "12-12-2015",
+      "status": "Sent"
+    }, {
+      "user": "John",
+      "subject": "Cbcr1",
+      "description": "This is Cbcr1",
+      "date": "12-12-2015",
+      "status": "Sent"
+    }]
+  },
+  "footer": "This is footer"
 }

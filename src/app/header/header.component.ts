@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { HeaderService } from './header.service';
 import { Header } from './header'
 
@@ -8,21 +8,22 @@ import { Header } from './header'
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  isLoading = true;
-  private header: Header;
+  // isLoading = true;
 
-  constructor(private _headerService: HeaderService) { }
+  @Input() header: Header;
+
+  constructor() { }
 
   ngOnInit() {
-    this._headerService.getHeader()
-        .subscribe(headerInfo => {
-          this.isLoading = false;
-          this.header = {
-            appName: headerInfo.appName,
-            userName: headerInfo.userName,
-            language: headerInfo.language
-          }
-        });
+    // this._headerService.getHeader()
+    //     .subscribe(headerInfo => {
+    //       this.isLoading = false;
+    //       this.header = {
+    //         appName: headerInfo.appName,
+    //         userName: headerInfo.userName,
+    //         language: headerInfo.language
+    //       }
+    //     });
   }
 
 }

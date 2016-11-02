@@ -1,3 +1,9 @@
+import { Messagedetail } from "./messagedetail/messagedetail";
+import { Messagelist } from "./messagelist/messagelist";
+import { Searchcriteria } from "./searchcriteria/searchcriteria";
 export interface Body {
-  body: string;
+
+  messagelist:  Array<Messagelist>;
+  messagedetail: Messagedetail;
+  searchcriteria: Searchcriteria;
 }

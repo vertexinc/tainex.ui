@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { TieMsgService } from '../TieMsg.service';
-import { TieMsg } from '../TieMsg';
+import { Component, OnInit,Input } from '@angular/core';
+// import { TieMsgService } from '../TieMsg.service';
+import { Messagelist } from './messagelist';
 
 @Component({
   selector: 'tieapp-messagelist',
@@ -9,21 +9,21 @@ import { TieMsg } from '../TieMsg';
 })
 export class MessagelistComponent implements OnInit {
 
-  private tieMsgs: TieMsg[];
-  private selectedTieMsg:TieMsg;
+  @Input() tieMsgs: Messagelist[];
+  // private selectedTieMsg:TieMsg;
 
 
-  constructor(private _tieMsgService: TieMsgService) { }
+  constructor() { }
 
   ngOnInit() {
-    this._tieMsgService.getTieMsg()
-      .subscribe(tieMsgInfoList => {
-
-        this.tieMsgs = tieMsgInfoList;
-      });
+    // this._tieMsgService.getTieMsg()
+    //   .subscribe(tieMsgInfoList => {
+    //
+    //     this.tieMsgs = tieMsgInfoList;
+    //   });
   }
 
-  onSelect(tieMsgInfo:TieMsg): void{
-    this.selectedTieMsg = tieMsgInfo;
-  }
+  // onSelect(tieMsgInfo:TieMsg): void{
+  //   this.selectedTieMsg = tieMsgInfo;
+  // }
 }
