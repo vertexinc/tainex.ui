@@ -1,5 +1,9 @@
 import { EntitylistRecord } from './entitylistRecord';
 
 export class Entitylist {
-  entitylist : Array<EntitylistRecord>;
+  entitySumList: Array<EntitylistRecord>;
+
+  constructor(entitySumList) {
+    this.entitySumList = entitySumList;
+  }
 }

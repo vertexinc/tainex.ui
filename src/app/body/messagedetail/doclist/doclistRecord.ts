@@ -1,4 +1,4 @@
-export class Doc {
+export class DoclistRecord {
   code: string;
   title: string;
   docType: string;
@@ -7,4 +7,5 @@ export class Doc {
   residentCountry: string;
   accountingStandard: string;
   reportingPeriod: string;
+
 }

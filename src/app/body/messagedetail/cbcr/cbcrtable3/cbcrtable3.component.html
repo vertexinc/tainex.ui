@@ -3,11 +3,9 @@
 <div class="headinfo">Fiscal Year Concerned: 2014-12-31</div>
 <table>
   <tbody>
-    <tr>
-      <td>This is table 3 details information part1</td>
+    <tr *ngFor="let cbcrtable3Item of cbcrtable3.cbcrtable3List">
+      <td>{{cbcrtable3Item}}</td>
     </tr>
-    <tr>
-      <td>This is table3 information part2</td>
-    </tr>
+
     <tbody>
 </table>

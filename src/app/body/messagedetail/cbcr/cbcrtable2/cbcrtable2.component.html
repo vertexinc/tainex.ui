@@ -61,168 +61,25 @@
 							</tr>
 		</thead>
     <tbody>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
+    <tr *ngFor = "let cbcrtable2Item of cbcrtable2.cbcrtable2List">
+      <td>{{cbcrtable2Item.taxJurisdiction}}</td>
+      <td>{{cbcrtable2Item.constituentEntities}}</td>
+      <td>{{cbcrtable2Item.taxJurisdictionOfOrganisation}}</td>
+      <td><div *ngIf="cbcrtable2Item.researchandDevelopment === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.holdingorManaging === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.purchaseorProcurement === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.manufacturingorProduction === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.salesMarketingorDistribution === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.administrativeManagement === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.provisionOfServices === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.internalGroupFinance === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.regulatedFinancialServices === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.insurance === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.holdingShares === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.dormant === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.other === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
     </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
-    <tr>
-      <td>Test</td>
-      <td>Data</td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-      <td></td>
-    </tr>
+
   </tbody>
 		</table>
 </div>

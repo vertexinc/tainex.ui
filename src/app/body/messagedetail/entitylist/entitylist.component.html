@@ -21,28 +21,19 @@
                 </tr>
               </thead>
               <tbody class="">
-                <tr class="">
-                  <td>10001</td>
-  								<td>Global...</td>
-  								<td>Global...</td>
-  								<td>CBCR</td>
-  								<td>Global...</td>
-                  <td>CA</td>
-                  <td>YES</td>
-                  <td></td>
-                  <td>Industry...</td>
+                <tr class="" *ngFor="let entitylistItem of entitylist.entitySumList">
+
+                  <td>{{entitylistItem.tin}}</td>
+  								<td>{{entitylistItem.name}}</td>
+  								<td>{{entitylistItem.entityCode}}</td>
+  								<td>{{entitylistItem.docType}}</td>
+  								<td>{{entitylistItem.incorporationCode}}</td>
+                  <td>{{entitylistItem.resident}}</td>
+                  <td><div *ngIf="entitylistItem.isPE === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+                  <td>{{entitylistItem.address}}</td>
+                  <td>{{entitylistItem.mainEntity}}</td>
                 </tr>
-                <tr class="">
-                  <td>10002</td>
-  								<td>Global...</td>
-  								<td>Global...</td>
-  								<td>CBCR</td>
-  								<td>Global...</td>
-                  <td>CA</td>
-                  <td>YES</td>
-                  <td></td>
-                  <td>Industry...</td>
-                </tr>
+
 
               </tbody>
             </table>

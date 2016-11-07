@@ -1,5 +1,10 @@
-import { Doc } from './doc';
+import { DoclistRecord } from './doclistRecord';
 export class Doclist {
-  docList: Array<Doc>;
-  currentDoc: Doc;
+  docSumList: Array<DoclistRecord>;
+  currentDoc: DoclistRecord;
+
+  constructor (docSumList,currentDoc){
+    this.docSumList = docSumList;
+    this.currentDoc = currentDoc;
+  }
 }

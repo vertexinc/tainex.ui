@@ -22,26 +22,17 @@
     </tr>
   </thead>
   <tbody class="docbody">
-    <tr class="">
-      <td>IndustryCo</td>
-      <td>doc13</td>
-      <td>Cbcr</td>
-      <td>RU=03389</td>
-      <td>USD</td>
-      <td>MX</td>
-      <td>US GAAP</td>
-      <td>2014-12-31</td>
+    <tr class="" *ngFor="let doclistItem of doclist.docSumList">
+      <td>{{doclistItem.code}}</td>
+      <td>{{doclistItem.title}}</td>
+      <td>{{doclistItem.docType}}</td>
+      <td>{{doclistItem.reportingEntity}}</td>
+      <td>{{doclistItem.currency}}</td>
+      <td>{{doclistItem.residentCountry}}</td>
+      <td>{{doclistItem.accountingStandard}}</td>
+      <td>{{doclistItem.reportingPeriod}}</td>
     </tr>
-    <tr class="">
-      <td>EySampleCorp</td>
-      <td>doc14</td>
-      <td>Cbcr</td>
-      <td>RU=03389</td>
-      <td>USD</td>
-      <td>MX</td>
-      <td>US GAAP</td>
-      <td>2014-12-31</td>
-    </tr>
+
 
   </tbody>
 </table>
