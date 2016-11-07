@@ -8,4 +8,13 @@ export class Messagelist {
     this.messageSumList = messageSumList;
     this.currentMessage = currentMessage;
   }
+
+
+  // get currentMsg():Message {
+  //    return this.currentMessage;
+  //  }
+  //
+  // set currentMsg(value: Message){
+  //   this.currentMessage = value;
+  // }
 }

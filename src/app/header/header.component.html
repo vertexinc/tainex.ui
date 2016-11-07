@@ -16,11 +16,11 @@
   </div>
 
   <div class="col-sm-4" id='headerright'>
-    <div id="user">Hello {{header.userName}} !</div>
+    <div id="user">Hello {{ header.userName }} !</div>
     <div id="language">Language</div>
     <div class="styled-select">
       <select class="form-control" id="sel1">
-        <option *ngFor="let lan of header.language">{{lan}}</option>
+        <option *ngFor="let lan of header.language">{{ lan }}</option>
       </select>
     </div>
   </div>

@@ -14,8 +14,10 @@ export class MessagelistComponent implements OnInit {
   private messageList: Messagelist;
 
   private messageSumList: Array<Message>;
-  private currentMessage: Message;
-  //  private messagedetail:Messagedetail;
+  static currentMessage: Message;
+
+
+  //  data Objects
   private messageListData = [
     {
       "user": "Mary",
@@ -50,6 +52,7 @@ export class MessagelistComponent implements OnInit {
 
   }
 
+
   ngOnInit() {
     // this._tieMsgService.getTieMsg()
     //   .subscribe(tieMsgInfoList => {
@@ -59,7 +62,7 @@ export class MessagelistComponent implements OnInit {
   }
 
   onSelect(currentMessage:Message): void{
-    this.currentMessage = currentMessage;
+    currentMessage = currentMessage;
     alert(JSON.stringify(currentMessage));
   }
 }

@@ -13,7 +13,7 @@ export class HeaderComponent implements OnInit {
 
   constructor() {
     // header = new Header ( "Mex", "user name", "EN", [EN. ] );
-    this.header = new Header("Mexican SAT", "Marisol",  ["en","es","zh" ] );
+    this.header = new Header("USA SAT", "Marisol",  ["en","es","zh" ] );
   }
 
   ngOnInit() {

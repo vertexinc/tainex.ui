@@ -5,7 +5,7 @@ export class Message {
   date: string;
   status: string;
   from: string;
-  data: string;
+
   reportingPeriod: string;
   to: string;
   notes: string;
@@ -19,7 +19,7 @@ export class Message {
   Language: Array<string>;
 
   constructor(user, subject, description, date, status, from,
-    data, reportingPeriod, to, notes, warning, contact, OECDMessageRefID, OECDMessageType, OECDMessageTypeIndic,
+     reportingPeriod, to, notes, warning, contact, OECDMessageRefID, OECDMessageType, OECDMessageTypeIndic,
     sendingCountry, receivingCountry, Language) {
     this.user = user;
     this.subject = subject;
@@ -27,7 +27,7 @@ export class Message {
     this.date = date;
     this.status = status;
     this.from = from;
-    this.data = data;
+
     this.reportingPeriod = reportingPeriod;
     this.to = to;
     this.notes = notes;
