@@ -9,7 +9,7 @@ import { Body } from "./body";
 export class BodyComponent implements OnInit {
   showSearchCriteria=false;
 
-  @Input() body:Body;
+  // @Input() body:Body;
   constructor() { }
 
   ngOnInit() {

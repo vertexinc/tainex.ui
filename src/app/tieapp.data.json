@@ -10,14 +10,67 @@
       "subject": "Cbcr1",
       "description": "This is Cbcr1",
       "date": "12-12-2015",
-      "status": "Sent"
+      "status": "Sent",
+      "messagedetail": {
+        "currentmessage": {
+          "tieMsgId": 10,
+          "subject": "CBCR to DE",
+          "code": "010",
+          "description": "CBCR docs for DE",
+          "notes": "Sending the CBCR docs of Industry Co and EYSampleCo to Germany tax authority.",
+          "senderId": 3,
+          "sender": {
+            "tieUserId": 3,
+            "name": "Mary",
+            "code": "Mary16",
+            "description": "Mary description",
+            "email": "mary@gmail.com",
+            "ctsUserId": "1",
+            "ctsUserPwd": "000",
+            "ctsUserCertificate": "certificateopm",
+            "tieAppId": 1,
+            "isExternal": 1
+          },
+          "ownerid": 4,
+          "tieMsgStateId": 2,
+          "tieMsgState": {
+            "tieMsgStateId": 2,
+            "name": "Sent",
+            "code": "Sent",
+            "description": "The message is sent in the system",
+            "countryCodeA2": ""
+          },
+          "sendingEntityIdNum": "1",
+          "transmittingCountry": "MX",
+          "receivingCountries": "DE",
+          "messageType": "excel",
+          "lauguage": "EN",
+          "warning": "Waning: ",
+          "contact": "contacters info",
+          "messageRefId": "MX-2018-1",
+          "messageTypeIndic": "1",
+          "corrMessageRefIds": "1",
+          "reportingPeriod": "2014-12-31",
+          "timestamp": "2013-06-04T13:23:21",
+          "rawMsg": "raw",
+          "msgReceiverList": "Danil13@MX;John16@US;Mary16@DE;Max@US;"
+        }
+      }
     }, {
-      "user": "John",
-      "subject": "Cbcr1",
-      "description": "This is Cbcr1",
-      "date": "12-12-2015",
-      "status": "Sent"
+      "user": "Mary",
+      "subject": "Cbcr2",
+      "description": "This is Cbcr2",
+      "date": "12-01-2015",
+      "status": "Draft",
+      "messagedetail": "x"
+    }, {
+      "user": "Mike",
+      "subject": "Cbcr3",
+      "description": "This is Cbcr3",
+      "date": "02-12-2011",
+      "status": "Sent",
+      "messagedetail": "x"
     }]
   },
-  "footer": "This is footer"
+  "footer": "?"
 }

@@ -8,6 +8,7 @@ import { Footer } from './footer'
 })
 export class FooterComponent implements OnInit {
   @Input() footer: Footer;
+
   constructor() { }
 
   ngOnInit() {

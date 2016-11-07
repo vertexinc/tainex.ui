@@ -5,45 +5,45 @@
       <th>Doc Type:</th>
       <td class="searchSelect">
         <select class="form-control" id="sel1">
-          <option>CBCR</option>
-          <option>Other</option>
+          <option  *ngFor="let docTypeItem of searchDetail.docType">{{docTypeItem}}</option>
+
         </select>
       </td>
     </tr>
     <tr>
       <th>From User:</th>
       <td>
-        <input type="text" class="form-control" id="fromUser" placeholder="Adam">
+        <input type="text" class="form-control" id="fromUser" placeholder="{{searchDetail.fromUser}}">
       </td>
     </tr>
     <tr>
       <th>From Country:</th>
       <td>
-        <input type="text" class="form-control" id="fromCountry" placeholder="USA">
+        <input type="text" class="form-control" id="fromCountry" placeholder="{{searchDetail.fromCountry}}">
       </td>
     </tr>
     <tr>
       <th>To user:</th>
       <td>
-        <input type="text" class="form-control" id="toUser" placeholder="Mary">
+        <input type="text" class="form-control" id="toUser" placeholder="{{searchDetail.toUser}}">
       </td>
     </tr>
     <tr>
       <th>To Country:</th>
       <td>
-        <input type="text" class="form-control" id="toCountry" placeholder="USA">
+        <input type="text" class="form-control" id="toCountry" placeholder="{{searchDetail.toCountry}}">
       </td>
     </tr>
     <tr>
       <th>From Date:</th>
       <td>
-        <input type="text" class="form-control" id="fromDate" placeholder="12-12-2016">
+        <input type="text" class="form-control" id="fromDate" placeholder="{{searchDetail.fromDate}}">
       </td>
     </tr>
     <tr>
       <th>To Date:</th>
       <td>
-        <input type="text" class="form-control" id="toDate" placeholder="12-12-2016">
+        <input type="text" class="form-control" id="toDate" placeholder="{{searchDetail.toData}}">
       </td>
     </tr>
   </table>
@@ -55,41 +55,39 @@
     <tr>
       <th>Name:</th>
       <td>
-        <input type="text" class="form-control" id="name" placeholder="MNC Name">
+        <input type="text" class="form-control" id="name" placeholder="{{searchDetail.name}}">
       </td>
     </tr>
     <tr>
       <th>Country:</th>
       <td>
         <select class="form-control" id="sel1">
-          <option>
-            US
+          <option *ngFor="let country of searchDetail.country" >
+            {{country}}
           </option>
-          <option>MX</option>
+
         </select>
       </td>
     </tr>
     <tr>
       <th>From Year:</th>
       <td>
-        <input type="text" class="form-control" id="fromYear" placeholder="2012">
+        <input type="text" class="form-control" id="fromYear" placeholder="{{searchDetail.fromYear}}">
       </td>
     </tr>
     <tr>
       <th>To Year:</th>
       <td>
-        <input type="text" class="form-control" id="toYear" placeholder="2016">
+        <input type="text" class="form-control" id="toYear" placeholder="{{searchDetail.toYear}}">
       </td>
     </tr>
     <tr>
       <th>Main Business:</th>
       <td>
         <select class="form-control" id="sel1">
-          <option>
-            Finance
+          <option *ngFor="let mainBusiness of searchDetail.mainBusiness" >
+            {{mainBusiness}}
           </option>
-          <option>Education</option>
-          <option>Health Care</option>
         </select>
       </td>
     </tr>
@@ -106,10 +104,10 @@
       <th>Revenue Rel:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.revenueRel[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.revenueRel[1]}}">
       </td>
     </tr>
 
@@ -117,80 +115,80 @@
       <th>Revenue Unrel:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.revenueUnrel[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.revenueUnrel[1]}}">
       </td>
     </tr>
     <tr>
       <th>Total Revenue:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.taxAccrual[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.taxAccrual[1]}}">
       </td>
     </tr>
     <tr>
       <th>Tax Accrual:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.taxPaid[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.taxPaid[1]}}">
       </td>
     </tr>
     <tr>
       <th>Tax Paid:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.numOfEmp[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.numOfEmp[1]}}">
       </td>
     </tr>
     <tr>
       <th>Num of Emp.:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.capital[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.capital[1]}}">
       </td>
     </tr>
     <tr>
       <th>Capital:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.revenueUnrel[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.revenueUnrel[1]}}">
       </td>
     </tr>
     <tr>
       <th>Accu Earnings:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.accuEarnings[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.accuEarnings[1]}}">
       </td>
     </tr>
     <tr>
       <th>Assets:</th>
 
       <td>
-        <input type="text" class="form-control metrix" id="from" placeholder="">
+        <input type="text" class="form-control metrix" id="from" placeholder="{{searchDetail.assets[0]}}">
       </td>
       <td>
-        <input type="text" class="form-control metrix" id="to" placeholder="">
+        <input type="text" class="form-control metrix" id="to" placeholder="{{searchDetail.assets[1]}}">
       </td>
     </tr>
   </table>

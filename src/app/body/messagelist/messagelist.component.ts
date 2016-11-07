@@ -1,6 +1,8 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 // import { TieMsgService } from '../TieMsg.service';
 import { Messagelist } from './messagelist';
+import { Message } from '../message';
+// import { Messagedetail } from '../messagedetail/messagedetail';
 
 @Component({
   selector: 'tieapp-messagelist',
@@ -9,11 +11,44 @@ import { Messagelist } from './messagelist';
 })
 export class MessagelistComponent implements OnInit {
 
-  @Input() tieMsgs: Messagelist[];
-  // private selectedTieMsg:TieMsg;
+  private messageList: Messagelist;
 
+  private messageSumList: Array<Message>;
+  private currentMessage: Message;
+  //  private messagedetail:Messagedetail;
+  private messageListData = [
+    {
+      "user": "Mary",
+      "subject": "Cbcr1",
+      "description": "This is Cbcr1",
+      "date": "12-12-2015",
+      "status": "Sent",
+       "from": "John"
+    },
+    {
+      "user": "John",
+      "subject": "Cbcr2",
+      "description": "This is Cbcr2",
+      "date": "12-12-2015",
+      "status": "Viewed",
+       "from": "Mary"
+    },
+    {
+      "user": "Jack",
+      "subject": "Cbcr3",
+      "description": "This is Cbcr3",
+      "date": "12-12-2015",
+      "status": "Draft",
+      "from": "Lora"
+    }
+  ];
+  private currentMessageData = this.messageListData[0];
 
-  constructor() { }
+  constructor() {
+
+    this.messageList = new Messagelist(this.messageListData, this.currentMessageData);
+
+  }
 
   ngOnInit() {
     // this._tieMsgService.getTieMsg()
@@ -23,7 +58,8 @@ export class MessagelistComponent implements OnInit {
     //   });
   }
 
-  // onSelect(tieMsgInfo:TieMsg): void{
-  //   this.selectedTieMsg = tieMsgInfo;
-  // }
+  onSelect(currentMessage:Message): void{
+    this.currentMessage = currentMessage;
+    alert(JSON.stringify(currentMessage));
+  }
 }

@@ -9,8 +9,9 @@
       <th>Status</th>
     </tr>
   </thead>
-  <tbody class="msgbody">
-    <tr class="" *ngFor="let tieMsg of tieMsgs">
+  <tbody class="msgbody" >
+    <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg)">
+    <!-- (click)="onSelect(tieMsg)"> -->
       <td>{{tieMsg.user}}</td>
       <td>{{tieMsg.subject}}</td>
       <td>{{tieMsg.description}}</td>
@@ -19,3 +20,5 @@
     </tr>
   </tbody>
 </table>
+
+<!-- <messagedetail [currentMsg] = "tieMsg">/<messagedetail> -->

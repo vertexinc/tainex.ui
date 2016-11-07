@@ -1,3 +1,3 @@
-export interface Footer {
+export class Footer {
   footer : string;
 }

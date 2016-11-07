@@ -1,7 +1,11 @@
-export interface Messagelist {
-  user: string,
-  subject: string,
-  description: string,
-  date: string,
-  status: string,
+
+import { Message } from "../message";
+export class Messagelist {
+  messageSumList: Array<Message>;
+  currentMessage: Message;
+
+  constructor(messageSumList,currentMessage){
+    this.messageSumList = messageSumList;
+    this.currentMessage = currentMessage;
+  }
 }

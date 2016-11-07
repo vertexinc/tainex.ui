@@ -1,5 +1,4 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { HeaderService } from './header.service';
 import { Header } from './header'
 
 @Component({
@@ -10,9 +9,12 @@ import { Header } from './header'
 export class HeaderComponent implements OnInit {
   // isLoading = true;
 
-  @Input() header: Header;
+ header: Header;
 
-  constructor() { }
+  constructor() {
+    // header = new Header ( "Mex", "user name", "EN", [EN. ] );
+    this.header = new Header("Mexican SAT", "Marisol",  ["en","es","zh" ] );
+  }
 
   ngOnInit() {
     // this._headerService.getHeader()

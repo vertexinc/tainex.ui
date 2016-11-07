@@ -1,11 +1,11 @@
 import {Cbcr} from "./cbcr/cbcr";
-import {Currentmessage} from "./currentmessage/currentmessage";
+// import {Message} from "../message";
 import {Doclist} from "./doclist/doclist";
 import {Entitylist} from "./entitylist/entitylist";
 
-export interface Messagedetail {
+export class Messagedetail {
   cbcr: Cbcr;
-  currentmessage: Currentmessage;
+  // message: Message;
   doclist: Doclist;
   entitylist: Entitylist;
 

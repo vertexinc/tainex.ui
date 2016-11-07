@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { Searchcriteria } from './searchcriteria';
 
 @Component({
   selector: 'tieapp-searchcriteria',
@@ -6,14 +7,18 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./searchcriteria.component.css']
 })
 export class SearchcriteriaComponent implements OnInit {
+  searchcriteria:Searchcriteria;
+  constructor() {
+    this.searchcriteria = new Searchcriteria()
+  }
 
-  constructor() { }
 
   ngOnInit() {
   }
+  
   showSearch = false;
   isExpanded = false;
-  @Input() title: string;
+
 
   toggle(){
     this.isExpanded = !this.isExpanded;
