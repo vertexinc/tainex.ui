@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-// import { TieMsgService } from '../TieMsg.service';
+import { TieappService } from "../../tieapp.service";
 import { Messagelist } from './messagelist';
 import { Message } from '../message';
 // import { Messagedetail } from '../messagedetail/messagedetail';
@@ -14,7 +14,8 @@ export class MessagelistComponent implements OnInit {
   private messageList: Messagelist;
 
   private messageSumList: Array<Message>;
-  static currentMessage: Message;
+
+
 
 
   //  data Objects
@@ -25,7 +26,18 @@ export class MessagelistComponent implements OnInit {
       "description": "This is Cbcr1",
       "date": "12-12-2015",
       "status": "Sent",
-       "from": "John"
+      "from": "John",
+      "reportingPeriod": "string",
+      "to": "John",
+      "notes": "This is note 1",
+      "warning": "Warning 1 ",
+      "contact": "Mary",
+      "OECDMessageRefID": "Cbc1",
+      "OECDMessageType": ["CBC", "Other"],
+      "OECDMessageTypeIndic": ["1", "2", "3"],
+      "sendingCountry": "US",
+      "receivingCountry": "US,MX",
+      "Language": ["en", "ch", "es"]
     },
     {
       "user": "John",
@@ -33,7 +45,17 @@ export class MessagelistComponent implements OnInit {
       "description": "This is Cbcr2",
       "date": "12-12-2015",
       "status": "Viewed",
-       "from": "Mary"
+      "from": "Mary",
+      "to": "Lora",
+      "notes": "This is note 2",
+      "warning": "Warning 2 ",
+      "contact": "Lucy",
+      "OECDMessageRefID": "Cbc2",
+      "OECDMessageType": ["CBC", "Other"],
+      "OECDMessageTypeIndic": ["1", "2", "3"],
+      "sendingCountry": "US",
+      "receivingCountry": "US,MX",
+      "Language": ["en", "ch"]
     },
     {
       "user": "Jack",
@@ -41,14 +63,25 @@ export class MessagelistComponent implements OnInit {
       "description": "This is Cbcr3",
       "date": "12-12-2015",
       "status": "Draft",
-      "from": "Lora"
+      "from": "Mary",
+      "to": "Lora",
+      "notes": "This is note 3",
+      "warning": "Warning 3",
+      "contact": "Lucy",
+      "OECDMessageRefID": "Cbc3",
+      "OECDMessageType": ["CBC", "Other"],
+      "OECDMessageTypeIndic": ["1", "2", "3"],
+      "sendingCountry": "US",
+      "receivingCountry": "US,MX",
+      "Language": ["en"]
     }
   ];
   private currentMessageData = this.messageListData[0];
 
-  constructor() {
+  constructor(private _tieappService: TieappService) {
 
     this.messageList = new Messagelist(this.messageListData, this.currentMessageData);
+    this._tieappService.setCurrentMsg(this.messageList.currentMessage);
 
   }
 
@@ -61,8 +94,10 @@ export class MessagelistComponent implements OnInit {
     //   });
   }
 
-  onSelect(currentMessage:Message): void{
+  onSelect(currentMessage: Message): void {
     currentMessage = currentMessage;
-    alert(JSON.stringify(currentMessage));
+    // this.messageList.setCurrentMsg(currentMessage);
+    this._tieappService.setCurrentMsg(currentMessage);
+    // alert(JSON.stringify(currentMessage));
   }
 }

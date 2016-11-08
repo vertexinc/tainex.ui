@@ -1,5 +1,8 @@
 
 import { Message } from "../message";
+
+
+
 export class Messagelist {
   messageSumList: Array<Message>;
   currentMessage: Message;
@@ -10,11 +13,11 @@ export class Messagelist {
   }
 
 
-  // get currentMsg():Message {
+  // getCurrentMsg() {
   //    return this.currentMessage;
   //  }
   //
-  // set currentMsg(value: Message){
-  //   this.currentMessage = value;
+  // setCurrentMsg(Message){
+  //   this.currentMessage = Message;
   // }
 }

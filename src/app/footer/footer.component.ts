@@ -7,7 +7,7 @@ import { Footer } from './footer'
   styleUrls: ['./footer.component.css']
 })
 export class FooterComponent implements OnInit {
-  @Input() footer: Footer;
+  // @Input() footer: Footer;
 
   constructor() { }
 

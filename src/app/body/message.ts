@@ -1,3 +1,5 @@
+
+
 export class Message {
   user: string;
   subject: string;
@@ -39,5 +41,6 @@ export class Message {
     this.sendingCountry = sendingCountry;
     this.receivingCountry = receivingCountry;
     this.Language = Language;
-  }
+  };
+
 }
