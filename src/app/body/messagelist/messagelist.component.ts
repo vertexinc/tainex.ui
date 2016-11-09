@@ -16,7 +16,7 @@ export class MessagelistComponent implements OnInit {
   private messageSumList: Array<Message>;
 
 
-
+  private currentMsgInfo: Message;
 
   //  data Objects
   private messageListData = [
@@ -28,7 +28,7 @@ export class MessagelistComponent implements OnInit {
       "status": "Sent",
       "from": "John",
       "reportingPeriod": "string",
-      "to": "John",
+      "to": "Lancy",
       "notes": "This is note 1",
       "warning": "Warning 1 ",
       "contact": "Mary",
@@ -45,7 +45,7 @@ export class MessagelistComponent implements OnInit {
       "description": "This is Cbcr2",
       "date": "12-12-2015",
       "status": "Viewed",
-      "from": "Mary",
+      "from": "David",
       "to": "Lora",
       "notes": "This is note 2",
       "warning": "Warning 2 ",
@@ -64,7 +64,7 @@ export class MessagelistComponent implements OnInit {
       "date": "12-12-2015",
       "status": "Draft",
       "from": "Mary",
-      "to": "Lora",
+      "to": "Jane",
       "notes": "This is note 3",
       "warning": "Warning 3",
       "contact": "Lucy",
@@ -92,6 +92,7 @@ export class MessagelistComponent implements OnInit {
     //
     //     this.tieMsgs = tieMsgInfoList;
     //   });
+    this.currentMsgInfo = this._tieappService.getCurrentMsg();
   }
 
   onSelect(currentMessage: Message): void {
@@ -99,5 +100,9 @@ export class MessagelistComponent implements OnInit {
     // this.messageList.setCurrentMsg(currentMessage);
     this._tieappService.setCurrentMsg(currentMessage);
     // alert(JSON.stringify(currentMessage));
+
+    this.currentMsgInfo = this._tieappService.getCurrentMsg();
   }
+
+
 }
