@@ -1,6 +1,6 @@
 {
   "messageSumList": [{
-    "msgId":1,
+    "tieMsgId": 10,
     "user": "Mary",
     "subject": "Cbcr1",
     "description": "This is Cbcr1",
@@ -19,7 +19,7 @@
     "receivingCountry": "US,MX",
     "Language": ["en", "ch", "es"]
   }, {
-    "msgId":2,
+    "tieMsgId": 11,
     "user": "John",
     "subject": "Cbcr2",
     "description": "This is Cbcr2",
@@ -37,7 +37,7 @@
     "receivingCountry": "US,MX",
     "Language": ["en", "ch"]
   }, {
-    "msgId":3,
+    "tieMsgId": 12,
     "user": "Jack",
     "subject": "Cbcr3",
     "description": "This is Cbcr3",

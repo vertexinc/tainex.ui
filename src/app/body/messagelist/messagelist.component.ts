@@ -11,10 +11,10 @@ import { Message } from '../message';
 })
 export class MessagelistComponent implements OnInit {
 
-  private messageList;
+
   private currentMessage;
 
-  private messageSumList: Array<Message>;
+  private messageSumList;
 
 
   constructor(private _tieappService: TieappService) {
@@ -22,30 +22,29 @@ export class MessagelistComponent implements OnInit {
 
   }
 
+  isHighlight(msgId) {
+    let styles = {
+      'background-color': msgId === this.currentMessage.tieMsgId ? 'lightgreen' : '',
+
+    };
+    return styles;
+  }
 
   ngOnInit() {
     this._tieappService.getMessageList()
-        .subscribe(tieMsgData => {
-          this.messageList = tieMsgData;
-          this.currentMessage = this.messageList.currentMessage;
-        });
-    // this.currentMessage = this.messageList.currentMessage;
-    // this._tieMsgService.getTieMsg()
-    //   .subscribe(tieMsgInfoList => {
-    //
-    //     this.tieMsgs = tieMsgInfoList;
-    //   });
-
+      .subscribe(tieMsgData => {
+        this.messageSumList = tieMsgData.messageSumList;
+        this.currentMessage = tieMsgData.currentMessage;
+      });
   }
 
-//Set currentMessage
+  //Set currentMessage
   onSelect(msgId): void {
-    //alert(msgId);
     this._tieappService.setCurrentMsg(msgId);
     this._tieappService.getCurrentMsg()
-        .subscribe(currentMsgData => {
-          this.currentMessage = currentMsgData;
-        });
+      .subscribe(currentMsgData => {
+        this.currentMessage = currentMsgData;
+      });
   }
 
 

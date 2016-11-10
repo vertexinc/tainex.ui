@@ -25,15 +25,15 @@ export class TieappService {
 
   setCurrentMsg(msgId) {
     switch (msgId) {
-      case 1: {
+      case 10: {
         this._currentMsgUrl = this._currentMsg1Url;
         break;
       }
-      case 2: {
+      case 11: {
         this._currentMsgUrl = this._currentMsg2Url;
         break;
       }
-      case 3: {
+      case 12: {
         this._currentMsgUrl = this._currentMsg3Url;
         break;
       }

@@ -9,8 +9,8 @@
         <th>Status</th>
       </tr>
     </thead>
-    <tbody class="msgbody" *ngIf="messageList">
-      <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg.msgId)">
+    <tbody class="msgbody" *ngIf="messageSumList">
+      <tr class="" *ngFor="let tieMsg of messageSumList" (click)="onSelect(tieMsg.tieMsgId)"  [ngStyle]="isHighlight(tieMsg.tieMsgId)">
         <!-- (click)="onSelect(tieMsg)"> -->
         <td>{{tieMsg.user}}</td>
         <td>{{tieMsg.subject}}</td>
