@@ -10,7 +10,7 @@
       </tr>
     </thead>
     <tbody class="msgbody" *ngIf="messageList">
-      <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg)">
+      <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect()">
         <!-- (click)="onSelect(tieMsg)"> -->
         <td>{{tieMsg.user}}</td>
         <td>{{tieMsg.subject}}</td>
@@ -22,7 +22,7 @@
   </table>
 </div>
 <div class="splitter-horizontal"></div>
-<div id='tieapp-messagedetail' *ngIf="messageList">
-  <tieapp-messagedetail [messageDetail]="messageList.currentMessage"></tieapp-messagedetail>
+<div id='tieapp-messagedetail' *ngIf="currentMessage">
+  <tieapp-messagedetail [messageDetail]="currentMessage"></tieapp-messagedetail>
 </div>
 <!-- <messagedetail [currentMsg] = "tieMsg">/<messagedetail> -->

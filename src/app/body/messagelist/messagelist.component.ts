@@ -12,6 +12,7 @@ import { Message } from '../message';
 export class MessagelistComponent implements OnInit {
 
   private messageList;
+  private currentMessage;
 
   private messageSumList: Array<Message>;
 
@@ -26,7 +27,9 @@ export class MessagelistComponent implements OnInit {
     this._tieappService.getMessageList()
         .subscribe(tieMsgData => {
           this.messageList = tieMsgData;
-        })
+          this.currentMessage = this.messageList.currentMessage;
+        });
+    // this.currentMessage = this.messageList.currentMessage;
     // this._tieMsgService.getTieMsg()
     //   .subscribe(tieMsgInfoList => {
     //
@@ -35,7 +38,9 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-  onSelect(currentMessage: Message): void {
+  onSelect(): void {
+
+
     // currentMessage = currentMessage;
     // // this.messageList.setCurrentMsg(currentMessage);
     // this._tieappService.setCurrentMsg(currentMessage);
