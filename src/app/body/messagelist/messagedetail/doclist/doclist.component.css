@@ -10,7 +10,11 @@ table {
 th, td {
 
     overflow: hidden;
-  
+
+}
+
+tbody tr {
+  background: #F0FFFF;
 }
 #docbuttons{
   text-align: right;
