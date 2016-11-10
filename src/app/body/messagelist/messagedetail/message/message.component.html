@@ -1,27 +1,27 @@
-<div id="currentMsgBody" *ngIf="currentMessage">
+<div id="currentMsgBody" *ngIf="messageDetail">
   <div class="row">
     <div class="col-md-3">
       <p>
-        From:<span id="from"> {{currentMessage.from}}</span>
+        From:<span id="from"> {{messageDetail.sender.name}}</span>
       </p>
     </div>
 
 
     <div class="col-md-3">
       <p>
-        Date: <span id="date">{{currentMessage.date}}</span>
+        Date: <span id="date">{{messageDetail.timestamp}}</span>
       </p>
     </div>
 
     <div class="col-md-3">
       <p>
-        Reporting Period: <span id="reportingPeriod"> {{currentMessage.reportingPeriod}}</span>
+        Reporting Period: <span id="reportingPeriod"> {{messageDetail.reportingPeriod}}</span>
       </p>
     </div>
 
     <div class="col-md-3">
       <p>
-        Status: <span id=tieMsgState> {{currentMessage.status}} </span>
+        Status: <span id=tieMsgState> {{messageDetail.tieMsgState.name}} </span>
       </p>
     </div>
   </div>
@@ -31,7 +31,7 @@
       <div>To:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="To" placeholder="{{currentMessage.to}}">
+      <input type="text" class="form-control" id="To" placeholder="{{messageDetail.msgReceiverList}}">
     </div>
   </div>
 
@@ -40,7 +40,7 @@
       <div>Subject:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Subject" placeholder="{{currentMessage.subject}}">
+      <input type="text" class="form-control" id="Subject" placeholder="{{messageDetail.subject}}">
     </div>
   </div>
 
@@ -50,7 +50,7 @@
       <div>Notes:</div>
     </div>
     <div class="col-md-9">
-      <textarea rows="4" cols="95" id="notes">{{currentMessage.notes}}</textarea>
+      <textarea rows="4" cols="95" id="notes">{{messageDetail.notes}}</textarea>
     </div>
   </div>
 
@@ -59,7 +59,7 @@
       <div>Warning:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Warning" placeholder="{{currentMessage.warning}}">
+      <input type="text" class="form-control" id="Warning" placeholder="{{messageDetail.warning}}">
     </div>
   </div>
 
@@ -68,7 +68,7 @@
       <div>Contact:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Contact" placeholder="{{currentMessage.contact}}">
+      <input type="text" class="form-control" id="Contact" placeholder="{{messageDetail.contact}}">
     </div>
   </div>
 
@@ -90,21 +90,21 @@
     </div>
     <div class="col-md-3">
       <div>
-        {{currentMessage.OECDMessageRefID}}
+        {{messageDetail.messageRefId}}
       </div>
       <div class="styled-select">
-        <select class="form-control" id="sel1">
-          <option *ngFor="let OECDMessageTypeItem of currentMessage.OECDMessageType">{{OECDMessageTypeItem}}</option>
+        <!-- <select class="form-control" id="sel1">
+          <option *ngFor="let OECDMessageTypeItem of messageDetail.messageTypeIndic">{{OECDMessageTypeItem}}</option>
 
-        </select>
+        </select> -->
       </div>
       <div>
-        {{currentMessage.sendingCountry}}
+        {{messageDetail.messageType}}
       </div>
       <div class="styled-select">
-        <select class="form-control" id="sel1" >
-          <option *ngFor = "let languageItem of currentMessage.Language">{{languageItem}}</option>
-        </select>
+        <!-- <select class="form-control" id="sel1" >
+          <option *ngFor = "let languageItem of messageDetail.lauguage">{{languageItem}}</option>
+        </select> -->
       </div>
     </div>
     <div class="col-md-3">
@@ -121,16 +121,16 @@
     </div>
     <div class="col-md-3">
       <div>
-        {{currentMessage.reportingPeriod}}
+        {{messageDetail.reportingPeriod}}
       </div>
       <div class="styled-select">
-        <select class="form-control" id="sel1">
-          <option  *ngFor = "let OECDMessageTypeIndicItem of currentMessage.OECDMessageTypeIndic">{{OECDMessageTypeIndicItem}}</option>
+        <!-- <select class="form-control" id="sel1">
+          <option  *ngFor = "let OECDMessageTypeIndicItem of messageDetail.messageTypeIndic">{{OECDMessageTypeIndicItem}}</option>
 
-        </select>
+        </select> -->
       </div>
       <div>
-        {{currentMessage.receivingCountry}}
+        {{messageDetail.receivingCountries}}
       </div>
     </div>
   </div>

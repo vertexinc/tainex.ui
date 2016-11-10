@@ -14,10 +14,10 @@ export class AppComponent {
   constructor(private _tieappService: TieappService) { }
 
   ngOnInit() {
-    this._tieappService.getData()
-        .subscribe(tieMsgData => {
-
-            this.tieapp = tieMsgData;
-        });
+    // this._tieappService.getData()
+    //     .subscribe(tieMsgData => {
+    //
+    //         this.tieapp = tieMsgData;
+    //     });
   }
 }

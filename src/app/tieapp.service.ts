@@ -6,23 +6,24 @@ import { Tieapp } from './tieapp';
 import { Message } from './body/message';
 
 @Injectable()
+//Act as the controller here
 export class TieappService {
-  private _url = "./app/tieapp.data.json";
-  private message: Message;
+  private _tieMessageListUrl = "./app/tieapp.data.tieMessageList.json";
+  private currentMessage;
   constructor(private _http: Http) { }
 
-  getData(): Observable<Tieapp> {
-    return this._http.get(this._url)
+  getMessageList() {
+    return this._http.get(this._tieMessageListUrl)
       .map(res => res.json());
   }
 
-  setCurrentMsg(message) {
+  setCurrentMsg() {
 
-    this.message = message;
-    alert(JSON.stringify(this.message));
+
+    // alert(JSON.stringify(this.currentMessage));
   }
 
   getCurrentMsg() {
-    return this.message;
+    return this.currentMessage;
   }
 }

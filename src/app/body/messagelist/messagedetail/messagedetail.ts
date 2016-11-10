@@ -1,5 +1,5 @@
 import {Cbcr} from "./cbcr/cbcr";
-import {Message} from "../message";
+import {Message} from "../../message";
 import {Doclist} from "./doclist/doclist";
 import {Entitylist} from "./entitylist/entitylist";
 
