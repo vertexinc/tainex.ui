@@ -38,15 +38,14 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-  onSelect(): void {
-
-
-    // currentMessage = currentMessage;
-    // // this.messageList.setCurrentMsg(currentMessage);
-    // this._tieappService.setCurrentMsg(currentMessage);
-    // // alert(JSON.stringify(currentMessage));
-    //
-    // this.currentMsgInfo = this._tieappService.getCurrentMsg();
+//Set currentMessage
+  onSelect(msgId): void {
+    //alert(msgId);
+    this._tieappService.setCurrentMsg(msgId);
+    this._tieappService.getCurrentMsg()
+        .subscribe(currentMsgData => {
+          this.currentMessage = currentMsgData;
+        });
   }
 
 
