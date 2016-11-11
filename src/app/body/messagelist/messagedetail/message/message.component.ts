@@ -11,6 +11,7 @@ import { TieappService } from "../../../../tieapp.service";
 export class MessageComponent implements OnInit {
 
   @Input() messageDetail;
+  private currentMessage;
 
   constructor(private _tieappService: TieappService) {
 
@@ -18,6 +19,10 @@ export class MessageComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._tieappService.getCurrentMsg()
+        .subscribe(currentMessageData => {
+          this.currentMessage = currentMessageData;
+        })
     // this.currentMessage = this._tieappService.getCurrentMsg();
   }
 

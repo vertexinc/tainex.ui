@@ -12,9 +12,9 @@ export class TieappService {
   private _currentMsg1Url = "./app/tieapp.data.currentMessage1.json";
   private _currentMsg2Url = "./app/tieapp.data.currentMessage2.json";
   private _currentMsg3Url = "./app/tieapp.data.currentMessage3.json";
-  private _currentMsgUrl;
+  private _currentMsgUrl = this._currentMsg1Url;
 
-  private currentMessage;
+  private currentMessage ;
   private currentDoc;
   constructor(private _http: Http) { }
 
@@ -40,7 +40,7 @@ export class TieappService {
     }
   };
 
-  getCurrentMsg() {
+  getCurrentMsg() :Observable<any>{
     return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
   }

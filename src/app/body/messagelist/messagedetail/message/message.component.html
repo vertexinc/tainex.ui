@@ -1,21 +1,21 @@
-<div id="currentMsgBody" *ngIf="messageDetail">
+<div id="currentMsgBody" *ngIf="messageDetail && currentMessage">
   <div class="row">
     <div class="col-md-3">
       <p>
-        From:<span id="from"> {{messageDetail.sender.name}}</span>
+        From:<span id="from"> {{currentMessage.sender.name}}</span>
       </p>
     </div>
 
 
     <div class="col-md-3">
       <p>
-        Date: <span id="date">{{messageDetail.timestamp}}</span>
+        Date: <span id="date">{{currentMessage.timestamp}}</span>
       </p>
     </div>
 
     <div class="col-md-3">
       <p>
-        Reporting Period: <span id="reportingPeriod"> {{messageDetail.reportingPeriod}}</span>
+        Reporting Period: <span id="reportingPeriod"> {{currentMessage.reportingPeriod}}</span>
       </p>
     </div>
 
