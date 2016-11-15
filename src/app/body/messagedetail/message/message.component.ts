@@ -17,7 +17,7 @@ export class MessageComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.message.from="test!!!!!!input is dynamically updating";
+  
   }
 
 }
