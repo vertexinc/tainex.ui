@@ -68,6 +68,7 @@
       "currentMessage": {}
     },
     "messageDetail": {
+      "currentDocIndex":0,
       "tieMsgId": 10,
       "subject": "CBCR to DE",
       "code": "010",
