@@ -1,6 +1,5 @@
 <div class="row">
   <div class="col-md-6">Tax Documents In Message:</div>
-  <p>thisis {{messageDetail.subject}}</p>
   <div id="docbuttons" class="col-md-6">
     <button type="button" class="btn btn-info">Attach ...</button>
     <button type="button" class="btn btn-info">Detach ...
@@ -22,8 +21,8 @@
       <th>Reporting Period</th>
     </tr>
   </thead>
-  <!-- <tbody class="docbody" *ngIf="messageDetail">
-    <tr class="" *ngFor="let doclistItem of tieDocList">
+  <tbody class="docbody" *ngIf="messageDetail">
+    <tr class="" *ngFor="let doclistItem of messageDetail.tieDocList">
       <td>{{doclistItem.code}}</td>
       <td>{{doclistItem.name}}</td>
       <td>{{doclistItem.tieDocTypeId}}</td>
@@ -35,5 +34,5 @@
     </tr>
 
 
-  </tbody> -->
+  </tbody>
 </table>

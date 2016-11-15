@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 @Component({
@@ -7,8 +7,12 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./messagedetail.component.css']
 })
 export class MessagedetailComponent implements OnInit {
-@Input() messageDetail;
-  constructor() { }
+  @Input() messageDetail;
+
+  // private currentDoc = this.messageDetail.tieDocList[0];
+  constructor() {
+
+  }
 
   ngOnInit() {
 
