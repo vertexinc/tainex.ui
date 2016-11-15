@@ -49,10 +49,10 @@
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="message"><tieapp-message [messageDetail]="messageDetail"></tieapp-message></div>
   <div role="tabpanel" class="tab-pane fade" id="docs"><tieapp-doclist [messageDetail]="messageDetail"></tieapp-doclist></div>
-  <div role="tabpanel" class="tab-pane fade" id="entity"><tieapp-entitylist [messageDetail]="messageDetail" [currentDoc]="messageDetail.tieDocList[messageDetail.currentDocIndex]"></tieapp-entitylist></div>
-  <div role="tabpanel" class="tab-pane fade" id="table1"><tieapp-cbcrtable1 ></tieapp-cbcrtable1></div>
-  <div role="tabpanel" class="tab-pane fade" id="table2"><tieapp-cbcrtable2 ></tieapp-cbcrtable2></div>
-  <div role="tabpane1" class="tab-pane fade" id="table3"><tieapp-cbcrtable3 ></tieapp-cbcrtable3></div>
+  <div role="tabpanel" class="tab-pane fade" id="entity"><tieapp-entitylist [currentDoc]="messageDetail.tieDocList[messageDetail.currentDocIndex]"></tieapp-entitylist></div>
+  <div role="tabpanel" class="tab-pane fade" id="table1"><tieapp-cbcrtable1 [currentDoc]="messageDetail.tieDocList[messageDetail.currentDocIndex]"></tieapp-cbcrtable1></div>
+  <div role="tabpanel" class="tab-pane fade" id="table2"><tieapp-cbcrtable2 [currentDoc]="messageDetail.tieDocList[messageDetail.currentDocIndex]"></tieapp-cbcrtable2></div>
+  <div role="tabpane1" class="tab-pane fade" id="table3"><tieapp-cbcrtable3 [currentDoc]="messageDetail.tieDocList[messageDetail.currentDocIndex]"></tieapp-cbcrtable3></div>
 
 
 </div>

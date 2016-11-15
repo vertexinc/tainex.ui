@@ -1,11 +1,11 @@
-<div *ngIf="messageDetail">
+<div *ngIf="currentDoc">
   <div class="row" id="docrow">
-    <div>&nbsp;&nbsp;&nbsp; Entities in CBCR Doc:</div>
+    <div><h5> Entities in CBCR Doc:</h5></div>
   </div>
   <div class="entityBody">
-    <div>Reporting Entity: IndustryCo</div>
-    <div>Resident Country: MX</div>
-    <div>Currency: MXN</div>
+    <div>Reporting Entity: {{currentDoc.reportingEntityCode}}</div>
+    <div>Resident Country: {{currentDoc.resCountryCode}}</div>
+    <div>Currency: {{currentDoc.currencyCode}}</div>
 
     <table>
       <thead>
@@ -18,10 +18,10 @@
           <th>Resident</th>
           <th>Is PE</th>
           <th>Address</th>
-          
+
         </tr>
       </thead>
-      <tbody class="" *ngIf="currentDoc">
+      <tbody class="" >
 
         <tr class="" *ngFor="let entitylistItem of currentDoc.taxEntityList">
 

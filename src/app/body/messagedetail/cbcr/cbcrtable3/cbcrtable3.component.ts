@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Cbcrtable3 } from './cbcrtable3';
 
 @Component({
@@ -7,6 +7,7 @@ import { Cbcrtable3 } from './cbcrtable3';
   styleUrls: ['./cbcrtable3.component.css']
 })
 export class Cbcrtable3Component implements OnInit {
+  @Input() currentDoc;
   private cbcrtable3: Cbcrtable3;
   private cbcrtable3Data = [
     "This is table 3 details information part1"

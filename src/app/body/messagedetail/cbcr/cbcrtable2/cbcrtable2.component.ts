@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Cbcrtable2 } from './cbcrtable2'
 
 @Component({
@@ -7,7 +7,7 @@ import { Cbcrtable2 } from './cbcrtable2'
   styleUrls: ['./cbcrtable2.component.css']
 })
 export class Cbcrtable2Component implements OnInit {
-
+@Input() currentDoc;
   private cbcrtable2: Cbcrtable2;
   private cbcrtable2Data = [{
     "taxJurisdiction": "CA",

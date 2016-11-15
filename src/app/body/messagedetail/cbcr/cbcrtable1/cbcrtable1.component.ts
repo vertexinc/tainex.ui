@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Input } from '@angular/core';
 import { Cbcrtable1 } from './cbcrtable1';
 
 @Component({
@@ -8,6 +8,7 @@ import { Cbcrtable1 } from './cbcrtable1';
 })
 export class Cbcrtable1Component implements OnInit {
 
+@Input() currentDoc;
   private cbcrtable1 : Cbcrtable1;
   private cbcrtable1Data = [
     {

@@ -8,7 +8,7 @@ import { EntitylistRecord } from './entitylistRecord';
   styleUrls: ['./entitylist.component.css']
 })
 export class EntitylistComponent implements OnInit {
-  @Input() messageDetail;
+
   @Input() currentDoc;
 
   constructor() {

@@ -8,6 +8,9 @@ th, td {
 
 }
 
+#docrow{
+  margin-left: 2px;
+}
 .btn {
   height: 30px;
   font-size: 12px;
