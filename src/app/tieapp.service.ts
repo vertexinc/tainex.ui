@@ -11,18 +11,18 @@ export class TieappService {
   private message: Message;
   constructor(private _http: Http) { }
 
-  getData(): Observable<Tieapp> {
+  getData(): Observable<any> {
     return this._http.get(this._url)
       .map(res => res.json());
   }
 
   setCurrentMsg(message) {
 
-    this.message = message;
-    alert(JSON.stringify(this.message));
+    // this.message = message;
+
   }
 
   getCurrentMsg() {
-    return this.message;
+    // return this.message;
   }
 }

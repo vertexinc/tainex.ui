@@ -9,7 +9,8 @@ import { Tieapp } from './tieapp'
 })
 export class AppComponent {
 
-  private tieapp: Tieapp;
+  private tieapp;
+
 
   constructor(private _tieappService: TieappService) { }
 

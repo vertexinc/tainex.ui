@@ -5,72 +5,88 @@
     "language": ["en", "es", "zh", "fr"]
   },
   "body": {
-    "messagelist": [{
-      "user": "John",
-      "subject": "Cbcr1",
-      "description": "This is Cbcr1",
-      "date": "12-12-2015",
-      "status": "Sent",
-      "messagedetail": {
-        "currentmessage": {
-          "tieMsgId": 10,
-          "subject": "CBCR to DE",
-          "code": "010",
-          "description": "CBCR docs for DE",
-          "notes": "Sending the CBCR docs of Industry Co and EYSampleCo to Germany tax authority.",
-          "senderId": 3,
-          "sender": {
-            "tieUserId": 3,
-            "name": "Mary",
-            "code": "Mary16",
-            "description": "Mary description",
-            "email": "mary@gmail.com",
-            "ctsUserId": "1",
-            "ctsUserPwd": "000",
-            "ctsUserCertificate": "certificateopm",
-            "tieAppId": 1,
-            "isExternal": 1
-          },
-          "ownerid": 4,
-          "tieMsgStateId": 2,
-          "tieMsgState": {
-            "tieMsgStateId": 2,
-            "name": "Sent",
-            "code": "Sent",
-            "description": "The message is sent in the system",
-            "countryCodeA2": ""
-          },
-          "sendingEntityIdNum": "1",
-          "transmittingCountry": "MX",
-          "receivingCountries": "DE",
-          "messageType": "excel",
-          "lauguage": "EN",
-          "warning": "Waning: ",
-          "contact": "contacters info",
-          "messageRefId": "MX-2018-1",
-          "messageTypeIndic": "1",
-          "corrMessageRefIds": "1",
-          "reportingPeriod": "2014-12-31",
-          "timestamp": "2013-06-04T13:23:21",
-          "rawMsg": "raw",
-          "msgReceiverList": "Danil13@MX;John16@US;Mary16@DE;Max@US;"
-        }
+    "searchCriteria": {},
+    "messageList": [
+      {
+        "user": "Mary",
+        "subject": "Cbcr1",
+        "description": "This is Cbcr1",
+        "date": "12-12-2015",
+        "status": "Sent",
+        "from": "John",
+        "reportingPeriod": "string",
+        "to": "Lancy",
+        "notes": "This is note 1",
+        "warning": "Warning 1 ",
+        "contact": "Mary",
+        "OECDMessageRefID": "Cbc1",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en", "ch", "es"]
+      },
+      {
+        "user": "John",
+        "subject": "Cbcr2",
+        "description": "This is Cbcr2",
+        "date": "12-12-2015",
+        "status": "Viewed",
+        "from": "David",
+        "to": "Lora",
+        "notes": "This is note 2",
+        "warning": "Warning 2 ",
+        "contact": "Lucy",
+        "OECDMessageRefID": "Cbc2",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en", "ch"]
+      },
+      {
+        "user": "Jack",
+        "subject": "Cbcr3",
+        "description": "This is Cbcr3",
+        "date": "12-12-2015",
+        "status": "Draft",
+        "from": "Mary",
+        "to": "Jane",
+        "notes": "This is note 3",
+        "warning": "Warning 3",
+        "contact": "Lucy",
+        "OECDMessageRefID": "Cbc3",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en"]
       }
-    }, {
-      "user": "Mary",
-      "subject": "Cbcr2",
-      "description": "This is Cbcr2",
-      "date": "12-01-2015",
-      "status": "Draft",
-      "messagedetail": "x"
-    }, {
-      "user": "Mike",
-      "subject": "Cbcr3",
-      "description": "This is Cbcr3",
-      "date": "02-12-2011",
-      "status": "Sent",
-      "messagedetail": "x"
-    }]
+    ],
+    "messageDetail": {
+      "message": {
+        "user": "Mary",
+        "subject": "Cbcr1",
+        "description": "This is Cbcr1",
+        "date": "12-12-2015",
+        "status": "Sent",
+        "from": "John",
+        "reportingPeriod": "string",
+        "to": "Lancy",
+        "notes": "This is note 1",
+        "warning": "Warning 1 ",
+        "contact": "Mary",
+        "OECDMessageRefID": "Cbc1",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en", "ch", "es"]
+      },
+      "doclist": {},
+      "entitylist": {},
+      "cbcr": {}
+    }
   },
   "footer": "MexicanSAT"
 }

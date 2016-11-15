@@ -9,11 +9,10 @@ import { Header } from './header'
 export class HeaderComponent implements OnInit {
   // isLoading = true;
 
- header: Header;
+ @Input() header:any;
 
   constructor() {
-    // header = new Header ( "Mex", "user name", "EN", [EN. ] );
-    this.header = new Header("USA SAT", "Marisol",  ["en","es","zh" ] );
+
   }
 
   ngOnInit() {
