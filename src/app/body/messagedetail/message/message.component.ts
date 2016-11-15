@@ -10,14 +10,14 @@ import { TieappService } from "../../../tieapp.service";
 })
 export class MessageComponent implements OnInit {
 
-  @Input() message;
+  @Input() messageDetail;
 
   constructor(private _tieappService: TieappService) {
 
   }
 
   ngOnInit() {
-  
+
   }
 
 }

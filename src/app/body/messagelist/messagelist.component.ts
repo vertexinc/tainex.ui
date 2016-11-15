@@ -25,8 +25,8 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-  onSelect(currentMessage) {
-     this.currentSelectedMessage.emit(currentMessage);
+  onSelect(tieMsgId) {
+     this.currentSelectedMessage.emit(tieMsgId);
   }
 
 

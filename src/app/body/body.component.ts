@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { Body } from "./body";
 
 @Component({
@@ -7,18 +7,19 @@ import { Body } from "./body";
   styleUrls: ['./body.component.css']
 })
 export class BodyComponent implements OnInit {
-  showSearchCriteria=false;
+  showSearchCriteria = false;
 
-   @Input() body;
+  @Input() body;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  currentSelectedMessage(currentMessage){
-    // alert(JSON.stringify(currentMessage));
-    this.body.messageDetail.message = currentMessage;
+  currentSelectedMessage(tieMsgId) {
+    alert(tieMsgId)
+    //alert(JSON.stringify(currentMessage));
+    //this.body.messageDetail.message = currentMessage;
   }
 
 }

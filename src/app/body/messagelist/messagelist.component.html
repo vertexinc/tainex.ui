@@ -9,7 +9,7 @@
     </tr>
   </thead>
   <tbody class="msgbody" *ngIf="messageList">
-    <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg)">
+    <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg.tieMsgId)">
       <!-- (click)="onSelect(tieMsg)"> -->
       <td>{{tieMsg.user}}</td>
       <td>{{tieMsg.subject}}</td>

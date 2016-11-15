@@ -16,21 +16,21 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
-     this.setFields({
-       "appName": "EU SAT",
-       "userName": "John",
-       "language": ["en", "es"]
-     });
-     console.log("OnInit Header");
-   }
+  //    this.setFields({
+  //      "appName": "EU SAT",
+  //      "userName": "John",
+  //      "language": ["en", "es"]
+  //    });
+  //    console.log("OnInit Header");
+  //  }
 
-
+}
    // Change all fields of this component
-   setFields(hdr: Header) {
-     this.header = hdr;
-     this.header.appName = "USA SAT";
-     console.log("setFields Header");
-   }
+  //  setFields(hdr: Header) {
+  //    this.header = hdr;
+  //    this.header.appName = "USA SAT";
+  //    console.log("setFields Header");
+  //  }
 
 
 }

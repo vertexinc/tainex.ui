@@ -1,5 +1,6 @@
 <div class="row">
   <div class="col-md-6">Tax Documents In Message:</div>
+  <p>thisis {{messageDetail.subject}}</p>
   <div id="docbuttons" class="col-md-6">
     <button type="button" class="btn btn-info">Attach ...</button>
     <button type="button" class="btn btn-info">Detach ...
@@ -21,18 +22,18 @@
       <th>Reporting Period</th>
     </tr>
   </thead>
-  <tbody class="docbody">
-    <tr class="" *ngFor="let doclistItem of doclist.docSumList">
+  <!-- <tbody class="docbody" *ngIf="messageDetail">
+    <tr class="" *ngFor="let doclistItem of tieDocList">
       <td>{{doclistItem.code}}</td>
-      <td>{{doclistItem.title}}</td>
-      <td>{{doclistItem.docType}}</td>
-      <td>{{doclistItem.reportingEntity}}</td>
-      <td>{{doclistItem.currency}}</td>
-      <td>{{doclistItem.residentCountry}}</td>
+      <td>{{doclistItem.name}}</td>
+      <td>{{doclistItem.tieDocTypeId}}</td>
+      <td>{{doclistItem.reportingEntityCode}}</td>
+      <td>{{doclistItem.currencyCode}}</td>
+      <td>{{doclistItem.resCountryCode}}</td>
       <td>{{doclistItem.accountingStandard}}</td>
       <td>{{doclistItem.reportingPeriod}}</td>
     </tr>
 
 
-  </tbody>
+  </tbody> -->
 </table>

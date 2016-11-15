@@ -7,7 +7,7 @@ import { Component, OnInit,Input } from '@angular/core';
   styleUrls: ['./messagedetail.component.css']
 })
 export class MessagedetailComponent implements OnInit {
-@Input() messageDetail
+@Input() messageDetail;
   constructor() { }
 
   ngOnInit() {

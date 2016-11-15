@@ -8,15 +8,15 @@
   <a (click)="showSearchCriteria = !showSearchCriteria">
     <div *ngIf="!showSearchCriteria"><i class="fa fa-chevron-right" aria-hidden="true"></i></div>
     <div *ngIf="showSearchCriteria"><i class="fa fa-chevron-left" aria-hidden="true"></i></div>
-   </a>
+  </a>
   <div id="rightpanel">
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>
         <!-- <tieapp-messagelist  [tieMsgs]="body.messagelist"></tieapp-messagelist> -->
-        <tieapp-messagelist [messageList]="body.messageList" (currentSelectedMessage) = "currentSelectedMessage($event)"> </tieapp-messagelist>
+        <tieapp-messagelist [messageList]="body.messageList" (currentSelectedMessage)="currentSelectedMessage($event)"> </tieapp-messagelist>
       </div>
       <div class="splitter-horizontal"></div>
-      <div id='tieapp-messagedetail' >
+      <div id='tieapp-messagedetail'>
         <tieapp-messagedetail [messageDetail]="body.messageDetail"></tieapp-messagedetail>
       </div>
     </div>
