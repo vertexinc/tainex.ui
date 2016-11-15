@@ -46,8 +46,8 @@
 </ul>
 
 <!-- Tab panes -->
-<div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="message"><tieapp-message></tieapp-message></div>
+<div class="tab-content" *ngIf="messageDetail">
+  <div role="tabpanel" class="tab-pane fade in active" id="message"><tieapp-message [message]="messageDetail.message"></tieapp-message></div>
   <div role="tabpanel" class="tab-pane fade" id="docs"><tieapp-doclist></tieapp-doclist></div>
   <div role="tabpanel" class="tab-pane fade" id="entity"><tieapp-entitylist></tieapp-entitylist></div>
   <div role="tabpanel" class="tab-pane fade" id="table1"><tieapp-cbcrtable1></tieapp-cbcrtable1></div>

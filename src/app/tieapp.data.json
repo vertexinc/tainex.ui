@@ -6,8 +6,9 @@
   },
   "body": {
     "searchCriteria": {},
-    "messageList": [
-      {
+    "messageList": {
+      "messageSumList": [{
+        "messageId":1,
         "user": "Mary",
         "subject": "Cbcr1",
         "description": "This is Cbcr1",
@@ -25,8 +26,8 @@
         "sendingCountry": "US",
         "receivingCountry": "US,MX",
         "Language": ["en", "ch", "es"]
-      },
-      {
+      }, {
+        "messageId":2,
         "user": "John",
         "subject": "Cbcr2",
         "description": "This is Cbcr2",
@@ -43,8 +44,8 @@
         "sendingCountry": "US",
         "receivingCountry": "US,MX",
         "Language": ["en", "ch"]
-      },
-      {
+      }, {
+        "messageId":3,
         "user": "Jack",
         "subject": "Cbcr3",
         "description": "This is Cbcr3",
@@ -61,8 +62,27 @@
         "sendingCountry": "US",
         "receivingCountry": "US,MX",
         "Language": ["en"]
+      }],
+      "currentMessage": {
+        "user": "Mary",
+        "subject": "Cbcr1",
+        "description": "This is Cbcr1",
+        "date": "12-12-2015",
+        "status": "Sent",
+        "from": "John",
+        "reportingPeriod": "string",
+        "to": "Lancy",
+        "notes": "This is note 1",
+        "warning": "Warning 1 ",
+        "contact": "Mary",
+        "OECDMessageRefID": "Cbc1",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en", "ch", "es"]
       }
-    ],
+    },
     "messageDetail": {
       "message": {
         "user": "Mary",

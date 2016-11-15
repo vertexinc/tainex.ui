@@ -1,4 +1,4 @@
-<div id='bodyContainer'>
+<div id='bodyContainer' *ngIf="body">
   <div *ngIf="showSearchCriteria" id='tieapp-searchcriteria'>
     <tieapp-searchcriteria title="Search By">
       <tieapp-search-detail></tieapp-search-detail>
@@ -13,11 +13,11 @@
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>
         <!-- <tieapp-messagelist  [tieMsgs]="body.messagelist"></tieapp-messagelist> -->
-        <tieapp-messagelist></tieapp-messagelist>
+        <tieapp-messagelist [messageList]="body.messageList"></tieapp-messagelist>
       </div>
       <div class="splitter-horizontal"></div>
       <div id='tieapp-messagedetail'>
-        <tieapp-messagedetail></tieapp-messagedetail>
+        <tieapp-messagedetail [messageDetail]="body.messageDetail"></tieapp-messagedetail>
       </div>
     </div>
   </div>

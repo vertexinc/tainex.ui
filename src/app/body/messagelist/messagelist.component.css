@@ -10,3 +10,10 @@ th, td {
     overflow: hidden;
     width: 160px;
 }
+
+tbody tr:nth-child(odd) {
+  background: #fcfcfc;
+}
+tbody tr:nth-child(even) {
+  background: #fcfcfc;
+}

@@ -8,7 +8,7 @@
       <th>Status</th>
     </tr>
   </thead>
-  <tbody class="msgbody">
+  <tbody class="msgbody" *ngIf="messageList">
     <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg)">
       <!-- (click)="onSelect(tieMsg)"> -->
       <td>{{tieMsg.user}}</td>
@@ -21,9 +21,9 @@
 
 
 </table>
-<div *ngIf="currentMsgInfo">
+<!-- <div *ngIf="currentMsgInfo">
   <p> description: {{currentMsgInfo.description}}</p>
   <p> From: {{currentMsgInfo.from}}</p>
   <p>To: {{currentMsgInfo.to}}</p>
-</div>
+</div> -->
 <!-- <messagedetail [currentMsg] = "tieMsg">/<messagedetail> -->

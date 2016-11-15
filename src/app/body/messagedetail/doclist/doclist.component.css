@@ -10,7 +10,7 @@ table {
 th, td {
 
     overflow: hidden;
-  
+
 }
 #docbuttons{
   text-align: right;
@@ -19,4 +19,11 @@ th, td {
   height: 30px;
   font-size: 12px;
   vertical-align: middle;
+}
+
+tbody tr:nth-child(odd) {
+  background: #fcfcfc;
+}
+tbody tr:nth-child(even) {
+  background: #fcfcfc;
 }
