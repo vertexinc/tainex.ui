@@ -10,12 +10,14 @@ export class BodyComponent implements OnInit {
   showSearchCriteria=false;
 
    @Input() body;
+  
   constructor() { }
 
   ngOnInit() {
   }
   currentSelectedMessage(currentMessage){
     alert(JSON.stringify(currentMessage));
+    this.body.messageDetail.message = currentMessage;
   }
 
 }
