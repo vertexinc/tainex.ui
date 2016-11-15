@@ -16,7 +16,7 @@ export class TieappService {
       .map(res => res.json());
   }
 
-  setCurrentMsg(message) {
+  setCurrentMsg(messageId) {
 
     // this.message = message;
 

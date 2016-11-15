@@ -1,0 +1,22 @@
+"messageDetail":{
+      "currentMessage": {
+        "messageId":2,
+        "user": "Eric",
+        "subject": "Cbcr2",
+        "description": "This is Cbcr2",
+        "date": "02-12-2014",
+        "status": "Viewed",
+        "from": "Mary",
+        "reportingPeriod": "12-12-2013",
+        "to": "Lancy",
+        "notes": "This is note 2",
+        "warning": "Warning 2 ",
+        "contact": "Mary",
+        "OECDMessageRefID": "Cbc2",
+        "OECDMessageType": ["CBC", "Other"],
+        "OECDMessageTypeIndic": ["1", "2", "3"],
+        "sendingCountry": "US",
+        "receivingCountry": "US,MX",
+        "Language": ["en", "ch", "es"]
+      }
+}

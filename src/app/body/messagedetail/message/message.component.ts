@@ -11,15 +11,13 @@ import { TieappService } from "../../../tieapp.service";
 export class MessageComponent implements OnInit {
 
   @Input() message;
+
   constructor(private _tieappService: TieappService) {
-    // this.currentMessage = new Message("Mary", "Cbcr1", "This is cbcr 1", "12-12-2015", "sent", "John",
-    // "01-01-2016", "Mike@MX.com", "This is cbct document for Mexican SAT", "Warning information", "John, Mike,Tom", "CBC 1", ["CBC","Other"], ["1","2","3"],
-    // "MX", "US,MX", ["en","ch","es"]);
 
   }
 
   ngOnInit() {
-
+    this.message.from="test!!!!!!input is dynamically updating";
   }
 
 }

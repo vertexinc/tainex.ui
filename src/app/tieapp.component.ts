@@ -17,7 +17,6 @@ export class AppComponent {
   ngOnInit() {
     this._tieappService.getData()
         .subscribe(tieMsgData => {
-
             this.tieapp = tieMsgData;
         });
   }

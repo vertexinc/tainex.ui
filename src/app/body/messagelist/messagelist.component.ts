@@ -25,8 +25,8 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-  onSelect(currentMessage: Message): void {
-    
+  onSelect(messageId) {
+    this._tieappService
   }
 
 
