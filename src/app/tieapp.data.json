@@ -20,12 +20,12 @@
         "notes": "This is note 1",
         "warning": "Warning 1 ",
         "contact": "Mary",
-        "OECDMessageRefID": "Cbc1",
-        "OECDMessageType": ["CBC", "Other"],
-        "OECDMessageTypeIndic": ["1", "2", "3"],
-        "sendingCountry": "US",
-        "receivingCountry": "US,MX",
-        "Language": ["en", "ch", "es"]
+        "OECDMessageRefID": "",
+        "OECDMessageType": [],
+        "OECDMessageTypeIndic": [],
+        "sendingCountry": "",
+        "receivingCountry": "",
+        "Language": []
       }, {
         "tieMsgId": 11,
         "user": "John",
@@ -39,12 +39,12 @@
         "notes": "This is note 2",
         "warning": "Warning 2 ",
         "contact": "Lucy",
-        "OECDMessageRefID": "Cbc2",
-        "OECDMessageType": ["CBC", "Other"],
-        "OECDMessageTypeIndic": ["1", "2", "3"],
-        "sendingCountry": "US",
-        "receivingCountry": "US,MX",
-        "Language": ["en", "ch"]
+        "OECDMessageRefID": "",
+        "OECDMessageType": [],
+        "OECDMessageTypeIndic": [],
+        "sendingCountry": "",
+        "receivingCountry": "",
+        "Language": []
       }, {
         "tieMsgId": 12,
         "user": "Jack",
@@ -58,12 +58,12 @@
         "notes": "This is note 3",
         "warning": "Warning 3",
         "contact": "Lucy",
-        "OECDMessageRefID": "Cbc3",
-        "OECDMessageType": ["CBC", "Other"],
-        "OECDMessageTypeIndic": ["1", "2", "3"],
-        "sendingCountry": "US",
-        "receivingCountry": "US,MX",
-        "Language": ["en"]
+        "OECDMessageRefID": "",
+        "OECDMessageType": [],
+        "OECDMessageTypeIndic": [],
+        "sendingCountry": "",
+        "receivingCountry": "",
+        "Language": []
       }],
       "currentMessage": {}
     },

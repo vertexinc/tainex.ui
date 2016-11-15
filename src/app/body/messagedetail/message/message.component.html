@@ -90,20 +90,21 @@
     </div>
     <div class="col-md-3">
       <div>
-        <!-- {{message.OECDMessageRefID}} -->
+        {{messageDetail.corrMessageRefIds}}
       </div>
       <div class="styled-select">
         <select class="form-control" id="sel1">
           <!-- <option *ngFor="let OECDMessageTypeItem of messageDetail.OECDMessageType">{{OECDMessageTypeItem}}</option> -->
-
+          <option>not an array</option>
         </select>
       </div>
       <div>
-        {{message.sendingCountry}}
+        {{messageDetail.transmittingCountry}}
       </div>
       <div class="styled-select">
-        <select class="form-control" id="sel1" >
+        <select class="form-control" id="sel1">
           <!-- <option *ngFor = "let languageItem of messageDetail.Language">{{languageItem}}</option> -->
+          <option>not an array</option>
         </select>
       </div>
     </div>
@@ -121,16 +122,18 @@
     </div>
     <div class="col-md-3">
       <div>
-        {{message.reportingPeriod}}
+
+        {{messageDetail.reportingPeriod}}
       </div>
       <div class="styled-select">
         <select class="form-control" id="sel1">
           <!-- <option  *ngFor = "let OECDMessageTypeIndicItem of messageDetail.OECDMessageTypeIndic">{{OECDMessageTypeIndicItem}}</option> -->
-
+          <option>not an array</option>
         </select>
       </div>
       <div>
-        {{message.receivingCountry}}
+
+        {{messageDetail.receivingCountries}}
       </div>
     </div>
   </div>
