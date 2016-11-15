@@ -14,5 +14,8 @@ export class BodyComponent implements OnInit {
 
   ngOnInit() {
   }
+  currentSelectedMessage(currentMessage){
+    alert(JSON.stringify(currentMessage));
+  }
 
 }

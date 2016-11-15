@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { TieappService } from "../../tieapp.service";
 import { Messagelist } from './messagelist';
 import { Message } from '../message';
@@ -12,7 +12,7 @@ import { Message } from '../message';
 export class MessagelistComponent implements OnInit {
 
   @Input() messageList;
-
+  @Output() currentSelectedMessage = new EventEmitter<any>();
 
 
   constructor(private _tieappService: TieappService) {
@@ -25,8 +25,8 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-  onSelect(messageId) {
-    this._tieappService
+  onSelect(currentMessage) {
+     this.currentSelectedMessage.emit(currentMessage);
   }
 
 
