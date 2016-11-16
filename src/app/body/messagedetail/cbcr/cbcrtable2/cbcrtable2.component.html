@@ -1,86 +1,84 @@
-<div style="text-align: center">Table 2. List of all the Constituent Entities of the MNE group included in each aggregation per tax jurisdiction</div>
-<div class="headinfo">Name  of  the  MNE  group: INDUSTRYCO CORPORATION INC</div>
-<div class="headinfo">Fiscal Year Concerned: 2014-12-31</div>
-<div class="ui-grid-top-panel" style="text-align: center">
-	<table border="0" cellpadding="0" cellspacing="0"
-						style="border-collapse: collapse; ">
+<div *ngIf="currentDoc">
+	<div style="text-align: center">Table 2. List of all the Constituent Entities of the MNE group included in each aggregation per tax jurisdiction</div>
+	<div class="headinfo">Name of the MNE group:{{currentDoc.reportingEntity.name}}</div>
+	<div class="headinfo">Fiscal Year Concerned: Not noted from original dataset</div>
+	<div class="ui-grid-top-panel" style="text-align: center">
+		<table border="0" cellpadding="0" cellspacing="0" style="border-collapse: collapse; ">
 
 
-		<thead>
+			<thead>
 
-			<tr height="22" style="height: 16.5pt">
-								<th rowspan="2" height="170" class="x0l67"
-									style="height: 127.5pt; ">Tax Jurisdiction</th>
-								<th rowspan="2" class="x0l67" style="">Constituent
-									Entities resident in the Tax Jurisdiction</th>
-								<th rowspan="2" class="x0l67"  style="">Tax
-									Jurisdiction of organisation of incorporation if different from
-									Tax Jurisdiction of Resident</th>
-								<th colspan="13" class="x0l67"
-									style="border-left: none; ">Main business
-									activity(ies)</th>
-							</tr>
-							<tr height="148"
-								style="mso-height-source: userset; height: 111.0pt">
-								<th height="148" class="x0l67"
-									style="height: 111.0pt; border-top: none; border-left: none; ">Research
-									and Development</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Holding
-									or Managing intellectual Property</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Purchase
-									or Procurement</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Manufacturing
-									or Production</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Sales,
-									Marketing or Distribution</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Administrative,
-									Management or Support Services</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Provision
-									of Services to unrelated parties</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Internal
-									Group Finance</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Regulated
-									Financial Services</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Insurance</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Holding
-									shares or other equity instruments</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Dormant</th>
-								<th class="x0l67"
-									style="border-top: none; border-left: none; ">Other2</th>
-							</tr>
-		</thead>
-    <tbody *ngIf="currentDoc">
-    <tr *ngFor = "let cbcrtable2Item of currentDoc.cbcrTable2List">
-      <td>{{cbcrtable2Item.taxJurisdiction}}</td>
-      <td>{{cbcrtable2Item.entityCode}}</td>
-      <td>{{cbcrtable2Item.taxJurisOfIncorporation}}</td>
-      <td><div *ngIf="cbcrtable2Item.mainBusRAndD === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusHoldingIp === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusPurchasing === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusMfctOrPrdn === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusSaleMktDistr === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusAdminMgmtSupportSvc === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusProvSvcToUnrelatedParti === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusInternalGroupFinance === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusRegulatedFinSvc === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusInsurance === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusHoldingEquityInstrument === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusDormant === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.mainBusOther === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-    </tr>
+				<tr height="22" style="height: 16.5pt">
+					<th rowspan="2" height="170" class="x0l67" style="height: 127.5pt; ">Tax Jurisdiction</th>
+					<th rowspan="2" class="x0l67" style="">Constituent Entities resident in the Tax Jurisdiction</th>
+					<th rowspan="2" class="x0l67" style="">Tax Jurisdiction of organisation of incorporation if different from Tax Jurisdiction of Resident</th>
+					<th colspan="13" class="x0l67" style="border-left: none; ">Main business activity(ies)
+					</th>
+				</tr>
+				<tr height="148" style="mso-height-source: userset; height: 111.0pt">
+					<th height="148" class="x0l67" style="height: 111.0pt; border-top: none; border-left: none; ">Research and Development</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Holding or Managing intellectual Property</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Purchase or Procurement</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Manufacturing or Production</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Sales, Marketing or Distribution</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Administrative, Management or Support Services</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Provision of Services to unrelated parties</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Internal Group Finance</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Regulated Financial Services</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Insurance</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Holding shares or other equity instruments</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Dormant</th>
+					<th class="x0l67" style="border-top: none; border-left: none; ">Other2</th>
+				</tr>
+			</thead>
+			<tbody *ngIf="currentDoc">
+				<tr *ngFor="let cbcrtable2Item of currentDoc.cbcrTable2List">
+					<td>{{cbcrtable2Item.taxJurisdiction}}</td>
+					<td>{{cbcrtable2Item.entityCode}}</td>
+					<td>{{cbcrtable2Item.taxJurisOfIncorporation}}</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusRAndD === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusHoldingIp === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusPurchasing === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusMfctOrPrdn === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusSaleMktDistr === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusAdminMgmtSupportSvc === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusProvSvcToUnrelatedParti === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusInternalGroupFinance === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusRegulatedFinSvc === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusInsurance === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusHoldingEquityInstrument === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusDormant === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+					<td>
+						<div *ngIf="cbcrtable2Item.mainBusOther === 1"><i class="fa fa-check" aria-hidden="true"></i></div>
+					</td>
+				</tr>
 
-  </tbody>
+			</tbody>
 		</table>
+	</div>
+	<div id="note">Please specify the nature if the activity of the Consitituent Entity in the "Additional Information" section.</div>
 </div>
-<div id="note">Please specify the nature if the activity of the Consitituent Entity in the "Additional Information" section.</div>

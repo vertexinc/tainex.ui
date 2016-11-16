@@ -1,11 +1,13 @@
-<div style="text-align: center">Table 3. Additional Information </div>
-<div class="headinfo">Name  of  the  MNE  group: INDUSTRYCO CORPORATION INC</div>
-<div class="headinfo">Fiscal Year Concerned: 2014-12-31</div>
-<table>
-  <tbody>
-    <tr *ngFor="let cbcrtable3Item of cbcrtable3.cbcrtable3List">
-      <td>{{cbcrtable3Item}}</td>
-    </tr>
+<div *ngIf="currentDoc">
+  <div style="text-align: center">Table 3. Additional Information </div>
+  <div class="headinfo">Name of the MNE group:{{currentDoc.reportingEntity.name}}</div>
+	<div class="headinfo">Fiscal Year Concerned: Not noted from original dataset</div>
+  <table>
+    <tbody *ngIf="currentDoc">
+      <tr *ngFor="let cbcrtable3Item of currentDoc.cbcrTable3List">
+        <td>{{additionalInfo}}</td>
+      </tr>
 
-    <tbody>
-</table>
+      <tbody>
+  </table>
+</div>

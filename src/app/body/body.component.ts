@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Body } from "./body";
+import {TieappService } from '../tieapp.service';
 
 @Component({
   selector: 'tieapp-body',
@@ -11,13 +12,18 @@ export class BodyComponent implements OnInit {
 
   @Input() body;
 
-  constructor() { }
+  constructor(private _tieappService: TieappService) { }
 
   ngOnInit() {
   }
 
   currentSelectedMessage(tieMsgId) {
-    alert(tieMsgId)
+    // alert(tieMsgId)
+    this._tieappService.setCurrentMsgURL(tieMsgId);
+    this._tieappService.getCurrentMsg()
+        .subscribe(currentMessageData => {
+          this.body.messageDetail = currentMessageData;
+        })
     //alert(JSON.stringify(currentMessage));
     //this.body.messageDetail.message = currentMessage;
   }
