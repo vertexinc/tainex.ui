@@ -60,24 +60,24 @@
 									style="border-top: none; border-left: none; ">Other2</th>
 							</tr>
 		</thead>
-    <tbody>
-    <tr *ngFor = "let cbcrtable2Item of cbcrtable2.cbcrtable2List">
+    <tbody *ngIf="currentDoc">
+    <tr *ngFor = "let cbcrtable2Item of currentDoc.cbcrTable2List">
       <td>{{cbcrtable2Item.taxJurisdiction}}</td>
-      <td>{{cbcrtable2Item.constituentEntities}}</td>
-      <td>{{cbcrtable2Item.taxJurisdictionOfOrganisation}}</td>
-      <td><div *ngIf="cbcrtable2Item.researchandDevelopment === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.holdingorManaging === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.purchaseorProcurement === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.manufacturingorProduction === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.salesMarketingorDistribution === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.administrativeManagement === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.provisionOfServices === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.internalGroupFinance === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.regulatedFinancialServices === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.insurance === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.holdingShares === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.dormant === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
-      <td><div *ngIf="cbcrtable2Item.other === '1'" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td>{{cbcrtable2Item.entityCode}}</td>
+      <td>{{cbcrtable2Item.taxJurisOfIncorporation}}</td>
+      <td><div *ngIf="cbcrtable2Item.mainBusRAndD === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusHoldingIp === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusPurchasing === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusMfctOrPrdn === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusSaleMktDistr === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusAdminMgmtSupportSvc === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusProvSvcToUnrelatedParti === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusInternalGroupFinance === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusRegulatedFinSvc === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusInsurance === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusHoldingEquityInstrument === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusDormant === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
+      <td><div *ngIf="cbcrtable2Item.mainBusOther === 1" ><i class="fa fa-check" aria-hidden="true" ></i></div></td>
     </tr>
 
   </tbody>

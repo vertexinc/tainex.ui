@@ -53,19 +53,19 @@
 				<th class="xl76" style=" ">Total</th>
 			</tr>
 		</thead>
-		<tbody>
-			<tr *ngFor="let cbcrtable1Item of cbcrtable1.cbcrtable1List">
+		<tbody *ngIf="currentDoc">
+			<tr *ngFor="let cbcrtable1Item of currentDoc.cbcrTable1List">
 				<td>{{cbcrtable1Item.taxJurisdiction }}</td>
-				<td>{{cbcrtable1Item.unrelatedParty | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.relatedParty | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.total | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.profitBeforeIncomeTax | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.revenueUnrelatedParty | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.revenueRelatedParty | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.revenueTotal | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.plBeforeIncomeTax | currency:'USD':true:'4.0-0' }}</td>
 				<td>{{cbcrtable1Item.incomeTaxPaid | currency:'USD':true:'4.0-0' }}</td>
 				<td>{{cbcrtable1Item.incomeTaxAccrued | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.statedCaptial | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.statedCapital | currency:'USD':true:'4.0-0' }}</td>
 				<td>{{cbcrtable1Item.accumulatedEarnings | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.numberofEmployees | currency:'USD':true:'4.0-0' }}</td>
-				<td>{{cbcrtable1Item.tangibleAssets | currency:'USD':true:'4.0-0' }}</td>
+				<td>{{cbcrtable1Item.numberOfEmployees}}</td>
+				<td>{{cbcrtable1Item.tangibleAssetsNonCash | currency:'USD':true:'4.0-0' }}</td>
 			</tr>
 
 		</tbody>
