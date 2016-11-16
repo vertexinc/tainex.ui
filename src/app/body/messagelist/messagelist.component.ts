@@ -13,7 +13,8 @@ export class MessagelistComponent implements OnInit {
 
   @Input() messageList;
   @Output() currentSelectedMessage = new EventEmitter<any>();
-
+  @Input() currentSelectedMessageId ;
+  //private currentSelectedMessageId = this.messageList.currentMessage.tieMsgId;
 
   constructor(private _tieappService: TieappService) {
 
@@ -24,8 +25,16 @@ export class MessagelistComponent implements OnInit {
   ngOnInit() {
 
   }
+  isHighlight(tieMsgId) {
+    let styles = {
+      'background-color': tieMsgId === this.currentSelectedMessageId ? 'lightgreen' : '',
+
+    };
+    return styles;
+  }
 
   onSelect(tieMsgId) {
+    this.currentSelectedMessageId = tieMsgId;
      this.currentSelectedMessage.emit(tieMsgId);
   }
 

@@ -18,14 +18,12 @@ export class BodyComponent implements OnInit {
   }
 
   currentSelectedMessage(tieMsgId) {
-    // alert(tieMsgId)
     this._tieappService.setCurrentMsgURL(tieMsgId);
     this._tieappService.getCurrentMsg()
         .subscribe(currentMessageData => {
           this.body.messageDetail = currentMessageData;
         })
-    //alert(JSON.stringify(currentMessage));
-    //this.body.messageDetail.message = currentMessage;
+
   }
 
 }

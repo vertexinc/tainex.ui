@@ -65,10 +65,29 @@
         "receivingCountry": "",
         "Language": []
       }],
-      "currentMessage": {}
+      "currentMessage": {
+        "tieMsgId": 10,
+        "user": "Mary",
+        "subject": "Cbcr1",
+        "description": "This is Cbcr1",
+        "date": "12-12-2015",
+        "status": "Sent",
+        "from": "John",
+        "reportingPeriod": "2016",
+        "to": "Lancy",
+        "notes": "This is note 1",
+        "warning": "Warning 1 ",
+        "contact": "Mary",
+        "OECDMessageRefID": "",
+        "OECDMessageType": [],
+        "OECDMessageTypeIndic": [],
+        "sendingCountry": "",
+        "receivingCountry": "",
+        "Language": []
+      }
     },
     "messageDetail": {
-      "currentDocIndex":0,
+      "currentDocIndex": 0,
       "tieMsgId": 10,
       "subject": "CBCR to DE",
       "code": "010",

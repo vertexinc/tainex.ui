@@ -15,6 +15,13 @@ export class EntitylistComponent implements OnInit {
 
   }
 
+  isHighlight(entityCode) {
+    let styles = {
+      'background-color': entityCode === this.currentDoc.reportingEntityCode ? '#FF7F50' : '',
+
+    };
+    return styles;
+  }
   ngOnInit() {
   }
 

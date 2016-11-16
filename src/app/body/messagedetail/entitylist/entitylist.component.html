@@ -23,7 +23,7 @@
       </thead>
       <tbody class="" >
 
-        <tr class="" *ngFor="let entitylistItem of currentDoc.taxEntityList">
+        <tr class="" *ngFor="let entitylistItem of currentDoc.taxEntityList" [ngStyle]="isHighlight(entitylistItem.entityCode)">
 
           <td>{{entitylistItem.taxIdNum}}</td>
           <td>{{entitylistItem.name}}</td>
