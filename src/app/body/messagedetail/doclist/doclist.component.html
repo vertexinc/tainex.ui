@@ -22,7 +22,7 @@
     </tr>
   </thead>
   <tbody class="docbody" *ngIf="messageDetail">
-    <tr class="" *ngFor="let doclistItem of messageDetail.tieDocList">
+    <tr class="" *ngFor="let doclistItem of messageDetail.tieDocList;let i = index" (click)="onSelect(i)">
       <td>{{doclistItem.code}}</td>
       <td>{{doclistItem.name}}</td>
       <td>{{doclistItem.tieDocTypeId}}</td>

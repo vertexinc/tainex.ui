@@ -1,4 +1,4 @@
-import { Component, OnInit,Input } from '@angular/core';
+import { Component, OnInit,EventEmitter,Input,Output } from '@angular/core';
 import { DoclistRecord } from './doclistRecord';
 import { Doclist } from './doclist';
 @Component({
@@ -9,6 +9,7 @@ import { Doclist } from './doclist';
 export class DoclistComponent implements OnInit {
 
    @Input() messageDetail;
+   @Output() emitCurrentDocIndex  = new EventEmitter<any>();;
 
 
   constructor() {
@@ -18,4 +19,8 @@ export class DoclistComponent implements OnInit {
   ngOnInit() {
   }
 
+  onSelect(docIndex){
+  
+    this.emitCurrentDocIndex.emit(docIndex)
+  }
 }

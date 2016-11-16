@@ -18,4 +18,8 @@ export class MessagedetailComponent implements OnInit {
 
   }
 
+  emitCurrentDocIndex(docIndex){
+    alert(docIndex);
+    //this.messageDetail.currentDocIndex = docIndex;
+  }
 }

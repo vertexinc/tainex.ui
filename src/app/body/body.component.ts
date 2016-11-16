@@ -17,7 +17,7 @@ export class BodyComponent implements OnInit {
   ngOnInit() {
   }
 
-  currentSelectedMessage(tieMsgId) {
+  emitMessageId(tieMsgId) {
     this._tieappService.setCurrentMsgURL(tieMsgId);
     this._tieappService.getCurrentMsg()
         .subscribe(currentMessageData => {

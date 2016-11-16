@@ -12,7 +12,9 @@ import { Message } from '../message';
 export class MessagelistComponent implements OnInit {
 
   @Input() messageList;
-  @Output() currentSelectedMessage = new EventEmitter<any>();
+
+  @Output() emitMessageId = new EventEmitter<any>();
+  //
   @Input() currentSelectedMessageId ;
   //private currentSelectedMessageId = this.messageList.currentMessage.tieMsgId;
 
@@ -35,7 +37,7 @@ export class MessagelistComponent implements OnInit {
 
   onSelect(tieMsgId) {
     this.currentSelectedMessageId = tieMsgId;
-     this.currentSelectedMessage.emit(tieMsgId);
+     this.emitMessageId.emit(tieMsgId);
   }
 
 
