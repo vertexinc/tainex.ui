@@ -9,7 +9,7 @@ import { Doclist } from './doclist';
 export class DoclistComponent implements OnInit {
 
    @Input() messageDetail;
-   @Output() emitCurrentDocIndex  = new EventEmitter<any>();;
+   @Output() emitCurrentDocId  = new EventEmitter<any>();;
 
 
   constructor() {
@@ -19,8 +19,8 @@ export class DoclistComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(docIndex){
-  
-    this.emitCurrentDocIndex.emit(docIndex)
+  onSelect(docId){
+
+    this.emitCurrentDocId.emit(docId)
   }
 }
