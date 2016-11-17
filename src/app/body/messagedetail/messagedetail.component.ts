@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import {TieappService } from '../../tieapp.service';
 
 
 @Component({
@@ -8,9 +9,10 @@ import { Component, OnInit, Input } from '@angular/core';
 })
 export class MessagedetailComponent implements OnInit {
   @Input() messageDetail;
+  @Input() currentDoc;
 
   // private currentDoc = this.messageDetail.tieDocList[0];
-  constructor() {
+  constructor(private _tieappService: TieappService) {
 
   }
 
@@ -19,7 +21,11 @@ export class MessagedetailComponent implements OnInit {
   }
 
   emitCurrentDocId(docId){
-    alert(docId);
-    //this.messageDetail.currentDocIndex = docIndex;
+    //alert(docId);
+    this._tieappService.setCurrentDocURL(docId);
+    this._tieappService.getCurrentDoc()
+        .subscribe(currentDocData => {
+          this.currentDoc = currentDocData;
+        })
   }
 }

@@ -11,6 +11,7 @@ export class BodyComponent implements OnInit {
   showSearchCriteria = false;
 
   @Input() body;
+  
 
   constructor(private _tieappService: TieappService) { }
 
