@@ -1,4 +1,4 @@
-import { Component, OnInit,EventEmitter,Input,Output } from '@angular/core';
+import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { DoclistRecord } from './doclistRecord';
 import { Doclist } from './doclist';
 @Component({
@@ -8,8 +8,9 @@ import { Doclist } from './doclist';
 })
 export class DoclistComponent implements OnInit {
 
-   @Input() messageDetail;
-   @Output() emitCurrentDocId  = new EventEmitter<any>();;
+  @Input() messageDetail;
+  @Output() emitCurrentDocId = new EventEmitter<any>();
+  @Input() currentDocId;
 
 
   constructor() {
@@ -19,8 +20,16 @@ export class DoclistComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSelect(docId){
-
+  onSelect(docId) {
+    this.currentDocId = docId;
     this.emitCurrentDocId.emit(docId)
+  }
+
+  isHighlight(docId) {
+    let styles = {
+      'background-color': docId === this.currentDocId ? 'lightgreen' : '',
+
+    };
+    return styles;
   }
 }
