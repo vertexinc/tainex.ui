@@ -20,6 +20,8 @@ import { Cbcrtable3Component } from './body/messagedetail/cbcr/cbcrtable3/cbcrta
 import { MessageComponent } from './body/messagedetail/message/message.component';
 
 import { SearchDetailComponent } from './body/searchcriteria/search-detail/search-detail.component';
+import { TabsumPipe } from './tabsum.pipe';
+
 
 @NgModule({
   declarations: [
@@ -37,7 +39,8 @@ import { SearchDetailComponent } from './body/searchcriteria/search-detail/searc
     Cbcrtable2Component,
     Cbcrtable3Component,
     MessageComponent,
-    SearchDetailComponent
+    SearchDetailComponent,
+    TabsumPipe
   ],
   imports: [
     BrowserModule,

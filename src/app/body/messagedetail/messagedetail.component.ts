@@ -11,21 +11,30 @@ export class MessagedetailComponent implements OnInit {
   @Input() messageDetail;
   @Input() currentDoc;
 
+
   // private currentDoc = this.messageDetail.tieDocList[0];
   constructor(private _tieappService: TieappService) {
-
+    // this.currentMessageName = this.truncateInfo(this.messageDetail.subject);
+    // this.currentDocName = this.truncateInfo(this.currentDoc.name)
   }
 
   ngOnInit() {
 
   }
 
-  emitCurrentDocId(docId){
+  emitCurrentDocId(docId) {
     //alert(docId);
     this._tieappService.setCurrentDocURL(docId);
     this._tieappService.getCurrentDoc()
-        .subscribe(currentDocData => {
-          this.currentDoc = currentDocData;
-        })
+      .subscribe(currentDocData => {
+        this.currentDoc = currentDocData;
+      })
+  }
+
+  truncateInfo(info) {
+    if (info.length > 10) {
+      info = info.substring(0, 10) + '...'
+    }
+    return info;
   }
 }
