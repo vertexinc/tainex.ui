@@ -21,6 +21,7 @@ import { MessageComponent } from './body/messagedetail/message/message.component
 
 import { SearchDetailComponent } from './body/searchcriteria/search-detail/search-detail.component';
 import { TabsumPipe } from './tabsum.pipe';
+import { TrainingComponent } from './training/training.component';
 
 
 @NgModule({
@@ -40,7 +41,8 @@ import { TabsumPipe } from './tabsum.pipe';
     Cbcrtable3Component,
     MessageComponent,
     SearchDetailComponent,
-    TabsumPipe
+    TabsumPipe,
+    TrainingComponent
   ],
   imports: [
     BrowserModule,

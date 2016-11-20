@@ -11,6 +11,8 @@ export class AppComponent {
 
   private tieapp;
 
+  private showApp = true;
+  private showTraining = false;
 
   constructor(private _tieappService: TieappService) { }
 
@@ -19,5 +21,13 @@ export class AppComponent {
         .subscribe(tieMsgData => {
             this.tieapp = tieMsgData;
         });
+  }
+
+  tieAppShowInfo(showApp){
+  this.showApp = showApp
+  }
+
+  trainingShowInfo(showTraining){
+    this.showTraining = showTraining
   }
 }

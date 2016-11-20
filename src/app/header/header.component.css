@@ -2,6 +2,9 @@
   margin-top: 0;
   color: white;
 }
+.logo:hover {
+  color:lightgreen;
+}
 #headercenter {
   text-align: center;
   padding-top: 12px;

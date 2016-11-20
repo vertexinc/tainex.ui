@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Header } from './header'
 
 @Component({
@@ -9,28 +9,32 @@ import { Header } from './header'
 export class HeaderComponent implements OnInit {
   // isLoading = true;
 
- @Input() header:any;
+  @Input() header: any;
+  @Output() tieAppShowInfo = new EventEmitter<any>();
+  @Output() trainingShowInfo = new EventEmitter<any>();
+  private showTieapp = true;
+  private showTraining = false;
 
   constructor() {
 
   }
 
   ngOnInit() {
-  //    this.setFields({
-  //      "appName": "EU SAT",
-  //      "userName": "John",
-  //      "language": ["en", "es"]
-  //    });
-  //    console.log("OnInit Header");
-  //  }
 
-}
-   // Change all fields of this component
-  //  setFields(hdr: Header) {
-  //    this.header = hdr;
-  //    this.header.appName = "USA SAT";
-  //    console.log("setFields Header");
-  //  }
+  }
 
+  tieAppOnlick() {
+    this.showTieapp = true;
+    this.showTraining = false;
+    this.tieAppShowInfo.emit(this.showTieapp);
+    this.trainingShowInfo.emit(this.showTraining);
+  }
+
+  trainingOnclick() {
+    this.showTieapp = false;
+    this.showTraining = true;
+    this.tieAppShowInfo.emit(this.showTieapp);
+    this.trainingShowInfo.emit(this.showTraining);
+  }
 
 }

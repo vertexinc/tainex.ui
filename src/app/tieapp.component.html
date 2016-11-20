@@ -1,13 +1,17 @@
 <div id='tieapp' *ngIf="tieapp">
-<!-- <div id='tieapp'> -->
+  <!-- <div id='tieapp'> -->
   <div id='tieapp-header'>
-    <tieapp-header [header]="tieapp.header"></tieapp-header>
+    <tieapp-header [header]="tieapp.header" (tieAppShowInfo)="tieAppShowInfo($event)" (trainingShowInfo)="trainingShowInfo($event)"></tieapp-header>
 
   </div>
-
   <div id='tieapp-body'>
 
-    <tieapp-body [body]="tieapp.body"></tieapp-body>
+    <div *ngIf="showApp">
+      <tieapp-body [body]="tieapp.body"></tieapp-body>
+    </div>
+    <div *ngIf="showTraining">
+      <tieapp-training></tieapp-training>
+    </div>
   </div>
 
   <div id='tieapp-footer'>
