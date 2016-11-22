@@ -3,21 +3,21 @@
 
   <div class="searchButton">
     <button type="button" class="btn btn-primary btn-md">
-        Compose...
+        {{ 'TRANSLATE.COMPOSE' | translate }}
       </button>
   </div>
 
 
   <div class="searchButton">
     <button type="button" class="btn btn-primary btn-md">
-        Inbox
+        {{ 'TRANSLATE.INBOX' | translate }}
       </button>
   </div>
 
 
   <div class="searchButton">
     <button type="button" class="btn btn-primary btn-md">
-        Draft
+        {{ 'TRANSLATE.DRAFT' | translate }}
       </button>
   </div>
 
@@ -37,7 +37,7 @@
     <ng-content></ng-content>
   </div> -->
   <button type="button" id = "searchBy" class="btn btn-primary btn-md">
-    Search By
+  {{ 'TRANSLATE.SEARCHBY' | translate }}
   </button>
   <a id="expandIcon" (click)="showSearch = !showSearch">
     <i *ngIf="!showSearch" class="fa fa-chevron-down" aria-hidden="true"></i>

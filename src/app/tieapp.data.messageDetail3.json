@@ -46,7 +46,7 @@
     "name": "doc16",
     "code": "Sample16",
     "description": "Sample16",
-    "tieDocTypeId": 3,
+    "tieDocTypeId": 2,
     "tieMsgId": 12,
     "reportingEntityCode": "RU=05686",
     "reportingEntity": {

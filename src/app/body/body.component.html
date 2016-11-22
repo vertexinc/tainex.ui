@@ -12,6 +12,7 @@
   <div id="rightpanel">
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>
+        
         <!-- <tieapp-messagelist  [tieMsgs]="body.messagelist"></tieapp-messagelist> -->
         <tieapp-messagelist [messageList]="body.messageList" [currentSelectedMessageId]="body.messageList.messageSumList[0].tieMsgId" (emitMessageId)="emitMessageId($event)"> </tieapp-messagelist>
       </div>

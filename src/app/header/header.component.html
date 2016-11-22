@@ -6,21 +6,21 @@
     <h2 class="logo">
 				<a (click)="tieAppOnlick()">TIE<strong>APP</strong></a> <span>
 					<h6>
-            For  {{header.appName}}
+            {{ 'TRANSLATE.FOR' | translate }}  {{header.appName}}
           </h6>
 				</span>
 			</h2></div>
 
   <div class="col-sm-4" id='headercenter'>
-    <button type="button" class="btn btn-success" (click)="trainingOnclick()">Training</button>
+    <button type="button" class="btn btn-success" (click)="trainingOnclick()"> {{ 'TRANSLATE.TRAINING' | translate }}</button>
   </div>
 
   <div class="col-sm-4" id='headerright'>
-    <div id="user">Hello {{ header.userName }} !</div>
-    <div id="language">Language</div>
+    <div id="user">  {{ 'TRANSLATE.WELCOME' | translate }} {{ header.userName }} !</div>
+    <div id="language"> {{ 'TRANSLATE.LANGUAGE' | translate }}</div>
     <div class="styled-select">
-      <select class="form-control" id="sel1">
-        <option *ngFor="let lan of header.language">{{ lan }}</option>
+      <select class="form-control" id="sel1" #langSelect (change)="translate.use(langSelect.value)">
+        <option *ngFor="let lang of translate.getLangs()" [value]="lang" [selected]="lang === translate.currentLang">{{ lang }}</option>
       </select>
     </div>
   </div>

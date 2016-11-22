@@ -25,7 +25,7 @@
     <tr class="" *ngFor="let doclistItem of messageDetail.tieDocList" (click)="onSelect(doclistItem.tieDocId)" [ngStyle]="isHighlight(doclistItem.tieDocId)">
       <td>{{doclistItem.code}}</td>
       <td>{{doclistItem.name}}</td>
-      <td>{{doclistItem.tieDocTypeId}}</td>
+      <td>{{doclistItem.tieDocTypeId|doctype}}</td>
       <td>{{doclistItem.reportingEntityCode}}</td>
       <td>{{doclistItem.currencyCode}}</td>
       <td>{{doclistItem.resCountryCode}}</td>

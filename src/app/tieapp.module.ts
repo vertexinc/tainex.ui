@@ -22,6 +22,10 @@ import { MessageComponent } from './body/messagedetail/message/message.component
 import { SearchDetailComponent } from './body/searchcriteria/search-detail/search-detail.component';
 import { TabsumPipe } from './tabsum.pipe';
 import { TrainingComponent } from './training/training.component';
+import { DoctypePipe } from './doctype.pipe';
+
+import {TranslateModule} from "ng2-translate";
+
 
 
 @NgModule({
@@ -42,12 +46,14 @@ import { TrainingComponent } from './training/training.component';
     MessageComponent,
     SearchDetailComponent,
     TabsumPipe,
-    TrainingComponent
+    TrainingComponent,
+    DoctypePipe
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    TranslateModule.forRoot()
   ],
   providers: [TieappService],
   bootstrap: [AppComponent]

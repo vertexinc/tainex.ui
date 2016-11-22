@@ -1,5 +1,6 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
-import { Header } from './header'
+import { Header } from './header';
+import {TranslateService} from 'ng2-translate';
 
 @Component({
   selector: 'tieapp-header',
@@ -15,7 +16,12 @@ export class HeaderComponent implements OnInit {
   private showTieapp = true;
   private showTraining = false;
 
-  constructor() {
+  constructor(private translate: TranslateService) {
+    translate.addLangs(["en", "es","zh","fr"]);
+    translate.setDefaultLang('en');
+
+    let browserLang = translate.getBrowserLang();
+    translate.use(browserLang.match(/en|zh/) ? browserLang : 'en');
 
   }
 

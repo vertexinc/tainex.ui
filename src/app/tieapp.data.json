@@ -134,7 +134,7 @@
         "name": "doc13",
         "code": "CBCR_IndustryCo",
         "description": "To Share CBCR Report of Industry Co",
-        "tieDocTypeId": 3,
+        "tieDocTypeId": 1,
         "tieMsgId": 10,
         "reportingEntityCode": "IndustryCo",
         "reportingEntity": {
@@ -949,7 +949,7 @@
         "name": "doc14",
         "code": "EySampleCorp",
         "description": "EY Sample Corp CBCR Report",
-        "tieDocTypeId": 3,
+        "tieDocTypeId": 1,
         "tieMsgId": 10,
         "reportingEntityCode": "RU=03389",
         "reportingEntity": null,
