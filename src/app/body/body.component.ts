@@ -11,16 +11,17 @@ export class BodyComponent implements OnInit {
   showSearchCriteria = false;
 
   @Input() body;
-  
+
 
   constructor(private _tieappService: TieappService) { }
 
   ngOnInit() {
   }
 
+  //overwrite to post id and get callback data from backend
   emitMessageId(tieMsgId) {
-    this._tieappService.setCurrentMsgURL(tieMsgId);
-    this._tieappService.getCurrentMsg()
+    //this._tieappService.setCurrentMsgURL(tieMsgId);
+    this._tieappService.postCurrentMsg(tieMsgId)
         .subscribe(currentMessageData => {
           this.body.messageDetail = currentMessageData;
         })
