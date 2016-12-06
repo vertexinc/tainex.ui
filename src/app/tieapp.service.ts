@@ -4,12 +4,14 @@ import 'rxjs/add/operator/map';
 import { Observable } from 'rxjs/Observable';
 import { Tieapp } from './tieapp';
 import { Message } from './body/message';
+import { Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class TieappService {
-  private _url = "./app/tieapp.data.json";
+   //private _url = "tieapp.data.json";
+   private _url = "./app/tieapp.tieMainPageData.json";
   private _currentMsgUrl;
-  private currentMessageUrl = '/login';
+  private currentUrl = 'login';
   private _currentMsgUrl1 = "./app/tieapp.data.messageDetail1.json";
   private _currentMsgUrl2 = "./app/tieapp.data.messageDetail2.json";
   private _currentMsgUrl3 = "./app/tieapp.data.messageDetail3.json";
@@ -19,12 +21,31 @@ export class TieappService {
   private _currentDocUrl3 = "./app/tieapp.data.doc3.json";
   private _currentDocUrl4 = "./app/tieapp.data.doc4.json";
 
+
+
   constructor(private _http: Http) { }
 
   getData(): Observable<any> {
     return this._http.get(this._url)
       .map(res => res.json());
   }
+
+  // getHeader(): Observable<any> {
+  //   let headers = new Headers({ 'Content-Type': 'application/json' });
+  //   // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
+  //   let options = new RequestOptions({ headers: headers });
+  //   let param =  JSON.stringify({action:"initPage"});
+  // //   let param = {
+  // //   "userId": 11,
+  // //   "id": 11,
+  // //   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  // //   "body": "quia et suscipi"
+  // // };
+  //   alert("posted")
+  //   //  return this._http.post(this.textPostUrl, param, options)
+  //   return this._http.post(this.currentUrl, param, options)
+  //     .map(res => res.json());
+  // }
 
   setCurrentMsgURL(messageId) {
     switch (messageId) {
@@ -64,10 +85,13 @@ export class TieappService {
     }
   }
 
-  postCurrentMsg(messageId) {
+  postCurrentMsg(messageId): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
     let temp = "action=selectCurrentMsg" + "&msgid=" + messageId;
-    return this._http.post(this.currentMessageUrl, temp) // ...using post request
-      .map(res => res.json()) ;// ...and calling .json() on the response to return data
+    alert(temp);
+    return this._http.post(this.currentUrl, temp, options) // ...using post request
+      .map(res => res.json());// ...and calling .json() on the response to return data
   }
 
   getCurrentMsg() {

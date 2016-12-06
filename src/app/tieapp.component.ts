@@ -10,7 +10,6 @@ import { Tieapp } from './tieapp'
 export class AppComponent {
 
   private tieapp;
-
   private showApp = true;
   private showTraining = false;
 
@@ -18,17 +17,36 @@ export class AppComponent {
 
   ngOnInit() {
     this._tieappService.getData()
-        .subscribe(tieMsgData => {
-            this.tieapp = tieMsgData;    
-        });
+      .subscribe(tieMsgData => {
+        this.tieapp = {
+          header: {
+            appName: tieMsgData.appName,
+            userName: tieMsgData.username,
+            language: tieMsgData.language
+          },
+          body: {
+            messageList: {
+               messageSumList:tieMsgData.msgList,
+               currentMessage:tieMsgData.msgList[0]
+            },
+            messageDetail: tieMsgData.msgList[0]
+          }
+        };
+        alert(JSON.stringify(this.tieapp));
+      });
+    // this._tieappService.getHeader()
+    //     .subscribe(tieData => {
+    //         this.header = tieData;
+    //         alert(JSON.stringify(tieData));
+    //     })
 
   }
 
-  tieAppShowInfo(showApp){
-  this.showApp = showApp
+  tieAppShowInfo(showApp) {
+    this.showApp = showApp
   }
 
-  trainingShowInfo(showTraining){
+  trainingShowInfo(showTraining) {
     this.showTraining = showTraining
   }
 }

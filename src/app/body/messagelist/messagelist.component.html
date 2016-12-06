@@ -11,11 +11,11 @@
   <tbody class="msgbody" *ngIf="messageList">
     <tr class="" *ngFor="let tieMsg of messageList.messageSumList" (click)="onSelect(tieMsg.tieMsgId)" [ngStyle]="isHighlight(tieMsg.tieMsgId)">
       <!-- (click)="onSelect(tieMsg)"> -->
-      <td>{{tieMsg.user}}</td>
+      <td>{{tieMsg.subject}}</td>
       <td>{{tieMsg.subject}}</td>
       <td>{{tieMsg.description}}</td>
-      <td>{{tieMsg.date}}</td>
-      <td>{{tieMsg.status}}</td>
+      <td>{{tieMsg.timestamp}}</td>
+      <td>tieMsg.tieMsgState</td>
     </tr>
   </tbody>
 
