@@ -19,15 +19,15 @@ export class BodyComponent implements OnInit {
   }
 
   emitMessageId(tieMsgId) {
-    // this._tieappService.setCurrentMsgURL(tieMsgId);
-    // this._tieappService.getCurrentMsg()
-    //     .subscribe(currentMessageData => {
-    //       this.body.messageDetail = currentMessageData;
-    //     })
-    this._tieappService.postCurrentMsg(tieMsgId)
-      .subscribe(currentMessageData => {
-        this.body.messageDetail = currentMessageData;
-      })
+    this._tieappService.setCurrentMsgURL(tieMsgId);
+    this._tieappService.getCurrentMsg()
+        .subscribe(currentMessageData => {
+          this.body.messageDetail = currentMessageData;
+        })
+    // this._tieappService.postCurrentMsg(tieMsgId)
+    //   .subscribe(currentMessageData => {
+    //     this.body.messageDetail = currentMessageData;
+    //   })
   }
 
 }

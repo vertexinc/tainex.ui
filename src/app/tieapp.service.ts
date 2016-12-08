@@ -26,7 +26,21 @@ export class TieappService {
   constructor(private _http: Http) { }
 
   getData(): Observable<any> {
-    return this._http.get(this._url)
+    // return this._http.get(this._url)
+    //   .map(res => res.json());
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
+    let options = new RequestOptions({ headers: headers });
+    let param =  JSON.stringify({action:"initPage"});
+  //   let param = {
+  //   "userId": 11,
+  //   "id": 11,
+  //   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+  //   "body": "quia et suscipi"
+  // };
+    alert("posted")
+      return this._http.get(this._url)
+    //return this._http.post(this.currentUrl, param, options)
       .map(res => res.json());
   }
 
