@@ -12,13 +12,13 @@
   <div id="rightpanel">
     <div id="rightpanelflex">
       <div id='tieapp-messagelist'>
-        
+
         <!-- <tieapp-messagelist  [tieMsgs]="body.messagelist"></tieapp-messagelist> -->
-        <tieapp-messagelist [messageList]="body.messageList" [currentSelectedMessageId]="body.messageList.messageSumList[0].tieMsgId" (emitMessageId)="emitMessageId($event)"> </tieapp-messagelist>
+        <tieapp-messagelist [messageList]="body.messageList.messageSumList" [currentSelectedMessageId]="10" (emitMessageId)="emitMessageId($event)"> </tieapp-messagelist>
       </div>
       <div class="splitter-horizontal"></div>
       <div id='tieapp-messagedetail'>
-        <tieapp-messagedetail [messageDetail]="body.messageDetail" [currentDoc]="body.messageDetail.tieDocList[0]"></tieapp-messagedetail>
+        <tieapp-messagedetail [messageDetail]="body.messageDetail"  [currentDoc]="body.currentDoc"></tieapp-messagedetail>
       </div>
     </div>
   </div>

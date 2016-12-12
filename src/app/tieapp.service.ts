@@ -8,8 +8,8 @@ import { Headers, RequestOptions } from '@angular/http';
 
 @Injectable()
 export class TieappService {
-   //private _url = "tieapp.data.json";
-   private _url = "./app/tieapp.tieMainPageData.json";
+  private _url = "tieapp.data.json";
+  //  private _url = "./app/tieapp.tieMainPageData.json";
   private _currentMsgUrl;
   private currentUrl = 'login';
   private _currentMsgUrl1 = "./app/tieapp.data.messageDetail1.json";
@@ -38,9 +38,8 @@ export class TieappService {
   //   "title": "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
   //   "body": "quia et suscipi"
   // };
-    alert("posted")
-      return this._http.get(this._url)
-    //return this._http.post(this.currentUrl, param, options)
+    //  return this._http.get(this._url)
+    return this._http.post(this.currentUrl, param, options)
       .map(res => res.json());
   }
 

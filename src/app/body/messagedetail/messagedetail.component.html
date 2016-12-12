@@ -5,30 +5,30 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#docs" title="Current Message:{{messageDetail.subject}} " role="tab" data-toggle="tab">Docs<div class="subinfo">
-								Current Message : {{messageDetail.subject|tabsum:4}}</div></a>
+								Current Message : {{messageDetail.subject}}</div></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#entity" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Entity<div class="subinfo">
-								Current Doc : {{currentDoc.name|tabsum:3}}</div></a>
+								Current Doc : {{currentDoc.name}}</div></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#table1" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table1<div class="subinfo">
-								Current Doc : {{currentDoc.name|tabsum:3}}</div></a>
+								Current Doc : {{currentDoc.name}}</div></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#table2" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table2<div class="subinfo">
-								Current Doc : {{currentDoc.name|tabsum:3}}</div></a>
+								Current Doc : {{currentDoc.name}}</div></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#table3" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table3<div class="subinfo">
-								Current Doc : {{currentDoc.name|tabsum:3}}</div></a>
+								Current Doc : {{currentDoc.name}}</div></a>
   </li>
 </ul>
 
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="message"><tieapp-message [messageDetail]="messageDetail"></tieapp-message></div>
-  <div role="tabpanel" class="tab-pane fade" id="docs"><tieapp-doclist [messageDetail]="messageDetail" [currentDocId] = "messageDetail.tieDocList[0].tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)"></tieapp-doclist></div>
+  <div role="tabpanel" class="tab-pane fade" id="docs"><tieapp-doclist [messageDetail]="messageDetail" [currentDocId] = "13" (emitCurrentDocId)="emitCurrentDocId($event)"></tieapp-doclist></div>
   <div role="tabpanel" class="tab-pane fade" id="entity"><tieapp-entitylist [currentDoc]="currentDoc" ></tieapp-entitylist></div>
   <div role="tabpanel" class="tab-pane fade" id="table1"><tieapp-cbcrtable1 [currentDoc]="currentDoc"></tieapp-cbcrtable1></div>
   <div role="tabpanel" class="tab-pane fade" id="table2"><tieapp-cbcrtable2 [currentDoc]="currentDoc"></tieapp-cbcrtable2></div>

@@ -31,10 +31,4 @@ export class MessagedetailComponent implements OnInit {
       })
   }
 
-  truncateInfo(info) {
-    if (info.length > 10) {
-      info = info.substring(0, 10) + '...'
-    }
-    return info;
-  }
 }
