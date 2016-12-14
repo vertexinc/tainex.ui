@@ -30,8 +30,8 @@ export class TieappService {
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "initPage" });
 
-    return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._url)
+    //return this._http.post(this.currentUrl, param, options)
+    return this._http.get(this._url)
       .map(res => res.json());
   }
 

@@ -24,15 +24,15 @@ export class MessagedetailComponent implements OnInit {
 
   emitCurrentDocId(docId) {
     //alert(docId);
-    // this._tieappService.setCurrentDocURL(docId);
-    // this._tieappService.postCurrentDoc(docId)
-    // .subscribe(currentDocData => {
-    //   this.currentDoc = currentDocData.currentTieDoc
-    // })
+    this._tieappService.setCurrentDocURL(docId);
     this._tieappService.postCurrentDoc(docId)
     .subscribe(currentDocData => {
       this.currentDoc = currentDocData.currentTieDoc
     })
+    // this._tieappService.postCurrentDoc(docId)
+    // .subscribe(currentDocData => {
+    //   this.currentDoc = currentDocData.currentTieDoc
+    // })
   }
 
 }
