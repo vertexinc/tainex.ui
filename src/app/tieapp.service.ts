@@ -78,8 +78,8 @@ export class TieappService {
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "selectCurrentMsg", messageId: messageId });
-    return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentMsgUrl)
+    //return this._http.post(this.currentUrl, param, options)
+    return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
   }
 
@@ -88,8 +88,8 @@ export class TieappService {
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "selectCurrentDoc", docId: docId });
-    return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentDocUrl)
+    // return this._http.post(this.currentUrl, param, options)
+    return this._http.get(this._currentDocUrl)
       .map(res => res.json());
   }
   getCurrentMsg() {
