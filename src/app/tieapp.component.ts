@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { TieappService } from './tieapp.service';
 import { Tieapp } from './tieapp'
+import 'rxjs/add/operator/map';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
   selector: 'tieapp-root',
@@ -9,7 +11,7 @@ import { Tieapp } from './tieapp'
 })
 export class AppComponent {
 
-  private tieapp = {
+  public tieapp = {
     header:{
       appName:"",
       userName:"",
@@ -24,6 +26,7 @@ export class AppComponent {
 
     }
   };
+  // private tieapp: Observable<any>;
   private tie;
   private showApp = true;
   private showTraining = false;
@@ -33,13 +36,15 @@ export class AppComponent {
   ngOnInit() {
     this._tieappService.getData()
       .subscribe(tieMsgData => {
+        // pageData = transformRawDataToPageStructure( rawData ); transform the given data structure into the exact structure of the pages
+        // updateScreen( pageData )
 
         this.tieapp.header.appName = tieMsgData.appName;
         this.tieapp.header.userName = tieMsgData.username;
         this.tieapp.header.language = tieMsgData.language;
 
         this.tieapp.body.messageList.messageSumList = tieMsgData.msgList;
-        this.tieapp.body.messageDetail =tieMsgData.currentMsg,
+        this.tieapp.body.messageDetail =tieMsgData.currentMsg;
         this.tieapp.body.currentDoc = tieMsgData.currentTieDoc
 
       });

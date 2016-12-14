@@ -1,4 +1,4 @@
-{"currentDocIndex":0,
+{
   "tieMsgId": 11,
   "subject": "CBCR to MX",
   "code": "011",
@@ -40,12 +40,15 @@
   "timestamp": "2014-07-04T13:23:21",
   "rawMsg": "raw",
   "msgReceiverList": "Larry@CN;Liu@US;",
+  "userName": "Adam",
+  "msgState": "Created",
+  "tieTaxEntity": [],
   "tieDocList": [{
     "tieDocId": 15,
     "name": "doc15",
     "code": "Sample15",
     "description": "Sample15",
-    "tieDocTypeId": 2,
+    "tieDocTypeId": 3,
     "tieMsgId": 11,
     "reportingEntityCode": "RU=04054",
     "reportingEntity": {

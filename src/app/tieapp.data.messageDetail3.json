@@ -1,5 +1,4 @@
 {
-  "currentDocIndex":0,
   "tieMsgId": 12,
   "subject": "CBCR to US",
   "code": "012",
@@ -41,12 +40,15 @@
   "timestamp": "2015-03-04T13:23:21",
   "rawMsg": "raw",
   "msgReceiverList": "Peter@MX;",
+  "userName": "John",
+  "msgState": "DeliveredToAll",
+  "tieTaxEntity": [],
   "tieDocList": [{
     "tieDocId": 16,
     "name": "doc16",
     "code": "Sample16",
     "description": "Sample16",
-    "tieDocTypeId": 2,
+    "tieDocTypeId": 3,
     "tieMsgId": 12,
     "reportingEntityCode": "RU=05686",
     "reportingEntity": {
