@@ -35,10 +35,8 @@ export class BodyComponent implements OnInit {
   emitCompose() {
     let msgList = this.body.messageList.messageSumList;
     let objectModel = msgList[msgList.length - 1];
-    var copy = objectModel.constructor();
-    for (var attr in objectModel) {
-      if (objectModel.hasOwnProperty(attr)) copy[attr] = objectModel[attr];
-    }
+    var copy =  JSON.parse(JSON.stringify(objectModel));
+
     //let newObject = objectModel
     let msgId = copy.tieMsgId
     copy.tieMsgId = msgId + 1;
