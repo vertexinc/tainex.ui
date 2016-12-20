@@ -39,9 +39,9 @@ export class MessagelistComponent implements OnInit {
     this.currentSelectedMessageId = tieMsgId;
     this.emitMessageId.emit(tieMsgId);
     // alert(JSON.stringify(this.messageList));
-    var object = this.messageList[this.messageList.length - 1];
-    object.tieMsgId += 1;
-    this.messageList.push(object);
+    // var object = this.messageList[this.messageList.length - 1];
+    // object.tieMsgId += 1;
+    // this.messageList.push(object);
   }
 
 

@@ -1,6 +1,6 @@
 <div id='bodyContainer' *ngIf="body">
   <div *ngIf="showSearchCriteria" id='tieapp-searchcriteria'>
-    <tieapp-searchcriteria title="Search By">
+    <tieapp-searchcriteria title="Search By" (emitCompose)="emitCompose($event)">
       <tieapp-search-detail></tieapp-search-detail>
     </tieapp-searchcriteria>
 

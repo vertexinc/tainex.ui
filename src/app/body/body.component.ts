@@ -32,4 +32,25 @@ export class BodyComponent implements OnInit {
     //   })
   }
 
+  emitCompose() {
+    let msgList = this.body.messageList.messageSumList;
+    let objectModel = msgList[msgList.length - 1];
+    var copy = objectModel.constructor();
+    for (var attr in objectModel) {
+      if (objectModel.hasOwnProperty(attr)) copy[attr] = objectModel[attr];
+    }
+    //let newObject = objectModel
+    let msgId = copy.tieMsgId
+    copy.tieMsgId = msgId + 1;
+    copy.subject = "new";
+    copy.sender.name = "new";
+    copy.description = "new";
+    copy.timestamp = "new";
+    copy.tieMsgState.name = "new";
+    this.body.messageList.messageSumList.push(copy);
+    // var object = this.body.messageList[this.body.messageList.length - 1];
+    // object.tieMsgId += 1;
+    // this.body.messageList.push(object);
+  }
+
 }

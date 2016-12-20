@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import { Searchcriteria } from './searchcriteria';
 
 @Component({
@@ -7,7 +7,10 @@ import { Searchcriteria } from './searchcriteria';
   styleUrls: ['./searchcriteria.component.css']
 })
 export class SearchcriteriaComponent implements OnInit {
-  searchcriteria:Searchcriteria;
+  searchcriteria: Searchcriteria;
+
+  @Output() emitCompose = new EventEmitter<any>();
+
   constructor() {
     this.searchcriteria = new Searchcriteria()
   }
@@ -15,13 +18,17 @@ export class SearchcriteriaComponent implements OnInit {
 
   ngOnInit() {
   }
-  
+
   showSearch = false;
   isExpanded = false;
 
 
-  toggle(){
+  toggle() {
     this.isExpanded = !this.isExpanded;
+  }
+
+  onCompose(){
+    this.emitCompose.emit();
   }
 
 }
