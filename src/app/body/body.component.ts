@@ -9,6 +9,7 @@ import {TieappService } from '../tieapp.service';
 })
 export class BodyComponent implements OnInit {
   showSearchCriteria = false;
+  currentMsgId;
 
   @Input() body;
 
@@ -19,6 +20,7 @@ export class BodyComponent implements OnInit {
   }
 
   emitMessageId(tieMsgId) {
+    this.currentMsgId = tieMsgId;
     this._tieappService.setCurrentMsgURL(tieMsgId);
     this._tieappService.postCurrentMsg(tieMsgId)
       .subscribe(currentMessageData => {
@@ -49,6 +51,9 @@ export class BodyComponent implements OnInit {
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;
     // this.body.messageList.push(object);
+  }
+  emiteDelete(){
+
   }
 
 }

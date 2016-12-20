@@ -8,7 +8,8 @@
       <th>Status</th>
     </tr>
   </thead>
-  <tr class="" *ngFor="let tieMsg of messageList" (click)="onSelect(tieMsg.tieMsgId)" [ngStyle]="isHighlight(tieMsg.tieMsgId)">
+  <tbody>
+  <tr class="" *ngFor="let tieMsg of messageList| paginate: { itemsPerPage: 6, currentPage: p }" (click)="onSelect(tieMsg.tieMsgId)" [ngStyle]="isHighlight(tieMsg.tieMsgId)" >
     <!-- (click)="onSelect(tieMsg)"> -->
     <td>{{tieMsg.sender.name}}</td>
     <td>{{tieMsg.subject}}</td>
@@ -16,10 +17,11 @@
     <td>{{tieMsg.timestamp}}</td>
     <td>{{tieMsg.tieMsgState.name}}</td>
   </tr>
+
   </tbody>
 
-
 </table>
+<pagination-controls (pageChange)="p = $event"></pagination-controls>
 <!-- <div *ngIf="currentMsgInfo">
   <p> description: {{currentMsgInfo.description}}</p>
   <p> From: {{currentMsgInfo.from}}</p>
