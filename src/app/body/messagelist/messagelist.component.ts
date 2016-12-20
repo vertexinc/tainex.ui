@@ -15,7 +15,7 @@ export class MessagelistComponent implements OnInit {
 
   @Output() emitMessageId = new EventEmitter<any>();
   //
-  @Input() currentSelectedMessageId ;
+  @Input() currentSelectedMessageId;
   //private currentSelectedMessageId = this.messageList.currentMessage.tieMsgId;
 
   constructor(private _tieappService: TieappService) {
@@ -37,7 +37,11 @@ export class MessagelistComponent implements OnInit {
 
   onSelect(tieMsgId) {
     this.currentSelectedMessageId = tieMsgId;
-     this.emitMessageId.emit(tieMsgId);
+    this.emitMessageId.emit(tieMsgId);
+    // alert(JSON.stringify(this.messageList));
+    var object = this.messageList[this.messageList.length - 1];
+    object.tieMsgId += 1;
+    this.messageList.push(object);
   }
 
 

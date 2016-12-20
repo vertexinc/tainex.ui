@@ -12,17 +12,17 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
 
   public tieapp = {
-    header:{
-      appName:"",
-      userName:"",
-      language:[]
+    header: {
+      appName: "",
+      userName: "",
+      language: []
     },
-    body:{
-      messageList:{
-        messageSumList:[]
+    body: {
+      messageList: {
+        messageSumList: []
       },
-      messageDetail:{},
-      currentDoc:{}
+      messageDetail: {},
+      currentDoc: {}
 
     }
   };
@@ -30,6 +30,7 @@ export class AppComponent {
   private tie;
   private showApp = true;
   private showTraining = false;
+  private pageData;
 
   constructor(private _tieappService: TieappService) { }
 
@@ -38,13 +39,14 @@ export class AppComponent {
       .subscribe(tieMsgData => {
         // pageData = transformRawDataToPageStructure( rawData ); transform the given data structure into the exact structure of the pages
         // updateScreen( pageData )
-
+        // this.pageData = this.transformRawDataToPageStructure( tieMsgData );
+        // this.updateScreen( this.pageData )
         this.tieapp.header.appName = tieMsgData.appName;
         this.tieapp.header.userName = tieMsgData.username;
         this.tieapp.header.language = tieMsgData.language;
 
         this.tieapp.body.messageList.messageSumList = tieMsgData.msgList;
-        this.tieapp.body.messageDetail =tieMsgData.currentMsg;
+        this.tieapp.body.messageDetail = tieMsgData.currentMsg;
         this.tieapp.body.currentDoc = tieMsgData.currentTieDoc
 
       });
@@ -55,7 +57,19 @@ export class AppComponent {
     //     })
 
   }
-
+  // transformRawDataToPageStructure (tieMsgData) {
+  //   this.pageData = tieMsgData;
+  // }
+  //
+  // updateScreen(pageData ){
+  //   this.tieapp.header.appName = pageData.appName;
+  //   this.tieapp.header.userName = pageData.username;
+  //   this.tieapp.header.language = pageData.language;
+  //
+  //   this.tieapp.body.messageList.messageSumList = pageData.msgList;
+  //   this.tieapp.body.messageDetail =pageData.currentMsg;
+  //   this.tieapp.body.currentDoc = pageData.currentTieDoc
+  // }
   tieAppShowInfo(showApp) {
     this.showApp = showApp
   }
