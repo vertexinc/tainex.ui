@@ -11,6 +11,8 @@ export class BodyComponent implements OnInit {
   showSearchCriteria = false;
   currentMsgId;
 
+
+
   @Input() body;
 
 
@@ -25,7 +27,8 @@ export class BodyComponent implements OnInit {
     this._tieappService.postCurrentMsg(tieMsgId)
       .subscribe(currentMessageData => {
         this.body.messageDetail = currentMessageData.currentMsg;
-        this.body.currentDoc = currentMessageData.currentTieDoc
+        this.body.currentDoc = currentMessageData.currentTieDoc;
+
       })
     // this._tieappService.postCurrentMsg(tieMsgId)
     //   .subscribe(currentMessageData => {
@@ -37,7 +40,7 @@ export class BodyComponent implements OnInit {
   emitCompose() {
     let msgList = this.body.messageList.messageSumList;
     let objectModel = msgList[msgList.length - 1];
-    var copy =  JSON.parse(JSON.stringify(objectModel));
+    var copy = JSON.parse(JSON.stringify(objectModel));
 
     //let newObject = objectModel
     let msgId = copy.tieMsgId
@@ -48,11 +51,17 @@ export class BodyComponent implements OnInit {
     copy.timestamp = "new";
     copy.tieMsgState.name = "new";
     this.body.messageList.messageSumList.push(copy);
+
+    this.body.currentDoc = {};
+    this.body.messageDetail = {};
+    this.body.messageDetail.userName = "new";
+    this.body.messageDetail.msgState = "new";
+    this.body.messageDetail.tieMsgId = copy.tieMsgId
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;
     // this.body.messageList.push(object);
   }
-  emiteDelete(){
+  emiteDelete() {
 
   }
 
