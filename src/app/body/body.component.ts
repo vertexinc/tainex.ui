@@ -34,7 +34,7 @@ export class BodyComponent implements OnInit {
         this.body.currentDoc = currentMessageData.currentTieDoc;
       },
       error => {
-        alert("No data from database");
+
         this.body.messageDetail = {};
         this.body.currentDoc = {};
         let msgList = this.body.messageList.messageSumList;
@@ -45,6 +45,7 @@ export class BodyComponent implements OnInit {
         this.body.messageDetail.msgState = "new";
         this.body.messageDetail.timestamp = "new";
         this.body.messageDetail.reportingPeriod = "new";
+        this.showTable = false;
       }
       )
     // this._tieappService.postCurrentMsg(tieMsgId)
@@ -55,7 +56,7 @@ export class BodyComponent implements OnInit {
   }
 
   emitCompose() {
-    this.showTable = false;
+
     let msgList = this.body.messageList.messageSumList;
     let objectModel = msgList[msgList.length - 1];
     var copy = JSON.parse(JSON.stringify(objectModel));

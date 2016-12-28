@@ -80,7 +80,7 @@ export class TieappService {
   }
 
   postCurrentMsg(messageId): Observable<any> {
-    alert(this._currentMsgUrl);
+    // alert(this._currentMsgUrl);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
