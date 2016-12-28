@@ -10,26 +10,43 @@ import {TieappService } from '../tieapp.service';
 export class BodyComponent implements OnInit {
   showSearchCriteria = false;
   currentMsgId;
-
+  showTable = false;
 
 
   @Input() body;
 
 
-  constructor(private _tieappService: TieappService) { }
+  constructor(private _tieappService: TieappService) {
+
+  }
 
   ngOnInit() {
   }
 
   emitMessageId(tieMsgId) {
+    this.showTable = true;
     this.currentMsgId = tieMsgId;
     this._tieappService.setCurrentMsgURL(tieMsgId);
     this._tieappService.postCurrentMsg(tieMsgId)
-      .subscribe(currentMessageData => {
+      .subscribe(
+      currentMessageData => {
         this.body.messageDetail = currentMessageData.currentMsg;
         this.body.currentDoc = currentMessageData.currentTieDoc;
-
-      })
+      },
+      error => {
+        alert("No data from database");
+        this.body.messageDetail = {};
+        this.body.currentDoc = {};
+        let msgList = this.body.messageList.messageSumList;
+        let objectModel = msgList[msgList.length - 1];
+        var copy = JSON.parse(JSON.stringify(objectModel));
+        this.body.messageDetail.tieMsgId = copy.tieMsgId;
+        this.body.messageDetail.userName = "new";
+        this.body.messageDetail.msgState = "new";
+        this.body.messageDetail.timestamp = "new";
+        this.body.messageDetail.reportingPeriod = "new";
+      }
+      )
     // this._tieappService.postCurrentMsg(tieMsgId)
     //   .subscribe(currentMessageData => {
     //     this.body.messageDetail = currentMessageData.currentMsg;
@@ -38,6 +55,7 @@ export class BodyComponent implements OnInit {
   }
 
   emitCompose() {
+    this.showTable = false;
     let msgList = this.body.messageList.messageSumList;
     let objectModel = msgList[msgList.length - 1];
     var copy = JSON.parse(JSON.stringify(objectModel));
@@ -56,6 +74,8 @@ export class BodyComponent implements OnInit {
     this.body.messageDetail = {};
     this.body.messageDetail.userName = "new";
     this.body.messageDetail.msgState = "new";
+    this.body.messageDetail.timestamp = "new";
+    this.body.messageDetail.reportingPeriod = "new";
     this.body.messageDetail.tieMsgId = copy.tieMsgId
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;

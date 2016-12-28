@@ -14,7 +14,7 @@ export class MessagelistComponent implements OnInit {
   @Input() messageList;
 
   @Output() emitMessageId = new EventEmitter<any>();
-  //
+
   @Input() currentSelectedMessageId;
   //private currentSelectedMessageId = this.messageList.currentMessage.tieMsgId;
 
@@ -43,6 +43,9 @@ export class MessagelistComponent implements OnInit {
     // object.tieMsgId += 1;
     // this.messageList.push(object);
   }
+  // TODO: when back end returns null upon msglist click, first check if the Id is among the currentMsgList
+  // If yes, set that msg as current msgList
+  // if not, create a new empty one just as compose
 
 
 }

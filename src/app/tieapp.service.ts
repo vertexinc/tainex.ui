@@ -49,6 +49,9 @@ export class TieappService {
         this._currentMsgUrl = this._currentMsgUrl3;
         break;
       }
+      default: {this._currentMsgUrl = "Invalid URL";
+
+      }
     }
   }
 
@@ -70,10 +73,14 @@ export class TieappService {
         this._currentDocUrl = this._currentDocUrl4;
         break;
       }
+      default: {this._currentDocUrl = "Invalid URL";
+
+      }
     }
   }
 
   postCurrentMsg(messageId): Observable<any> {
+    alert(this._currentMsgUrl);
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });

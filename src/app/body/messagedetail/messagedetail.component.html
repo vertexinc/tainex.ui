@@ -1,5 +1,4 @@
-
-<ul class="nav nav-tabs" role="tablist" >
+<ul class="nav nav-tabs" role="tablist">
   <li class="nav-item">
     <a class="nav-link active" href="#message" title="Message" role="tab" data-toggle="tab">Message</a>
   </li>
@@ -11,15 +10,15 @@
     <a class="nav-link" href="#entity" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Entity<div class="subinfo">
 								Current Doc : {{currentDoc.name}}</div></a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table1" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table1<div class="subinfo">
 								Current Doc : {{currentDoc.name}}</div></a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table2" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table2<div class="subinfo">
 								Current Doc : {{currentDoc.name}}</div></a>
   </li>
-  <li class="nav-item">
+  <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table3" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table3<div class="subinfo">
 								Current Doc : {{currentDoc.name}}</div></a>
   </li>
@@ -27,10 +26,22 @@
 
 <!-- Tab panes -->
 <div class="tab-content">
-  <div role="tabpanel" class="tab-pane fade in active" id="message"><tieapp-message [messageDetail]="messageDetail"></tieapp-message></div>
-  <div role="tabpanel" class="tab-pane fade" id="docs"><tieapp-doclist [messageDetail]="messageDetail" [currentDocId] = "currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)"></tieapp-doclist></div>
-  <div role="tabpanel" class="tab-pane fade" id="entity"><tieapp-entitylist [currentDoc]="currentDoc" ></tieapp-entitylist></div>
-  <div role="tabpanel" class="tab-pane fade" id="table1"><tieapp-cbcrtable1 [currentDoc]="currentDoc"></tieapp-cbcrtable1></div>
-  <div role="tabpanel" class="tab-pane fade" id="table2"><tieapp-cbcrtable2 [currentDoc]="currentDoc"></tieapp-cbcrtable2></div>
-  <div role="tabpane1" class="tab-pane fade" id="table3"><tieapp-cbcrtable3 [currentDoc]="currentDoc"></tieapp-cbcrtable3></div>
+  <div role="tabpanel" class="tab-pane fade in active" id="message">
+    <tieapp-message [messageDetail]="messageDetail"></tieapp-message>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="docs">
+    <tieapp-doclist [messageDetail]="messageDetail" [currentDocId]="currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)"></tieapp-doclist>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="entity">
+    <tieapp-entitylist [currentDoc]="currentDoc"></tieapp-entitylist>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="table1">
+    <tieapp-cbcrtable1 [currentDoc]="currentDoc"></tieapp-cbcrtable1>
+  </div>
+  <div role="tabpanel" class="tab-pane fade" id="table2">
+    <tieapp-cbcrtable2 [currentDoc]="currentDoc"></tieapp-cbcrtable2>
+  </div>
+  <div role="tabpane1" class="tab-pane fade" id="table3">
+    <tieapp-cbcrtable3 [currentDoc]="currentDoc"></tieapp-cbcrtable3>
+  </div>
 </div>

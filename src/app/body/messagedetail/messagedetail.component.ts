@@ -10,7 +10,7 @@ import {TieappService } from '../../tieapp.service';
 export class MessagedetailComponent implements OnInit {
   @Input() messageDetail;
   @Input() currentDoc;
-
+  @Input() showTable;
 
   // private currentDoc = this.messageDetail.tieDocList[0];
   constructor(private _tieappService: TieappService) {
@@ -26,9 +26,9 @@ export class MessagedetailComponent implements OnInit {
     //alert(docId);
     this._tieappService.setCurrentDocURL(docId);
     this._tieappService.postCurrentDoc(docId)
-    .subscribe(currentDocData => {
-      this.currentDoc = currentDocData.currentTieDoc
-    })
+      .subscribe(currentDocData => {
+        this.currentDoc = currentDocData.currentTieDoc
+      })
     // this._tieappService.postCurrentDoc(docId)
     // .subscribe(currentDocData => {
     //   this.currentDoc = currentDocData.currentTieDoc
