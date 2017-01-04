@@ -1,6 +1,6 @@
 <div id='bodyContainer' *ngIf="body">
   <div *ngIf="showSearchCriteria" id='tieapp-searchcriteria'>
-    <tieapp-searchcriteria title="Search By">
+    <tieapp-searchcriteria title="Search By" (emitCompose)="emitCompose($event)">
       <tieapp-search-detail></tieapp-search-detail>
     </tieapp-searchcriteria>
 
@@ -19,7 +19,7 @@
       </div>
       <div class="splitter-horizontal"></div>
       <div id='tieapp-messagedetail'>
-        <tieapp-messagedetail [messageDetail]="body.messageDetail" [currentDoc]="body.currentDoc"></tieapp-messagedetail>
+        <tieapp-messagedetail [messageDetail]="body.messageDetail" [currentDoc]="body.currentDoc" [showTable]="showTable"></tieapp-messagedetail>
       </div>
     </div>
   </div>

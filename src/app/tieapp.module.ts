@@ -25,6 +25,7 @@ import { TrainingComponent } from './training/training.component';
 import { DoctypePipe } from './doctype.pipe';
 
 import {TranslateModule} from "ng2-translate";
+import {Ng2PaginationModule} from 'ng2-pagination';
 
 
 
@@ -53,6 +54,7 @@ import {TranslateModule} from "ng2-translate";
     BrowserModule,
     FormsModule,
     HttpModule,
+    Ng2PaginationModule,
     TranslateModule.forRoot()
   ],
   providers: [TieappService],
