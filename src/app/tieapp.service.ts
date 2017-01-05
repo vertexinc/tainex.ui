@@ -73,6 +73,17 @@ export class TieappService {
     }
   }
 
+  postSave(model): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
+    let options = new RequestOptions({ headers: headers });
+    let param = JSON.stringify({ action: "save", tieMsg: model });
+    alert("ready to post" + param)
+    return this._http.post(this.currentUrl, param, options)
+    //return this._http.get(this._currentMsgUrl)
+      .map(res => res.json());
+
+  }
   postCurrentMsg(messageId): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });

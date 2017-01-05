@@ -22,7 +22,12 @@ export class MessageComponent implements OnInit {
   model = new Message();
   get diagnostic() { return JSON.stringify(this.model); }
 
-  onSubmit(){
-    alert("Message to be saved:" + JSON.stringify(this.model))
+  onSubmit() {
+    alert("Message to be saved:" + JSON.stringify(this.model));
+
+    this._tieappService.postSave(this.model)
+      .subscribe(saveReturnData => {
+        alert(saveReturnData)
+      })    
   }
 }
