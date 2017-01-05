@@ -51,7 +51,7 @@ export class Message {
       public from?: string,
 
       public reportingPeriod?: string,
-      public to?: string,
+      public msgReceiverList?: string,
       public notes?: string,
       public warning?: string,
       public contact?: string,
