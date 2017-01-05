@@ -1,4 +1,6 @@
 <div id="currentMsgBody" *ngIf="messageDetail">
+  <form (ngSubmit)="onSubmit()" #heroForm="ngForm">
+     Items in this form {{diagnostic}}
   <div class="row">
     <div class="col-md-3">
       <p>
@@ -31,7 +33,7 @@
       <div>To:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="To" placeholder="{{messageDetail.msgReceiverList}}">
+      <input type="text" class="form-control" id="To" placeholder="{{messageDetail.msgReceiverList}}" [(ngModel)]="model.to" name="to">
     </div>
   </div>
 
@@ -40,7 +42,7 @@
       <div>Subject:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Subject" placeholder="{{messageDetail.subject}}">
+      <input type="text" class="form-control" id="Subject" placeholder="{{messageDetail.subject}}" [(ngModel)]="model.subject" name="subject">
     </div>
   </div>
 
@@ -50,7 +52,7 @@
       <div>Notes:</div>
     </div>
     <div class="col-md-9">
-      <textarea rows="4" cols="95" id="notes">{{messageDetail.notes}}</textarea>
+      <textarea rows="4" cols="95" id="notes" [(ngModel)]="model.notes" name="notes">{{messageDetail.notes}}</textarea>
     </div>
   </div>
 
@@ -59,7 +61,7 @@
       <div>Warning:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Warning" placeholder="{{messageDetail.warning}}">
+      <input type="text" class="form-control" id="Warning" placeholder="{{messageDetail.warning}}" [(ngModel)]="model.warning" name="warning">
     </div>
   </div>
 
@@ -68,7 +70,7 @@
       <div>Contact:</div>
     </div>
     <div class="col-md-9">
-      <input type="text" class="form-control" id="Contact" placeholder="{{messageDetail.contact}}">
+      <input type="text" class="form-control" id="Contact" placeholder="{{messageDetail.contact}}" [(ngModel)]="model.contact" name="contact">
     </div>
   </div>
 
@@ -140,5 +142,5 @@
   <button type="button" class="btn btn-primary">Save</button>
   <button type="button" class="btn btn-primary">Delete</button>
   <button type="button" class="btn btn-primary">Send</button>
-
+</form>
 </div>

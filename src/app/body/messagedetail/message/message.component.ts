@@ -19,5 +19,6 @@ export class MessageComponent implements OnInit {
   ngOnInit() {
 
   }
-
+  model = new Message();
+  get diagnostic() { return JSON.stringify(this.model); }
 }
