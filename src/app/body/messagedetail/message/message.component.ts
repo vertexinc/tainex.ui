@@ -11,15 +11,22 @@ import { TieappService } from "../../../tieapp.service";
 export class MessageComponent implements OnInit {
 
   @Input() messageDetail;
+  @Input() language;
+
+  model = new Message('test');
 
   constructor(private _tieappService: TieappService) {
 
   }
 
   ngOnInit() {
-
+    // alert(JSON.stringify(this.messageDetail))
+    JSON.stringify(alert('this.messageDetail' + this.messageDetail));
+    JSON.stringify(alert('this.messageDetail.subject' + this.messageDetail.subject));
+    this.model.subject = 'test2';
+    this.model.description = 'desc2';
   }
-  model = new Message();
+
   get diagnostic() { return JSON.stringify(this.model); }
 
   onSubmit() {
@@ -28,6 +35,6 @@ export class MessageComponent implements OnInit {
     this._tieappService.postSave(this.model)
       .subscribe(saveReturnData => {
         alert(saveReturnData)
-      })    
+      })
   }
 }

@@ -13,7 +13,7 @@ export class BodyComponent implements OnInit {
   showTable = false;
 
   @Input() body;
-
+  @Input() language;
 
   constructor(private _tieappService: TieappService) { }
 
@@ -39,7 +39,10 @@ export class BodyComponent implements OnInit {
         this.body.messageDetail = {};
         this.body.currentDoc = {};
         let msgList = this.body.messageList.messageSumList;
-        let objectModel = msgList[msgList.length - 1];
+        let objectModel = {};
+        if(msgList != null){
+           objectModel = msgList[msgList.length - 1];
+        }
         var copy = JSON.parse(JSON.stringify(objectModel));
         this.body.messageDetail.tieMsgId = copy.tieMsgId;
         this.body.messageDetail.userName = "new";

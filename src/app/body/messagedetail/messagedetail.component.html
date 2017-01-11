@@ -27,7 +27,7 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="message">
-    <tieapp-message [messageDetail]="messageDetail"></tieapp-message>
+    <tieapp-message [messageDetail]="messageDetail" [language] = "language"></tieapp-message>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="docs">
     <tieapp-doclist [messageDetail]="messageDetail" [currentDocId]="currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)"></tieapp-doclist>

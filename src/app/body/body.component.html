@@ -14,12 +14,12 @@
       <div id='tieapp-messagelist'>
 
         <!-- <tieapp-messagelist  [tieMsgs]="body.messagelist"></tieapp-messagelist> -->
-        <tieapp-messagelist [messageList]="body.messageList.messageSumList" [currentSelectedMessageId]="body.messageDetail.tieMsgId" (emitMessageId)="emitMessageId($event)"> </tieapp-messagelist>
+        <tieapp-messagelist [messageList]="body.messageList.messageSumList" [currentSelectedMessageId]="body.messageDetail.tieMsgId"  (emitMessageId)="emitMessageId($event)"> </tieapp-messagelist>
 
       </div>
       <div class="splitter-horizontal"></div>
       <div id='tieapp-messagedetail'>
-        <tieapp-messagedetail [messageDetail]="body.messageDetail" [currentDoc]="body.currentDoc" [showTable]="showTable"></tieapp-messagedetail>
+        <tieapp-messagedetail [messageDetail]="body.messageDetail" [language] = "language" [currentDoc]="body.currentDoc" [showTable]="showTable"></tieapp-messagedetail>
       </div>
     </div>
   </div>

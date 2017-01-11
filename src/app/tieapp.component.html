@@ -7,7 +7,7 @@
   <div id='tieapp-body'>
 
     <div *ngIf="showApp">
-      <tieapp-body [body]="tieapp.body"></tieapp-body>
+      <tieapp-body [body]="tieapp.body" [language]="tieapp.header.language"></tieapp-body>
     </div>
     <div *ngIf="showTraining">
       <tieapp-training></tieapp-training>

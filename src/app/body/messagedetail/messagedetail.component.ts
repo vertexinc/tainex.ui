@@ -11,6 +11,7 @@ export class MessagedetailComponent implements OnInit {
   @Input() messageDetail;
   @Input() currentDoc;
   @Input() showTable;
+  @Input() language;
 
   // private currentDoc = this.messageDetail.tieDocList[0];
   constructor(private _tieappService: TieappService) {

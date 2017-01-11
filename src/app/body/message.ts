@@ -43,8 +43,8 @@ export class Message {
   //   this.Language = Language;
   // };
     constructor(
+      public subject: string,
       public user?: string,
-      public subject?: string,
       public description?: string,
       public date?: string,
       public status?: string,

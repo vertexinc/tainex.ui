@@ -18,6 +18,7 @@ export class MessagelistComponent implements OnInit {
   @Input() currentSelectedMessageId ;
   //private currentSelectedMessageId = this.messageList.currentMessage.tieMsgId;
 
+
   constructor(private _tieappService: TieappService) {
 
 
