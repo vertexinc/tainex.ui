@@ -33,10 +33,11 @@
         <div>To:</div>
       </div>
       <div class="col-md-9">
-        <!-- <input type="text" class="form-control" id="To" placeholder="{{messageDetail.msgReceiverList}}" [(ngModel)]="model.msgReceiverList" name="msgReceiverList"> -->
-        <!-- <input type="text" class="form-control" id="To" placeholder="{{messageDetail.msgReceiverList}}"> -->
-        <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.msgReceiverList}}</textarea>
-
+        <!-- <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.msgReceiverList}}</textarea> -->
+        <input type="text" class="form-control" id="msgReceiverList"
+               required
+               [(ngModel)]="model.msgReceiverList" name="msgReceiverList"
+               #name="ngModel">
       </div>
     </div>
 
@@ -49,7 +50,7 @@
         <input type="text" class="form-control" id="Subject"
                required
                [(ngModel)]="model.subject" name="subject"
-               #name="ngModel" value="test2 value">
+               #name="ngModel">
       </div>
     </div>
 
@@ -59,7 +60,7 @@
         <div>Notes:</div>
       </div>
       <div class="col-md-9">
-        <textarea style="overflow:auto" class="notestextarea" rows="3">{{messageDetail.notes}}</textarea>
+        <textarea style="overflow:auto" class="notestextarea" rows="3" [(ngModel)]="model.notes" name="notes">{{messageDetail.notes}}</textarea>
         <!-- <textarea rows="4" cols="95" id="notes" [(ngModel)]="model.notes" name="notes">wheres note {{messageDetail.notes}}</textarea> -->
       </div>
     </div>
@@ -69,7 +70,10 @@
         <div>Warning:</div>
       </div>
       <div class="col-md-9">
-          <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.warning}}</textarea>
+          <input type="text" class="form-control" id="warning"
+                 required
+                 [(ngModel)]="model.warning" name="warning"
+                 #name="ngModel">
         <!-- <input type="text" class="form-control" id="Warning" placeholder="{{messageDetail.warning}}" [(ngModel)]="model.warning" name="warning"> -->
       </div>
     </div>
@@ -79,7 +83,11 @@
         <div>Contact:</div>
       </div>
       <div class="col-md-9">
-        <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.contact}}</textarea>
+        <!-- <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.contact}}</textarea> -->
+        <input type="text" class="form-control" id="contact"
+               required
+               [(ngModel)]="model.contact" name="contact"
+               #name="ngModel">
         <!-- <input type="text" class="form-control" id="Contact" placeholder="{{messageDetail.contact}}" [(ngModel)]="model.contact" name="contact"> -->
       </div>
     </div>

@@ -20,17 +20,14 @@ export class MessageComponent implements OnInit {
   }
 
   ngOnChanges() {
-    JSON.stringify(alert('this.messageDetail' + JSON.stringify(this.messageDetail)));
+    this.model.msgReceiverList = this.messageDetail.msgReceiverList;
     this.model.subject = this.messageDetail.subject;
+    this.model.notes = this.messageDetail.notes;
+    this.model.warning = this.messageDetail.warning;
+    this.model.contact = this.messageDetail.contact;
   }
   ngOnInit() {
-    // alert(JSON.stringify(this.messageDetail))
-    // JSON.stringify(alert('this.messageDetail' + JSON.stringify(this.messageDetail)));
-    // JSON.stringify(alert('this.messageDetail.subject' + JSON.stringify(this.messageDetail.subject)));
-    let subject = this.messageDetail.subject;
-    alert(this.messageDetail.subject + subject)
-    // this.model.subject = 'test2';
-    // this.model.description = 'desc2';
+
   }
 
   get diagnostic() { return JSON.stringify(this.model); }
