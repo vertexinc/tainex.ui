@@ -34,10 +34,7 @@
       </div>
       <div class="col-md-9">
         <!-- <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.msgReceiverList}}</textarea> -->
-        <input type="text" class="form-control" id="msgReceiverList"
-               required
-               [(ngModel)]="model.msgReceiverList" name="msgReceiverList"
-               #name="ngModel">
+        <input type="text" class="form-control" id="msgReceiverList" required [(ngModel)]="model.msgReceiverList" name="msgReceiverList" #name="ngModel">
       </div>
     </div>
 
@@ -47,10 +44,7 @@
       </div>
       <div class="col-md-9">
         <!-- <input type="text" class="form-control" id="Subject" placeholder="{{messageDetail.subject}}" [(ngModel)]="model.subject" name="subject"> -->
-        <input type="text" class="form-control" id="Subject"
-               required
-               [(ngModel)]="model.subject" name="subject"
-               #name="ngModel">
+        <input type="text" class="form-control" id="Subject" required [(ngModel)]="model.subject" name="subject" #name="ngModel">
       </div>
     </div>
 
@@ -70,10 +64,7 @@
         <div>Warning:</div>
       </div>
       <div class="col-md-9">
-          <input type="text" class="form-control" id="warning"
-                 required
-                 [(ngModel)]="model.warning" name="warning"
-                 #name="ngModel">
+        <input type="text" class="form-control" id="warning" required [(ngModel)]="model.warning" name="warning" #name="ngModel">
         <!-- <input type="text" class="form-control" id="Warning" placeholder="{{messageDetail.warning}}" [(ngModel)]="model.warning" name="warning"> -->
       </div>
     </div>
@@ -84,10 +75,7 @@
       </div>
       <div class="col-md-9">
         <!-- <textarea style="overflow:auto" class="textarea" rows="0">{{messageDetail.contact}}</textarea> -->
-        <input type="text" class="form-control" id="contact"
-               required
-               [(ngModel)]="model.contact" name="contact"
-               #name="ngModel">
+        <input type="text" class="form-control" id="contact" required [(ngModel)]="model.contact" name="contact" #name="ngModel">
         <!-- <input type="text" class="form-control" id="Contact" placeholder="{{messageDetail.contact}}" [(ngModel)]="model.contact" name="contact"> -->
       </div>
     </div>
@@ -113,10 +101,9 @@
           {{messageDetail.corrMessageRefIds}}
         </div>
         <div class="styled-select">
-          <select class="form-control" id="sel1">
+          <select class="form-control" id="sel1" required [(ngModel)]="model.messageType" name="messageType" #messageType="ngModel">
           <!-- <option *ngFor="let OECDMessageTypeItem of messageDetail.OECDMessageType">{{OECDMessageTypeItem}}</option> -->
-          <option>CbC</option>
-          <option>CbCR</option>
+           <option *ngFor="let messageType of OECDMessageTypeList" [value]="messageType">{{messageType}}</option>
         </select>
         </div>
         <div>
@@ -124,7 +111,7 @@
         </div>
         <div class="styled-select">
           <select class="form-control" id="sel1">
-          <option *ngFor = "let languageItem of language">{{languageItem}}</option>
+          <option *ngFor = "let language of languageList">{{language}}</option>
 
         </select>
         </div>
@@ -147,10 +134,13 @@
           {{messageDetail.reportingPeriod}}
         </div>
         <div class="styled-select">
-          <select class="form-control" id="sel1">
-          <!-- <option  *ngFor = "let OECDMessageTypeIndicItem of messageDetail.OECDMessageTypeIndic">{{OECDMessageTypeIndicItem}}</option> -->
+          <!-- <select class="form-control" id="sel1">
+
           <option>CBC401</option>
-          <option>CBC402</option>
+          <option>CBC402</option> -->
+          <select class="form-control" id="sel1" required [(ngModel)]="model.messageTypeIndic" name="messageTypeIndic" #messageTypeIndic="ngModel">
+
+           <option *ngFor="let messageTypeIndic of OECDMessageTypeIndicList" [value]="messageTypeIndic">{{messageTypeIndic}}</option>
         </select>
         </div>
         <div>

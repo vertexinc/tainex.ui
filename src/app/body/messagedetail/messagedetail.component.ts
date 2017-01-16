@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter} from '@angular/core';
 import {TieappService } from '../../tieapp.service';
 
 
@@ -12,6 +12,7 @@ export class MessagedetailComponent implements OnInit {
   @Input() currentDoc;
   @Input() showTable;
   @Input() language;
+  @Output() emitSaveChangeAtMessageDetail = new EventEmitter<any>();
 
   // private currentDoc = this.messageDetail.tieDocList[0];
   constructor(private _tieappService: TieappService) {
@@ -31,9 +32,14 @@ export class MessagedetailComponent implements OnInit {
     //   this.currentDoc = currentDocData.currentTieDoc
     // })
     this._tieappService.postCurrentDoc(docId)
-    .subscribe(currentDocData => {
-      this.currentDoc = currentDocData.currentTieDoc
-    })
+      .subscribe(currentDocData => {
+        this.currentDoc = currentDocData.currentTieDoc
+      })
   }
+
+  emitSaveChangeAtMessage(model){
+    this.emitSaveChangeAtMessageDetail.emit(model);
+  }
+
 
 }

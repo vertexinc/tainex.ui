@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Body } from "./body";
 import {TieappService } from '../tieapp.service';
 
@@ -14,6 +14,8 @@ export class BodyComponent implements OnInit {
 
   @Input() body;
   @Input() language;
+  @Output() emitSaveChangeAtBody = new EventEmitter<any>();
+
 
   constructor(private _tieappService: TieappService) { }
 
@@ -35,8 +37,8 @@ export class BodyComponent implements OnInit {
         this.body.currentDoc = {};
         let msgList = this.body.messageList.messageSumList;
         let objectModel = {};
-        if(msgList != null){
-           objectModel = msgList[msgList.length - 1];
+        if (msgList != null) {
+          objectModel = msgList[msgList.length - 1];
         }
         var copy = JSON.parse(JSON.stringify(objectModel));
         this.body.messageDetail.tieMsgId = copy.tieMsgId;
@@ -56,7 +58,7 @@ export class BodyComponent implements OnInit {
 
     //let newObject = objectModel
     let msgId = copy.tieMsgId
-    copy.tieMsgId = msgId + 1;
+    copy.tieMsgId = 0;
     copy.subject = "new";
     copy.sender.name = "new";
     copy.description = "new";
@@ -78,4 +80,8 @@ export class BodyComponent implements OnInit {
   emiteDelete() {
 
   }
+  emitSaveChangeAtMessageDetail(model){
+    this.emitSaveChangeAtBody.emit(model);
+  }
+
 }

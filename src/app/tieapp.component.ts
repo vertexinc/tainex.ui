@@ -12,48 +12,47 @@ import { Observable } from 'rxjs/Observable';
 export class AppComponent {
 
   public tieapp = {
-    header:{
-      appName:"",
-      userName:"",
-      language:[]
+    header: {
+      appName: "",
+      userName: "",
+      language: []
     },
-    body:{
-      messageList:{
-        messageSumList:[]
+    body: {
+      messageList: {
+        messageSumList: []
       },
-      messageDetail:{},
-      currentDoc:{}
+      messageDetail: {},
+      currentDoc: {}
 
     }
   };
-  // private tieapp: Observable<any>;
   private tie;
   private showApp = true;
   private showTraining = false;
 
-  constructor(private _tieappService: TieappService) { }
+  constructor(private _tieappService: TieappService) {
 
+  }
+  ngOnChanges() {
+
+  }
   ngOnInit() {
+    this.getAppData();
+
+  }
+  getAppData() {
     this._tieappService.getData()
       .subscribe(tieMsgData => {
-        // pageData = transformRawDataToPageStructure( rawData ); transform the given data structure into the exact structure of the pages
-        // updateScreen( pageData )
 
         this.tieapp.header.appName = tieMsgData.appName;
         this.tieapp.header.userName = tieMsgData.username;
         this.tieapp.header.language = tieMsgData.language;
 
         this.tieapp.body.messageList.messageSumList = tieMsgData.msgList;
-        this.tieapp.body.messageDetail =tieMsgData.currentMsg;
+        this.tieapp.body.messageDetail = tieMsgData.currentMsg;
         this.tieapp.body.currentDoc = tieMsgData.currentTieDoc
 
       });
-    // this._tieappService.getHeader()
-    //     .subscribe(tieData => {
-    //         this.header = tieData;
-    //         alert(JSON.stringify(tieData));
-    //     })
-
   }
 
   tieAppShowInfo(showApp) {
@@ -62,5 +61,16 @@ export class AppComponent {
 
   trainingShowInfo(showTraining) {
     this.showTraining = showTraining
+  }
+  emitSaveChangeAtBody(model) {
+    alert("emit applied!");
+    alert(JSON.stringify(model));
+    this._tieappService.postSave(model)
+      .subscribe(saveReturnData => {
+        alert("returning: " + JSON.stringify(saveReturnData));
+        this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
+        this.tieapp.body.messageDetail = saveReturnData.currentMsg;
+        this.tieapp.body.currentDoc = saveReturnData.currentTieDoc
+      });
   }
 }

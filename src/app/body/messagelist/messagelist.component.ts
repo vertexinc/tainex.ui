@@ -24,7 +24,9 @@ export class MessagelistComponent implements OnInit {
 
   }
 
-
+  // ngOnChanges() {
+  //   alert(JSON.stringify(this.messageList));
+  // }
   ngOnInit() {
 
   }
