@@ -1,7 +1,7 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Body } from "./body";
 import {TieappService } from '../tieapp.service';
-
+import {DatePipe} from '@angular/common';
 @Component({
   selector: 'tieapp-body',
   templateUrl: './body.component.html',
@@ -15,7 +15,7 @@ export class BodyComponent implements OnInit {
   @Input() body;
   @Input() language;
   @Output() emitSaveChangeAtBody = new EventEmitter<any>();
-
+  timename: string;
 
   constructor(private _tieappService: TieappService) { }
 
@@ -44,7 +44,11 @@ export class BodyComponent implements OnInit {
         this.body.messageDetail.tieMsgId = copy.tieMsgId;
         this.body.messageDetail.userName = "new";
         this.body.messageDetail.msgState = "new";
-        this.body.messageDetail.timestamp = "new";
+        this.timename = 'Angular2'
+
+        let dp = new DatePipe('en-US' /* locale .. */);
+        this.timename = dp.transform(new Date(), 'yMdjm');
+        this.body.messageDetail.timestamp = this.timename;
         this.body.messageDetail.reportingPeriod = "new";
         this.showTable = false;
       })
@@ -62,7 +66,9 @@ export class BodyComponent implements OnInit {
     copy.subject = "new";
     copy.sender.name = "new";
     copy.description = "new";
-    copy.timestamp = "new";
+    let dp = new DatePipe('en-US' /* locale .. */);
+    this.timename = dp.transform(new Date(), 'yMdjm');
+    copy.timestamp = this.timename;
     copy.tieMsgState.name = "new";
     this.body.messageList.messageSumList.push(copy);
 
@@ -70,7 +76,7 @@ export class BodyComponent implements OnInit {
     this.body.messageDetail = {};
     this.body.messageDetail.userName = "new";
     this.body.messageDetail.msgState = "new";
-    this.body.messageDetail.timestamp = "new";
+    this.body.messageDetail.timestamp = this.timename;
     this.body.messageDetail.reportingPeriod = "new";
     this.body.messageDetail.tieMsgId = copy.tieMsgId
     // var object = this.body.messageList[this.body.messageList.length - 1];
@@ -80,7 +86,7 @@ export class BodyComponent implements OnInit {
   emiteDelete() {
 
   }
-  emitSaveChangeAtMessageDetail(model){
+  emitSaveChangeAtMessageDetail(model) {
     this.emitSaveChangeAtBody.emit(model);
   }
 
