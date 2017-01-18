@@ -98,7 +98,7 @@
       </div>
       <div class="col-md-3">
         <div>
-          {{messageDetail.corrMessageRefIds}}
+          {{messageDetail.messageRefId}}
         </div>
         <div class="styled-select">
           <select class="form-control" id="sel1" required [(ngModel)]="model.messageType" name="messageType" #messageType="ngModel">
@@ -110,8 +110,8 @@
           {{messageDetail.transmittingCountry}}
         </div>
         <div class="styled-select">
-          <select class="form-control" id="sel1">
-          <option *ngFor = "let language of languageList">{{language}}</option>
+          <select class="form-control" id="sel1" required [(ngModel)]="model.messageType" name="messageType" #messageType="ngModel">
+          <option *ngFor = "let language of languageList" [value]="language">{{language}}</option>
 
         </select>
         </div>

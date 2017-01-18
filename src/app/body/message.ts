@@ -16,11 +16,11 @@ export class Message {
       public notes?: string,
       public warning?: string,
       public contact?: string,
-      public OECDMessageRefID?: string,
+      public messageRefId?: string,
       public messageType?: string,
       public messageTypeIndic?: string,
-      public sendingCountry?: string,
-      public receivingCountry?: string,
+      public transmittingCountry?: string,
+      public receivingCountries?: string,
       public language?: Array<string>,
     ){}
 }

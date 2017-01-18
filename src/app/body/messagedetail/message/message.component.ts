@@ -34,6 +34,12 @@ export class MessageComponent implements OnInit {
     this.model.reportingPeriod = this.messageDetail.reportingPeriod;
     //the time is the time the current message been composed
     this.model.timestamp = this.messageDetail.timestamp;
+
+    //Hard coded values
+    this.model.messageRefId = '1';
+    this.model.transmittingCountry = 'MX';
+    this.model.receivingCountries = 'US';
+    this.model.description = 'CBCR docs';
   }
   ngOnInit() {
 
