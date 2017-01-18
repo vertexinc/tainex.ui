@@ -16,8 +16,11 @@ export class BodyComponent implements OnInit {
   @Input() language;
   @Output() emitSaveChangeAtBody = new EventEmitter<any>();
   timename: string;
+  tempId = 0;
 
-  constructor(private _tieappService: TieappService) { }
+  constructor(private _tieappService: TieappService) {
+
+   }
 
   ngOnInit() {
   }
@@ -62,7 +65,7 @@ export class BodyComponent implements OnInit {
 
     //let newObject = objectModel
     let msgId = copy.tieMsgId
-    copy.tieMsgId = 0;
+    copy.tieMsgId = this.tempId--;
     copy.subject = "new";
     copy.sender.name = "new";
     copy.description = "new";
@@ -78,7 +81,11 @@ export class BodyComponent implements OnInit {
     this.body.messageDetail.msgState = "new";
     this.body.messageDetail.timestamp = this.timename;
     this.body.messageDetail.reportingPeriod = "new";
-    this.body.messageDetail.tieMsgId = copy.tieMsgId
+    this.body.messageDetail.tieMsgId = copy.tieMsgId;
+    this.body.messageDetail.messageRefId = '1';
+    this.body.messageDetail.transmittingCountry = 'MX';
+    this.body.messageDetail.receivingCountries = 'US';
+    this.body.messageDetail.description = 'CBCR docs';
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;
     // this.body.messageList.push(object);

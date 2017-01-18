@@ -36,10 +36,10 @@ export class MessageComponent implements OnInit {
     this.model.timestamp = this.messageDetail.timestamp;
 
     //Hard coded values
-    this.model.messageRefId = '1';
-    this.model.transmittingCountry = 'MX';
-    this.model.receivingCountries = 'US';
-    this.model.description = 'CBCR docs';
+    this.model.messageRefId = this.messageDetail.messageRefId;
+    this.model.transmittingCountry = this.messageDetail.transmittingCountry;
+    this.model.receivingCountries = this.messageDetail.receivingCountries;
+    this.model.description = this.messageDetail.description;
   }
   ngOnInit() {
 
