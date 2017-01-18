@@ -32,6 +32,7 @@ export class MessageComponent implements OnInit {
     this.model.contact = this.messageDetail.contact;
     this.model.messageType = this.messageDetail.messageType;
     this.model.reportingPeriod = this.messageDetail.reportingPeriod;
+    this.model.messageTypeIndic = this.messageDetail.messageTypeIndic;
     //the time is the time the current message been composed
     this.model.timestamp = this.messageDetail.timestamp;
 
@@ -40,6 +41,7 @@ export class MessageComponent implements OnInit {
     this.model.transmittingCountry = this.messageDetail.transmittingCountry;
     this.model.receivingCountries = this.messageDetail.receivingCountries;
     this.model.description = this.messageDetail.description;
+
   }
   ngOnInit() {
 

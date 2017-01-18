@@ -10,7 +10,7 @@ import {DatePipe} from '@angular/common';
 export class BodyComponent implements OnInit {
   showSearchCriteria = false;
   currentMsgId;
-  showTable = false;
+  showTable = true;
 
   @Input() body;
   @Input() language;
@@ -20,7 +20,7 @@ export class BodyComponent implements OnInit {
 
   constructor(private _tieappService: TieappService) {
 
-   }
+  }
 
   ngOnInit() {
   }
@@ -32,7 +32,8 @@ export class BodyComponent implements OnInit {
     this._tieappService.postCurrentMsg(tieMsgId)
       .subscribe(currentMessageData => {
         this.body.messageDetail = currentMessageData.currentMsg;
-        this.body.currentDoc = currentMessageData.currentTieDoc
+        this.body.currentDoc = currentMessageData.currentTieDoc;
+        //TODO: if currentDoc is undefined --> this.showTable = false;
       },
       error => {
 
@@ -58,7 +59,7 @@ export class BodyComponent implements OnInit {
   }
 
   emitCompose() {
-
+    this.showTable = false;
     let msgList = this.body.messageList.messageSumList;
     let objectModel = msgList[msgList.length - 1];
     var copy = JSON.parse(JSON.stringify(objectModel));
@@ -86,6 +87,7 @@ export class BodyComponent implements OnInit {
     this.body.messageDetail.transmittingCountry = 'MX';
     this.body.messageDetail.receivingCountries = 'US';
     this.body.messageDetail.description = 'CBCR docs';
+    this.body.messageTypeIndic = 'CBC401';
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;
     // this.body.messageList.push(object);
