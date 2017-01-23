@@ -11,7 +11,7 @@ export class DoclistComponent implements OnInit {
   @Input() messageDetail;
   @Output() emitCurrentDocId = new EventEmitter<any>();
   @Input() currentDocId;
-
+  file: File;
 
   constructor() {
 
@@ -31,5 +31,25 @@ export class DoclistComponent implements OnInit {
 
     };
     return styles;
+  }
+
+  onChange(event: EventTarget) {
+    this.file = null;
+    alert("starts to read");
+    let text = "";
+    let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
+    let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
+    let files: FileList = target.files;
+    this.file = files[0];
+    alert(this.file.name);
+
+    let reader = new FileReader();
+    reader.onload = file => {
+      let contents: any = file.target;
+      text = contents.result;
+      alert(text);
+      console.log(text);
+    }
+    reader.readAsText(this.file);
   }
 }

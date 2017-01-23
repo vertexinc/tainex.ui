@@ -1,29 +1,72 @@
 .docbody tr:hover {
-	background-color: #eff5dc;
+  background-color: #eff5dc;
 }
-
 
 table {
   /*table-layout: fixed;*/
   width: 100%;
 }
+
 th, td {
-
-    overflow: hidden;
-
+  overflow: hidden;
 }
-#docbuttons{
+
+#docbuttons {
   text-align: right;
 }
+
 .btn {
+  color: white;
   height: 30px;
   font-size: 12px;
   vertical-align: middle;
+  /*background-color: lightgreen;*/
 }
-
+.btn:hover{
+	background-color: lightgreen
+}
 tbody tr:nth-child(odd) {
   background: #fcfcfc;
 }
+
 tbody tr:nth-child(even) {
   background: #fcfcfc;
+}
+
+.inputfile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.inputfile+label {
+  font-size: 12px;
+  color: white;
+  background-color: #44c4e7;
+  display: inline-block;
+  /*padding-top: 20px;*/
+  height: 30px;
+  margin-top: 10px;
+  vertical-align: middle;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 5px;
+  border-radius: 3px;
+}
+
+.inputfile:focus+label, .inputfile+label:hover {
+  background-color: lightgreen;
+}
+
+.inputfile+label {
+  cursor: pointer;
+  /* "hand" cursor */
+}
+
+.inputfile:focus+label {
+  outline: 1px dotted #000;
+  outline: -webkit-focus-ring-color auto 5px;
 }
