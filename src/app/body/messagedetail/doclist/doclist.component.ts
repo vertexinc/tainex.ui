@@ -53,7 +53,7 @@ export class DoclistComponent implements OnInit {
       console.log(text);
       this._tieappService.postDoc(text)
         .subscribe(docData => {
-          alert ("docAttached");
+          alert ("docAttached: " +  JSON.stringify(docData));
         });
 
     }
