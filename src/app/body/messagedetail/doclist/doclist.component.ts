@@ -1,6 +1,8 @@
 import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { DoclistRecord } from './doclistRecord';
 import { Doclist } from './doclist';
+import { TieappService } from "../../../tieapp.service";
+
 @Component({
   selector: 'tieapp-doclist',
   templateUrl: './doclist.component.html',
@@ -13,7 +15,7 @@ export class DoclistComponent implements OnInit {
   @Input() currentDocId;
   file: File;
 
-  constructor() {
+  constructor(private _tieappService: TieappService) {
 
   }
 
@@ -49,6 +51,11 @@ export class DoclistComponent implements OnInit {
       text = contents.result;
       alert(text);
       console.log(text);
+      this._tieappService.postDoc(text)
+        .subscribe(docData => {
+          alert ("docAttached");
+        });
+
     }
     reader.readAsText(this.file);
   }

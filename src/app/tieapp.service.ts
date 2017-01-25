@@ -35,42 +35,17 @@ export class TieappService {
       .map(res => res.json());
   }
 
-  setCurrentMsgURL(messageId) {
-    switch (messageId) {
-      case 10: {
-        this._currentMsgUrl = this._currentMsgUrl1;
-        break;
-      }
-      case 11: {
-        this._currentMsgUrl = this._currentMsgUrl2;
-        break;
-      }
-      case 12: {
-        this._currentMsgUrl = this._currentMsgUrl3;
-        break;
-      }
-    }
-  }
+  //Attach doc
+  postDoc(docString):Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
+    let options = new RequestOptions({ headers: headers });
+    let param = JSON.stringify({ action: "saveDoc", docString: docString });
+    alert("ready to save doc: " + param)
+    return this._http.post(this.currentUrl, param, options)
+    //return this._http.get(this._currentMsgUrl)
+      .map(res => res.json());
 
-  setCurrentDocURL(messageId) {
-    switch (messageId) {
-      case 13: {
-        this._currentDocUrl = this._currentDocUrl1;
-        break;
-      }
-      case 14: {
-        this._currentDocUrl = this._currentDocUrl2;
-        break;
-      }
-      case 15: {
-        this._currentDocUrl = this._currentDocUrl3;
-        break;
-      }
-      case 16: {
-        this._currentDocUrl = this._currentDocUrl4;
-        break;
-      }
-    }
   }
 
   postSave(model): Observable<any> {
@@ -84,6 +59,7 @@ export class TieappService {
       .map(res => res.json());
 
   }
+
   postCurrentMsg(messageId): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
