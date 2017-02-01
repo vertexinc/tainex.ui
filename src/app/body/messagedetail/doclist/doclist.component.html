@@ -2,7 +2,7 @@
   <div class="col-md-6">Tax Documents In Message:</div>
   <div id="docbuttons" class="col-md-6">
     <!-- <button type="button" class="btn btn-info">Attach ...</button> -->
-    <input type="file" name="file" id="file" class="inputfile" (change)="onChange($event)" />
+    <input type="file" name="file" id="file" class="inputfile" (change)="onChange($event)" (click)="onClick($event)"/>
     <label for="file">Attach ...</label>
     <button type="button" class="btn btn-info">Detach ...
     </button>

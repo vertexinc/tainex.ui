@@ -31,6 +31,7 @@ export class MessagedetailComponent implements OnInit {
     // .subscribe(currentDocData => {
     //   this.currentDoc = currentDocData.currentTieDoc
     // })
+
     this._tieappService.postCurrentDoc(docId)
       .subscribe(currentDocData => {
         this.currentDoc = currentDocData.currentTieDoc
@@ -39,6 +40,11 @@ export class MessagedetailComponent implements OnInit {
 
   emitSaveChangeAtMessage(model){
     this.emitSaveChangeAtMessageDetail.emit(model);
+  }
+
+  emitAttachedFile(text){
+    // alert("emited at messageDetail: " + text);
+    this.messageDetail = text.currentMsg
   }
 
 

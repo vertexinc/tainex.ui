@@ -41,7 +41,7 @@ export class TieappService {
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "saveDoc", docString: docString });
-    alert("ready to save doc: " + param)
+    // alert("ready to save doc: " + param)
     return this._http.post(this.currentUrl, param, options)
     //return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
@@ -53,7 +53,7 @@ export class TieappService {
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "save", tieMsg: model });
-    alert("ready to post" + param)
+    // alert("ready to post" + param)
     return this._http.post(this.currentUrl, param, options)
     //return this._http.get(this._currentMsgUrl)
       .map(res => res.json());

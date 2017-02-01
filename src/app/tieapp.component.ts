@@ -67,7 +67,7 @@ export class AppComponent {
     alert(JSON.stringify(model));
     this._tieappService.postSave(model)
       .subscribe(saveReturnData => {
-        alert("returning: " + JSON.stringify(saveReturnData));
+        
         this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
         this.tieapp.body.messageDetail = saveReturnData.currentMsg;
         this.tieapp.body.currentDoc = saveReturnData.currentTieDoc
