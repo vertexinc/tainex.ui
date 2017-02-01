@@ -31,21 +31,17 @@ export class DoclistComponent implements OnInit {
   isHighlight(docId) {
     let styles = {
       'background-color': docId === this.currentDocId ? 'lightgreen' : '',
-
     };
     return styles;
   }
 
   onChange(event: EventTarget) {
     this.file = null;
-
     let text = "";
     let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
     let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
     let files: FileList = target.files;
     this.file = files[0];
-
-
     let reader = new FileReader();
     reader.onload = file => {
       let contents: any = file.target;
@@ -56,19 +52,14 @@ export class DoclistComponent implements OnInit {
           this.emitAttachedFile.emit(docData);
           //alert("docAttached: " + JSON.stringify(docData));
         });
-
     }
     reader.readAsText(this.file);
   }
 
   onClick(event: EventTarget) {
     let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
-
-
     let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
-
     target.value = null
-  
   }
 
 }
