@@ -6,11 +6,12 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class TabsumPipe implements PipeTransform {
   //value = ""
   transform(value: string, num: number): any {
-
-      if (value.length > num) {
-        value = value.substring(1, num) + '...'
+      let val = "";
+      val += value;
+      if (val.length > num) {
+        val = val.substring(0, num) + '...'
       }
-      return value;
+      return val;
     }
 
 }

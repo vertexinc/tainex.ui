@@ -4,23 +4,23 @@
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#docs" title="Current Message:{{messageDetail.subject}} " role="tab" data-toggle="tab">Docs<div class="subinfo">
-								Current Message : {{currentDocSubject}}</div></a>
+								Current Message : {{messageDetail.subject | tabsum:10}}</div></a>
   </li>
   <li class="nav-item">
     <a class="nav-link" href="#entity" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Entity<div class="subinfo">
-								Current Doc : {{currentDocName}}</div></a>
+								Current Doc : {{currentDoc.name | tabsum:10}}</div></a>
   </li>
   <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table1" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table1<div class="subinfo">
-								Current Doc : {{currentDocName}}</div></a>
+								Current Doc : {{currentDoc.name | tabsum:10}}</div></a>
   </li>
   <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table2" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table2<div class="subinfo">
-								Current Doc : {{currentDocName}}</div></a>
+								Current Doc : {{currentDoc.name | tabsum:10}}</div></a>
   </li>
   <li *ngIf="showTable" class="nav-item">
     <a class="nav-link" href="#table3" title="Current Doc: {{currentDoc.name}}" role="tab" data-toggle="tab">Table3<div class="subinfo">
-								Current Doc : {{currentDocName}}</div></a>
+								Current Doc : {{currentDoc.name | tabsum:10}}</div></a>
   </li>
 </ul>
 
