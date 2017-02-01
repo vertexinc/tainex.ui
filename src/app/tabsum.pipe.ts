@@ -9,7 +9,7 @@ export class TabsumPipe implements PipeTransform {
       let val = "";
       val += value;
       if (val.length > num) {
-        val = val.substring(0, num) + '...'
+        val = val.substring(0, num - 1) + '...'
       }
       return val;
     }
