@@ -62,11 +62,18 @@ export class DoclistComponent implements OnInit {
     let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
     target.value = null
   }
-  
+
   onDetach(){
     this.detach = true;
   }
   onConfirm(){
     this.detach = false;
+  }
+  onCancel(){
+    this.detach = false;
+  }
+  onClickCheckBox(event){
+
+  alert("selected : " + event.target.value)
   }
 }
