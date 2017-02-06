@@ -2,9 +2,9 @@
   <div class="col-md-6">Tax Documents In Message:</div>
   <div id="docbuttons" class="col-md-6">
     <!-- <button type="button" class="btn btn-info">Attach ...</button> -->
-    <input type="file" name="file" id="file" class="inputfile" (change)="onChange($event)" (click)="onClick($event)"/>
+    <input type="file" name="file" id="file" class="inputfile" (change)="onChange($event)" (click)="onClick($event)" />
     <label for="file">Attach ...</label>
-    <button type="button" class="btn btn-info">Detach ...
+    <button type="button" class="btn btn-info" (click)="onDetach()">Detach ...
     </button>
   </div>
 </div>
@@ -13,6 +13,7 @@
 <table>
   <thead>
     <tr>
+      <th *ngIf="detach"></th>
       <th>Code</th>
       <th>Title</th>
       <th>Doc Type</th>
@@ -25,6 +26,7 @@
   </thead>
   <tbody class="docbody" *ngIf="messageDetail">
     <tr class="" *ngFor="let doclistItem of messageDetail.tieDocList" (click)="onSelect(doclistItem.tieDocId)" [ngStyle]="isHighlight(doclistItem.tieDocId)">
+      <td *ngIf="detach"><input type="checkbox"></td>
       <td>{{doclistItem.code}}</td>
       <td>{{doclistItem.name}}</td>
       <td>{{doclistItem.tieDocTypeId|doctype}}</td>
@@ -34,7 +36,9 @@
       <td>{{doclistItem.accountingStandard}}</td>
       <td>{{doclistItem.reportingPeriod}}</td>
     </tr>
-
-
   </tbody>
 </table>
+<div class="" *ngIf="detach">
+  <button type="button" class="btn btn-info" (click)="onConfirm()">Confirm
+  </button>
+</div>

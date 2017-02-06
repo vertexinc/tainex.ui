@@ -15,6 +15,7 @@ export class DoclistComponent implements OnInit {
   @Input() currentDocId;
   @Output() emitAttachedFile = new EventEmitter<any>();
   file: File;
+  detach = false;
 
   constructor(private _tieappService: TieappService) {
 
@@ -61,5 +62,11 @@ export class DoclistComponent implements OnInit {
     let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
     target.value = null
   }
-
+  
+  onDetach(){
+    this.detach = true;
+  }
+  onConfirm(){
+    this.detach = false;
+  }
 }
