@@ -66,7 +66,12 @@ export class DoclistComponent implements OnInit {
 
   onDetach() {
     // this.detach = true;
-    alert("checked: " + this.detachList);
+    let idList= ""
+    for(let valueItem of this.detachList){
+      idList += valueItem + ',';
+    }
+    idList = idList.substring(0,idList.length - 1);
+    
   }
   onConfirm() {
     // this.detach = false;
@@ -78,19 +83,15 @@ export class DoclistComponent implements OnInit {
     // if the list contains the event value , remove it from the list
     if (this.detachList.length === 0) {
       this.detachList.push(event.target.value);
-      alert("checked: " + event.target.value);
     } else {
       for (let valueItem of this.detachList) {
         if (event.target.value === valueItem) {
-          alert("valueItem: " + valueItem + " event.target.value" + event.target.value)
           let i = this.detachList.indexOf(valueItem);
           this.detachList.splice(i, 1);
-          alert("unchecked: " + event.target.value);
           return;
         }
       }
       this.detachList.push(event.target.value);
-      alert("checked: " + event.target.value);
     }
   }
 }
