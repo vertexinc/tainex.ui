@@ -16,6 +16,7 @@ export class DoclistComponent implements OnInit {
   @Output() emitAttachedFile = new EventEmitter<any>();
   file: File;
   detach = false;
+  detachList = [];
 
   constructor(private _tieappService: TieappService) {
 
@@ -63,17 +64,33 @@ export class DoclistComponent implements OnInit {
     target.value = null
   }
 
-  onDetach(){
-    this.detach = true;
+  onDetach() {
+    // this.detach = true;
+    alert("checked: " + this.detachList);
   }
-  onConfirm(){
-    this.detach = false;
+  onConfirm() {
+    // this.detach = false;
   }
-  onCancel(){
-    this.detach = false;
+  onCancel() {
+    // this.detach = false;
   }
-  onClickCheckBox(event){
-
-  alert("selected : " + event.target.value)
+  onClickCheckBox(event) {
+    // if the list contains the event value , remove it from the list
+    if (this.detachList.length === 0) {
+      this.detachList.push(event.target.value);
+      alert("checked: " + event.target.value);
+    } else {
+      for (let valueItem of this.detachList) {
+        if (event.target.value === valueItem) {
+          alert("valueItem: " + valueItem + " event.target.value" + event.target.value)
+          let i = this.detachList.indexOf(valueItem);
+          this.detachList.splice(i, 1);
+          alert("unchecked: " + event.target.value);
+          return;
+        }
+      }
+      this.detachList.push(event.target.value);
+      alert("checked: " + event.target.value);
+    }
   }
 }
