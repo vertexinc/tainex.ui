@@ -30,7 +30,7 @@
     <tieapp-message [messageDetail]="messageDetail" [languageList]="language" (emitSaveChangeAtMessage)="emitSaveChangeAtMessage($event)"></tieapp-message>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="docs">
-    <tieapp-doclist [messageDetail]="messageDetail" [currentDocId]="currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)" (emitAttachedFile)="emitAttachedFile($event)"></tieapp-doclist>
+    <tieapp-doclist [messageDetail]="messageDetail" [currentDocId]="currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)" (emitAttachedFile)="emitAttachedFile($event)" (emitDetachedDocIdList)="emitDetachedDocIdList($event)"></tieapp-doclist>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="entity">
     <tieapp-entitylist [currentDoc]="currentDoc"></tieapp-entitylist>

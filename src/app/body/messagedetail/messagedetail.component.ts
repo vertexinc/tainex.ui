@@ -25,43 +25,29 @@ export class MessagedetailComponent implements OnInit {
   ngOnInit() {
 
   }
-  // ngOnChanges() {
-  //   this.currentDocSubject = this.tabSummary(this.messageDetail.subject);
-  //   this.currentDocName = this.tabSummary(this.currentDoc.name);
-  // }
+
 
   emitCurrentDocId(docId) {
-    //alert(docId);
-    // this._tieappService.setCurrentDocURL(docId);
-    // this._tieappService.postCurrentDoc(docId)
-    // .subscribe(currentDocData => {
-    //   this.currentDoc = currentDocData.currentTieDoc
-    // })
-
     this._tieappService.postCurrentDoc(docId)
       .subscribe(currentDocData => {
         this.currentDoc = currentDocData.currentTieDoc
       })
   }
 
-  emitSaveChangeAtMessage(model){
+  emitSaveChangeAtMessage(model) {
     this.emitSaveChangeAtMessageDetail.emit(model);
   }
 
-  emitAttachedFile(text){
+  emitAttachedFile(text) {
     // alert("emited at messageDetail: " + text);
     this.messageDetail = text.currentMsg;
-    alert("this.messageDetail.tieDocList)"+JSON.stringify(this.messageDetail.tieDocList));
-    console.log("this.messageDetail.tieDocList)"+JSON.stringify(this.messageDetail.tieDocList));
+    alert("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
+    console.log("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
   }
 
-  // tabSummary(value){
-  //   let val = "";
-  //   val += value;
-  //   if (val.length > 9) {
-  //     val = val.substring(0, 9) + '...'
-  //   }
-  //   return val;
-  // }
+  emitDetachedDocIdList(text) {
+    this.messageDetail = text.currentMsg;
+    console.log("this.messageDetail after delete" + JSON.stringify(this.messageDetail));
+  }
 
 }

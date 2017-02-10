@@ -31,19 +31,28 @@ export class TieappService {
     let param = JSON.stringify({ action: "initPage" });
 
     return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._url)
+      //return this._http.get(this._url)
+      .map(res => res.json());
+  }
+
+  //Detach Doc
+  postDetachedDocId(docIdList): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let param = JSON.stringify({ action: "detachDoc", docIdListString: docIdList });
+    return this._http.post(this.currentUrl, param, options)
       .map(res => res.json());
   }
 
   //Attach doc
-  postDoc(docString):Observable<any> {
+  postDoc(docString): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "saveDoc", docString: docString });
     // alert("ready to save doc: " + param)
     return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentMsgUrl)
+      //return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
 
   }
@@ -55,7 +64,7 @@ export class TieappService {
     let param = JSON.stringify({ action: "save", tieMsg: model });
     // alert("ready to post" + param)
     return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentMsgUrl)
+      //return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
 
   }
@@ -66,7 +75,7 @@ export class TieappService {
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "selectCurrentMsg", messageId: messageId });
     return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentMsgUrl)
+      //return this._http.get(this._currentMsgUrl)
       .map(res => res.json());
   }
 
@@ -76,7 +85,7 @@ export class TieappService {
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "selectCurrentDoc", docId: docId });
     return this._http.post(this.currentUrl, param, options)
-    //return this._http.get(this._currentDocUrl)
+      //return this._http.get(this._currentDocUrl)
       .map(res => res.json());
   }
   getCurrentMsg() {

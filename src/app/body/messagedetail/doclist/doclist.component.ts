@@ -14,6 +14,7 @@ export class DoclistComponent implements OnInit {
   @Output() emitCurrentDocId = new EventEmitter<any>();
   @Input() currentDocId;
   @Output() emitAttachedFile = new EventEmitter<any>();
+  @Output() emitDetachedDocIdList = new EventEmitter<any>();
   file: File;
   detach = false;
   detachList = [];
@@ -66,12 +67,22 @@ export class DoclistComponent implements OnInit {
 
   onDetach() {
     // this.detach = true;
-    let idList= ""
-    for(let valueItem of this.detachList){
-      idList += valueItem + ',';
+    let idList = ""
+    for (let valueItem of this.detachList) {
+      idList += valueItem + ','
     }
-    idList = idList.substring(0,idList.length - 1);
-    
+    idList = idList.substring(0, idList.length - 1);
+    if (idList.length > 0) {
+      // this.emitDetachedDocIdList.emit(idList);
+      this._tieappService.postDetachedDocId(idList)
+        .subscribe(docData =>{
+          this.emitDetachedDocIdList.emit(docData)
+          alert(JSON.stringify(docData));
+          console.log("return value after detachment: " + JSON.stringify(docData))
+        })
+    }
+    this.detachList = [];
+
   }
   onConfirm() {
     // this.detach = false;
