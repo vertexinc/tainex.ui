@@ -35,6 +35,17 @@ export class TieappService {
       .map(res => res.json());
   }
 
+  deleteCurrentMsg(): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let param = JSON.stringify({ action: "deleteMsg" });
+
+    return this._http.post(this.currentUrl, param, options)
+      //return this._http.get(this._url)
+      .map(res => res.json());
+
+  }
+
   //Detach Doc
   postDetachedDocId(docIdList): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });

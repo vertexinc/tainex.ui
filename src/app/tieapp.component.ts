@@ -67,10 +67,16 @@ export class AppComponent {
     alert(JSON.stringify(model));
     this._tieappService.postSave(model)
       .subscribe(saveReturnData => {
-        
+
         this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
         this.tieapp.body.messageDetail = saveReturnData.currentMsg;
         this.tieapp.body.currentDoc = saveReturnData.currentTieDoc
       });
+  }
+  emitDeleteMsgAtBody(){
+    this._tieappService.deleteCurrentMsg()
+      .subscribe(returnData => {
+        alert("Message deleted")
+      })
   }
 }

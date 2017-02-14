@@ -13,6 +13,7 @@ export class MessageComponent implements OnInit {
   @Input() messageDetail;
   @Input() languageList;
   @Output() emitSaveChangeAtMessage = new EventEmitter<any>();
+  @Output() emitDeleteMsgAtMessage = new EventEmitter<any>();
   timename: string;
 
   model = new Message();
@@ -59,5 +60,9 @@ export class MessageComponent implements OnInit {
     this.timename = dp.transform(new Date(), 'yMdjm');
     this.model.timestamp = this.timename;
     this.emitSaveChangeAtMessage.emit(this.model);
+  }
+
+  onDeleteMsg(){
+    this.emitDeleteMsgAtMessage.emit();
   }
 }

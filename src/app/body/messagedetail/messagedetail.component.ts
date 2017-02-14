@@ -13,6 +13,7 @@ export class MessagedetailComponent implements OnInit {
   @Input() showTable;
   @Input() language;
   @Output() emitSaveChangeAtMessageDetail = new EventEmitter<any>();
+  @Output() emitDeleteMsgAtMessageDetail = new EventEmitter<any>();
   // currentDocName:string;
   // currentDocSubject:string;
 
@@ -36,6 +37,9 @@ export class MessagedetailComponent implements OnInit {
 
   emitSaveChangeAtMessage(model) {
     this.emitSaveChangeAtMessageDetail.emit(model);
+  }
+  emitDeleteMsgAtMessage(){
+    this.emitDeleteMsgAtMessageDetail.emit();
   }
 
   emitAttachedFile(text) {
