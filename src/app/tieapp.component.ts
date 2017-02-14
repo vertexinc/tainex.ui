@@ -75,8 +75,11 @@ export class AppComponent {
   }
   emitDeleteMsgAtBody(){
     this._tieappService.deleteCurrentMsg()
-      .subscribe(returnData => {
+      .subscribe(tieMsgData => {
         alert("Message deleted")
-      })
+        this.tieapp.body.messageList.messageSumList = tieMsgData.msgList;
+        this.tieapp.body.messageDetail = tieMsgData.currentMsg;
+        this.tieapp.body.currentDoc = tieMsgData.currentTieDoc
+      });
   }
 }
