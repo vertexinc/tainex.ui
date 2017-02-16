@@ -33,7 +33,13 @@ export class BodyComponent implements OnInit {
     this._tieappService.postCurrentMsg(tieMsgId)
       .subscribe(currentMessageData => {
         this.body.messageDetail = currentMessageData.currentMsg;
-        this.body.currentDoc = currentMessageData.currentTieDoc;
+        if (currentMessageData.currentTieDoc != null) {
+          this.body.currentDoc = currentMessageData.currentTieDoc;
+        } else {
+          this.showTable = false;
+          this.body.currentDoc = { name: "No doc" };
+
+        }
         //TODO: if currentDoc is undefined --> this.showTable = false;
       },
       error => {
@@ -99,7 +105,7 @@ export class BodyComponent implements OnInit {
   emitSaveChangeAtMessageDetail(model) {
     this.emitSaveChangeAtBody.emit(model);
   }
-  emitDeleteMsgAtMessageDetail(){
+  emitDeleteMsgAtMessageDetail() {
     this.emitDeleteMsgAtBody.emit();
   }
 

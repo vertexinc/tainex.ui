@@ -75,27 +75,10 @@ export class AppComponent {
     this._tieappService.deleteCurrentMsg()
       .subscribe(tieMsgData => {
         alert("Message deleted")
-        console.log("====================1========================");
-        console.log("current data after delete:" + JSON.stringify(tieMsgData));
-        console.log("====================1========================");
-        console.log("current this.tieapp.body.messageList.messageSumList after delete:" + JSON.stringify(tieMsgData.msgList));
-        console.log("====================1========================");
-        console.log("current this.tieapp.body.messageDetail after delete:" + JSON.stringify( tieMsgData.currentMsg));
-        console.log("====================1========================");
-        console.log("current this.tieapp.body.currentDoc after delete:" + JSON.stringify(tieMsgData.currentTieDoc));
-
-
         this.tieapp.body.messageList.messageSumList = tieMsgData.msgList;
         this.tieapp.body.messageDetail = tieMsgData.currentMsg;
         this.tieapp.body.currentDoc = tieMsgData.currentTieDoc;
-        console.log("===================2=========================");
-        console.log("current data after delete:" + JSON.stringify(tieMsgData));
-        console.log("===================2=========================");
-        console.log("current this.tieapp.body.messageList.messageSumList after delete:" + JSON.stringify(tieMsgData.msgList));
-        console.log("===================2=========================");
-        console.log("current this.tieapp.body.messageDetail after delete:" + JSON.stringify( tieMsgData.currentMsg));
-        console.log("===================2=========================");
-        console.log("current this.tieapp.body.currentDoc after delete:" + JSON.stringify(tieMsgData.currentTieDoc));
+
       });
   }
 

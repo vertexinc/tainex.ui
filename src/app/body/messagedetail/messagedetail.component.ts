@@ -38,19 +38,27 @@ export class MessagedetailComponent implements OnInit {
   emitSaveChangeAtMessage(model) {
     this.emitSaveChangeAtMessageDetail.emit(model);
   }
-  emitDeleteMsgAtMessage(){
+  emitDeleteMsgAtMessage() {
     this.emitDeleteMsgAtMessageDetail.emit();
   }
 
   emitAttachedFile(text) {
     // alert("emited at messageDetail: " + text);
     this.messageDetail = text.currentMsg;
+    this.currentDoc = text.currentTieDoc;
+    this.showTable = true;
     alert("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
     console.log("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
   }
 
   emitDetachedDocIdList(text) {
     this.messageDetail = text.currentMsg;
+    if (text.currentTieDoc != null) {
+      this.currentDoc = text.currentTieDoc;
+    } else {
+      this.showTable = false;
+      this.currentDoc = { name: "No doc" };
+    }
     console.log("this.messageDetail after delete" + JSON.stringify(this.messageDetail));
   }
 
