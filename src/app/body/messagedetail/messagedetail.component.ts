@@ -14,6 +14,7 @@ export class MessagedetailComponent implements OnInit {
   @Input() language;
   @Output() emitSaveChangeAtMessageDetail = new EventEmitter<any>();
   @Output() emitDeleteMsgAtMessageDetail = new EventEmitter<any>();
+  attachedFile = false;
   // currentDocName:string;
   // currentDocSubject:string;
 
@@ -61,5 +62,9 @@ export class MessagedetailComponent implements OnInit {
     }
     console.log("this.messageDetail after delete" + JSON.stringify(this.messageDetail));
   }
+  // emitCheckMsgWhenAttach(attachedFileFromDoc) {
+  //   alert('attachedFile' + attachedFileFromDoc);
+  //   this.attachedFile = attachedFileFromDoc;
+  // }
 
 }

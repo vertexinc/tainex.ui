@@ -14,7 +14,11 @@ export class MessageComponent implements OnInit {
   @Input() languageList;
   @Output() emitSaveChangeAtMessage = new EventEmitter<any>();
   @Output() emitDeleteMsgAtMessage = new EventEmitter<any>();
+  @Input() attachedFile;
+  saveCurrentMessage = false;
+  checkAttachedFile = false;
   timename: string;
+  msgSubmit = false;
 
   model = new Message();
   OECDMessageTypeList = ['CbC', 'CbCR'];
@@ -56,13 +60,16 @@ export class MessageComponent implements OnInit {
     //   .subscribe(saveReturnData => {
     //     alert("returning: " + JSON.stringify(saveReturnData))
     //   });
+    this.msgSubmit = true;
     let dp = new DatePipe('en-US' /* locale .. */);
     this.timename = dp.transform(new Date(), 'yMdjm');
     this.model.timestamp = this.timename;
     this.emitSaveChangeAtMessage.emit(this.model);
+    this.saveCurrentMessage = true;
   }
 
   onDeleteMsg(){
     this.emitDeleteMsgAtMessage.emit();
   }
+
 }

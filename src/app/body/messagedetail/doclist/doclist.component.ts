@@ -15,8 +15,10 @@ export class DoclistComponent implements OnInit {
   @Input() currentDocId;
   @Output() emitAttachedFile = new EventEmitter<any>();
   @Output() emitDetachedDocIdList = new EventEmitter<any>();
+  @Output() emitCheckMsgWhenAttach = new EventEmitter<any>();
   file: File;
   detach = false;
+  attachedFile = false;
   detachList = [];
 
   constructor(private _tieappService: TieappService) {
@@ -39,6 +41,7 @@ export class DoclistComponent implements OnInit {
   }
 
   onChange(event: EventTarget) {
+
     this.file = null;
     let text = "";
     let eventObj: MSInputMethodContext = <MSInputMethodContext>event;
@@ -50,11 +53,16 @@ export class DoclistComponent implements OnInit {
       let contents: any = file.target;
       text = contents.result;
       console.log(text);
+      //let message know that there one file already attached and don't need to save the current message
       this._tieappService.postDoc(text)
         .subscribe(docData => {
           this.emitAttachedFile.emit(docData);
+          // this.attachedFile = true;
+          // this.emitCheckMsgWhenAttach.emit(this.attachedFile);
           //alert("docAttached: " + JSON.stringify(docData));
-        });
+        },
+        err => alert("failed to attach")
+      );
     }
     reader.readAsText(this.file);
   }

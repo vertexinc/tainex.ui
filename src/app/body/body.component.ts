@@ -98,6 +98,10 @@ export class BodyComponent implements OnInit {
     // var object = this.body.messageList[this.body.messageList.length - 1];
     // object.tieMsgId += 1;
     // this.body.messageList.push(object);
+    this._tieappService.resetMsgandDoc()
+      .subscribe(data =>{
+        alert("Current Msg and Doc reset")
+      })
   }
   emiteDelete() {
 
