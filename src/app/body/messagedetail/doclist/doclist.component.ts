@@ -2,6 +2,8 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { DoclistRecord } from './doclistRecord';
 import { Doclist } from './doclist';
 import { TieappService } from "../../../tieapp.service";
+declare var $:any;
+
 
 @Component({
   selector: 'tieapp-doclist',
@@ -61,7 +63,7 @@ export class DoclistComponent implements OnInit {
           // this.emitCheckMsgWhenAttach.emit(this.attachedFile);
           //alert("docAttached: " + JSON.stringify(docData));
         },
-        err => alert("failed to attach")
+        err => $('#errModalLong').modal('show')
       );
     }
     reader.readAsText(this.file);
