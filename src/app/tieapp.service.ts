@@ -6,6 +6,7 @@ import { Tieapp } from './tieapp';
 import { Message } from './body/message';
 import { Headers, RequestOptions } from '@angular/http';
 
+
 @Injectable()
 export class TieappService {
   //private _url = "tieapp.data.json";
@@ -24,6 +25,7 @@ export class TieappService {
 
 
   constructor(private _http: Http) { }
+
 
   getData(): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });

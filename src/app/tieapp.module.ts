@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
@@ -55,7 +56,8 @@ import {Ng2PaginationModule} from 'ng2-pagination';
     FormsModule,
     HttpModule,
     Ng2PaginationModule,
-    TranslateModule.forRoot()
+    TranslateModule.forRoot(),
+
   ],
   providers: [TieappService],
   bootstrap: [AppComponent]

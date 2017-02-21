@@ -2,7 +2,8 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { DoclistRecord } from './doclistRecord';
 import { Doclist } from './doclist';
 import { TieappService } from "../../../tieapp.service";
-declare var $:any;
+import { LoadingAnimateService } from 'ng2-loading-animate';
+declare var $: any;
 
 
 @Component({
@@ -22,12 +23,14 @@ export class DoclistComponent implements OnInit {
   detach = false;
   attachedFile = false;
   detachList = [];
+  loading = false;
 
   constructor(private _tieappService: TieappService) {
 
   }
 
   ngOnInit() {
+
   }
 
   onSelect(docId) {
@@ -56,15 +59,17 @@ export class DoclistComponent implements OnInit {
       text = contents.result;
       console.log(text);
       //let message know that there one file already attached and don't need to save the current message
+      this.loading = true;
       this._tieappService.postDoc(text)
         .subscribe(docData => {
           this.emitAttachedFile.emit(docData);
+          this.loading = false;
           // this.attachedFile = true;
           // this.emitCheckMsgWhenAttach.emit(this.attachedFile);
           //alert("docAttached: " + JSON.stringify(docData));
         },
         err => $('#errModalLong').modal('show')
-      );
+        );
     }
     reader.readAsText(this.file);
   }
@@ -85,7 +90,7 @@ export class DoclistComponent implements OnInit {
     if (idList.length > 0) {
       // this.emitDetachedDocIdList.emit(idList);
       this._tieappService.postDetachedDocId(idList)
-        .subscribe(docData =>{
+        .subscribe(docData => {
           this.emitDetachedDocIdList.emit(docData)
           alert(JSON.stringify(docData));
           console.log("return value after detachment: " + JSON.stringify(docData))

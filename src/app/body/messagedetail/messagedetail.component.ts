@@ -48,7 +48,7 @@ export class MessagedetailComponent implements OnInit {
     this.messageDetail = text.currentMsg;
     this.currentDoc = text.currentTieDoc;
     this.showTable = true;
-    alert("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
+    //alert("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
     console.log("this.messageDetail.tieDocList)" + JSON.stringify(this.messageDetail.tieDocList));
   }
 
