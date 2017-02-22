@@ -24,7 +24,8 @@ export class DoclistComponent implements OnInit {
   attachedFile = false;
   detachList = [];
   loading = false;
-
+  errorName = "";
+  errorDescription = "";
   constructor(private _tieappService: TieappService) {
 
   }
@@ -62,14 +63,27 @@ export class DoclistComponent implements OnInit {
       this.loading = true;
       this._tieappService.postDoc(text)
         .subscribe(docData => {
-          this.emitAttachedFile.emit(docData);
-          this.loading = false;
+          if (docData.errorName != null) {
+            this.errorName = docData.errorName;
+            this.errorDescription = docData.errorDescription;
+            this.loading = false;
+            $('#errModalLong').modal('show')
+          } else {
+            this.emitAttachedFile.emit(docData);
+            this.loading = false;
+          }
+
           // this.attachedFile = true;
           // this.emitCheckMsgWhenAttach.emit(this.attachedFile);
           //alert("docAttached: " + JSON.stringify(docData));
         },
-        err => $('#errModalLong').modal('show')
-        );
+        err => {
+          this.loading = false;
+          this.errorName = "Error!"
+          this.errorDescription = err;
+          $('#errModalLong').modal('show')
+
+        });
     }
     reader.readAsText(this.file);
   }
