@@ -68,7 +68,7 @@ export class AppComponent {
       .subscribe(saveReturnData => {
         this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
         this.tieapp.body.messageDetail = saveReturnData.currentMsg;
-        this.tieapp.body.currentDoc = {tieDocId:0};
+        this.tieapp.body.currentDoc = saveReturnData.currentTieDoc;
       });
   }
   emitDeleteMsgAtBody(){
