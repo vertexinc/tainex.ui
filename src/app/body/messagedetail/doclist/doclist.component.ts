@@ -54,6 +54,7 @@ export class DoclistComponent implements OnInit {
     let target: HTMLInputElement = <HTMLInputElement>eventObj.target;
     let files: FileList = target.files;
     this.file = files[0];
+    let fileName = this.file.name;
     let reader = new FileReader();
     reader.onload = file => {
       let contents: any = file.target;
@@ -61,7 +62,8 @@ export class DoclistComponent implements OnInit {
       console.log(text);
       //let message know that there one file already attached and don't need to save the current message
       this.loading = true;
-      this._tieappService.postDoc(text)
+      // alert("fileName: " + fileName);
+      this._tieappService.postDoc(text,fileName)
         .subscribe(docData => {
           if (docData.errorName != null) {
             this.errorName = docData.errorName;

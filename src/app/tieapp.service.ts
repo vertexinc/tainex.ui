@@ -68,11 +68,11 @@ export class TieappService {
   }
 
   //Attach doc
-  postDoc(docString): Observable<any> {
+  postDoc(docString,fileName): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
-    let param = JSON.stringify({ action: "saveDoc", docString: docString });
+    let param = JSON.stringify({ action: "saveDoc", docString: docString,fileName:fileName });
     // alert("ready to save doc: " + param)
     return this._http.post(this.currentUrl, param, options)
       //return this._http.get(this._currentMsgUrl)
