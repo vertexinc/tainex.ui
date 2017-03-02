@@ -63,12 +63,13 @@ export class AppComponent {
   }
   emitSaveChangeAtBody(model) {
     //alert("emit applied!");
-    alert(JSON.stringify(model));
+    // alert(JSON.stringify(model));
     this._tieappService.postSave(model)
       .subscribe(saveReturnData => {
         this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
         this.tieapp.body.messageDetail = saveReturnData.currentMsg;
         this.tieapp.body.currentDoc = saveReturnData.currentTieDoc;
+        alert("Message saved!");
       });
   }
   emitDeleteMsgAtBody(){

@@ -71,6 +71,7 @@ export class DoclistComponent implements OnInit {
             this.loading = false;
             $('#errModalLong').modal('show')
           } else {
+            alert("Document Attached!");
             this.emitAttachedFile.emit(docData);
             this.loading = false;
           }
@@ -108,7 +109,7 @@ export class DoclistComponent implements OnInit {
       this._tieappService.postDetachedDocId(idList)
         .subscribe(docData => {
           this.emitDetachedDocIdList.emit(docData)
-          alert(JSON.stringify(docData));
+          alert("Document Detached!");
           console.log("return value after detachment: " + JSON.stringify(docData))
         })
     }
