@@ -13,14 +13,8 @@ export class TieappService {
   private _url = "./app/tieapp.data.json";
   private _currentMsgUrl;
   private currentUrl = 'login';
-  private _currentMsgUrl1 = "./app/tieapp.data.messageDetail1.json";
-  private _currentMsgUrl2 = "./app/tieapp.data.messageDetail2.json";
-  private _currentMsgUrl3 = "./app/tieapp.data.messageDetail3.json";
   private _currentDocUrl;
-  private _currentDocUrl1 = "./app/tieapp.data.doc1.json";
-  private _currentDocUrl2 = "./app/tieapp.data.doc2.json";
-  private _currentDocUrl3 = "./app/tieapp.data.doc3.json";
-  private _currentDocUrl4 = "./app/tieapp.data.doc4.json";
+
 
 
 
@@ -31,6 +25,16 @@ export class TieappService {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "initPage" });
+
+    return this._http.post(this.currentUrl, param, options)
+      //return this._http.get(this._url)
+      .map(res => res.json());
+  }
+
+  sendMessage(messageId): Observable<any> {
+    let headers = new Headers({ 'Content-Type': 'application/json' });
+    let options = new RequestOptions({ headers: headers });
+    let param = JSON.stringify({ action: "send" ,messageId:messageId});
 
     return this._http.post(this.currentUrl, param, options)
       //return this._http.get(this._url)

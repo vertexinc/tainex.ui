@@ -68,8 +68,18 @@ export class MessageComponent implements OnInit {
     this.saveCurrentMessage = true;
   }
 
-  onDeleteMsg(){
+  onDeleteMsg() {
     this.emitDeleteMsgAtMessage.emit();
+  }
+  onSendMsg() {
+    this._tieappService.sendMessage(this.messageDetail.tieMsgId)
+      .subscribe(currentDocData => {
+        alert("Message sent")
+      })
+      ,
+      error => {
+        alert("No respond from server")
+      }
   }
 
 }

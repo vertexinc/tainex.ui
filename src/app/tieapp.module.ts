@@ -27,6 +27,8 @@ import { DoctypePipe } from './doctype.pipe';
 
 import {TranslateModule} from "ng2-translate";
 import {Ng2PaginationModule} from 'ng2-pagination';
+import { CapPipe } from './cap.pipe';
+
 
 
 
@@ -49,7 +51,8 @@ import {Ng2PaginationModule} from 'ng2-pagination';
     SearchDetailComponent,
     TabsumPipe,
     TrainingComponent,
-    DoctypePipe
+    DoctypePipe,
+    CapPipe
   ],
   imports: [
     BrowserModule,

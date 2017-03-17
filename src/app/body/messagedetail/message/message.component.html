@@ -113,7 +113,7 @@
           <!-- <select class="form-control" id="sel1" required [(ngModel)]="model.language" name="messageType" #messageType="ngModel">
           <option *ngFor = "let language of languageList" [value]="language">{{language}}</option> -->
           <select class="form-control" id="sel1">
-          <option *ngFor = "let language of languageList">{{language}}</option>
+          <option *ngFor = "let language of languageList">{{language | cap}}</option>
 
         </select>
         </div>
@@ -153,6 +153,6 @@
     </div>
     <button type="button" type="submit" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-primary" (click) = "onDeleteMsg()">Delete</button>
-    <button type="button" class="btn btn-primary">Send</button>
+    <button type="button" class="btn btn-primary" (click) = "onSendMsg()">Send</button>
   </form>
 </div>

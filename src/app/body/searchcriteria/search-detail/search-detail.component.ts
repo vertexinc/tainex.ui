@@ -18,7 +18,7 @@ searchDetail: SearchDetail;
 
   constructor() {
     this.searchDetail = new SearchDetail(
-      ["cbcr", "doc"], "Lucy", "USA", "Mary", "USA", "02-02-2016", "02-02-2016", "MNC Name", ["USA", "RU"], "2012", "2016", ["Finance", "Education"], [1, 100], [1, 100], [1, 100],
+      ["CbCR", "CbC"], "Lucy", "USA", "Mary", "USA", "02-02-2016", "02-02-2016", "MNC Name", ["USA", "RU"], "2012", "2016", ["Finance", "Education"], [1, 100], [1, 100], [1, 100],
       [1, 100], [1, 100], [1, 100], [1, 100], [1, 100])
   }
 
