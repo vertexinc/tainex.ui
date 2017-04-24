@@ -21,9 +21,9 @@ export class MessageComponent implements OnInit {
   msgSubmit = false;
 
   model = new Message();
-  OECDMessageTypeList = ['CbC', 'CbCR'];
+  OECDMessageTypeList = ['CbC'];
   OECDMessageTypeIndicList = ['CBC401', 'CBC402']
-
+  lanList = ['en', 'es','fr', 'zh','gb']
   constructor(private _tieappService: TieappService) {
 
   }
@@ -40,6 +40,7 @@ export class MessageComponent implements OnInit {
     this.model.messageTypeIndic = this.messageDetail.messageTypeIndic;
     //the time is the time the current message been composed
     this.model.timestamp = this.messageDetail.timestamp;
+    this.model.language = this.messageDetail.language;
 
     //Hard coded values
     this.model.messageRefId = this.messageDetail.messageRefId;
@@ -64,6 +65,7 @@ export class MessageComponent implements OnInit {
     let dp = new DatePipe('en-US' /* locale .. */);
     this.timename = dp.transform(new Date(), 'yMdjm');
     this.model.timestamp = this.timename;
+    console.log(this.model)
     this.emitSaveChangeAtMessage.emit(this.model);
     this.saveCurrentMessage = true;
   }

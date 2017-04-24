@@ -112,11 +112,15 @@
         <div class="styled-select">
           <!-- <select class="form-control" id="sel1" required [(ngModel)]="model.language" name="messageType" #messageType="ngModel">
           <option *ngFor = "let language of languageList" [value]="language">{{language}}</option> -->
-          <select class="form-control" id="sel1">
-          <option *ngFor = "let language of languageList">{{language | cap}}</option>
+          <select class="form-control" id="sel2" [(ngModel)] = "model.language" name="language" #language="ngModel">
+          <option *ngFor = "let language of lanList" [value]="language">{{language | cap}}</option>
 
         </select>
         </div>
+
+        
+
+
       </div>
       <div class="col-md-3">
         <div>

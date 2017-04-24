@@ -16,11 +16,12 @@ export class Message {
       public notes?: string,
       public warning?: string,
       public contact?: string,
+      public language?: string,
       public messageRefId?: string,
       public messageType?: string,
       public messageTypeIndic?: string,
       public transmittingCountry?: string,
       public receivingCountries?: string,
-      public language?: Array<string>,
+
     ){}
 }

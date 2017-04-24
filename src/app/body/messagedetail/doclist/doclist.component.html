@@ -24,6 +24,7 @@
       <th>Resident Country</th>
       <th>Accounting Standard</th>
       <th>Reporting Period</th>
+      <th>Reporting Entity Type</th>
     </tr>
   </thead>
   <tbody class="docbody" *ngIf="messageDetail">
@@ -37,6 +38,7 @@
       <td>{{doclistItem.resCountryCode}}</td>
       <td>{{doclistItem.accountingStandard}}</td>
       <td>{{doclistItem.reportingPeriod}}</td>
+      <td>{{doclistItem.reportingEntityRole}}</td>
     </tr>
   </tbody>
 </table>

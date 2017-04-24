@@ -61,7 +61,7 @@ export class BodyComponent implements OnInit {
         let dp = new DatePipe('en-US' /* locale .. */);
         this.timename = dp.transform(new Date(), 'yMdjm');
         this.body.messageDetail.timestamp = this.timename;
-        this.body.messageDetail.reportingPeriod = "new";
+        this.body.messageDetail.reportingPeriod = "2014";
         this.showTable = false;
       })
   }
