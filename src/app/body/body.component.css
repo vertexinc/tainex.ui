@@ -4,6 +4,7 @@
   overflow: hidden;
 }
 
+
 /*#bodyContainer>div {
   display: inline-block;
   padding: 1em;
@@ -17,16 +18,25 @@
   color: #fff;
   padding: 10px 10px 10px 10px
 }
+
 #rightpanel {
   min-height: 500px;
   min-width: 100px;
   padding: 10px 10px 10px 10px
 }
+
+#rightttpanel {
+  min-height: 500px;
+  min-width: 100px;
+  padding: 10px 10px 10px 10px
+}
+
 #rightpanelflex {
   display: flex;
   flex-direction: column;
   overflow: hidden;
 }
+
 
 /*rightpanelflex */
 
@@ -41,10 +51,10 @@
 }
 
 #tieapp-messagelist {
-    height: 200px;
-    min-height: 10px;
+  height: 200px;
+  min-height: 10px;
 }
 
-#tieapp-messagedetail{
+#tieapp-messagedetail {
   min-height: 10px;
 }
