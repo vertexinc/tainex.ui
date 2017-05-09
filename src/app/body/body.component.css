@@ -25,12 +25,6 @@
   padding: 10px 10px 10px 10px
 }
 
-#rightttpanel {
-  min-height: 500px;
-  min-width: 100px;
-  padding: 10px 10px 10px 10px
-}
-
 #rightpanelflex {
   display: flex;
   flex-direction: column;
@@ -46,7 +40,6 @@
   text-align: center;
   color: #000;
   background: #44c4e7;
-  /*background: url(https://raw.githubusercontent.com/RickStrahl/jquery-resizable/master/assets/hsizegrip.png) center center no-repeat #535353;*/
   cursor: row-resize;
 }
 

@@ -34,14 +34,14 @@ export class TieappService {
   sendMessage(messageId): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
-    let param = JSON.stringify({ action: "send" ,messageId:messageId});
+    let param = JSON.stringify({ action: "send", messageId: messageId });
 
     return this._http.post(this.currentUrl, param, options)
       //return this._http.get(this._url)
       .map(res => res.json());
   }
 
-  resetMsgandDoc():Observable<any> {
+  resetMsgandDoc(): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     let options = new RequestOptions({ headers: headers });
     let param = JSON.stringify({ action: "reset" });
@@ -72,11 +72,11 @@ export class TieappService {
   }
 
   //Attach doc
-  postDoc(docString,fileName): Observable<any> {
+  postDoc(docString, fileName): Observable<any> {
     let headers = new Headers({ 'Content-Type': 'application/json' });
     // let headers = new Headers({ 'Content-Type': 'text/plain; charset=UTF-8' });
     let options = new RequestOptions({ headers: headers });
-    let param = JSON.stringify({ action: "saveDoc", docString: docString,fileName:fileName });
+    let param = JSON.stringify({ action: "saveDoc", docString: docString, fileName: fileName });
     // alert("ready to save doc: " + param)
     return this._http.post(this.currentUrl, param, options)
       //return this._http.get(this._currentMsgUrl)

@@ -72,7 +72,7 @@ export class AppComponent {
         alert("Message saved!");
       });
   }
-  emitDeleteMsgAtBody(){
+  emitDeleteMsgAtBody() {
     this._tieappService.deleteCurrentMsg()
       .subscribe(tieMsgData => {
         alert("Message deleted")

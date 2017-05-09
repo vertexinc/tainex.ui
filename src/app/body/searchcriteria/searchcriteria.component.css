@@ -2,15 +2,18 @@
   border: 1px solid #ccc;
   border-radius: 2px;
 }
+
 .zippy .zippy-title {
   padding: 20px;
   font-weight: bold;
 }
+
 .zippy .zippy-title:hover {
   background: #ccffcc;
   color: #34393d;
   cursor: pointer;
 }
+
 .zippy .zippy-content {
   padding: 20px;
 }
@@ -18,30 +21,30 @@
 #inbox {
   text-align: center;
   border: 1px solid #fff;
-  height:130px;
+  height: 130px;
 }
+
 
 /*ul {
 	list-style: none;
 	margin: 0;
 	padding: 0;
 }*/
+
 .searchButton {
   margin-top: 5px;
   margin-bottom: 5px;
 }
 
-.btn-md{
+.btn-md {
   width: 100px;
-  height:35px;
-
+  height: 35px;
 }
-
-
 
 #searchBy {
   margin-left: 20px;
 }
+
 #expandIcon {
   margin-left: 80px;
 }

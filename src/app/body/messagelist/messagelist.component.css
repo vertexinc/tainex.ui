@@ -1,19 +1,21 @@
 .msgbody tr:hover {
   background-color: #eff5dc;
 }
+
 table {
   table-layout: fixed;
   width: 800px;
 }
-th, td {
 
-    overflow: hidden;
-    width: 160px;
+th, td {
+  overflow: hidden;
+  width: 160px;
 }
 
 tbody tr:nth-child(odd) {
   background: #fcfcfc;
 }
+
 tbody tr:nth-child(even) {
   background: #fcfcfc;
 }
