@@ -11,9 +11,9 @@ import { Headers, RequestOptions } from '@angular/http';
 export class TieappService {
   //private _url = "tieapp.data.json";
   private _url = "./app/tieapp.data.json";
-  private _currentMsgUrl;
+  private _currentMsgUrl = "./app/tieapp.tieMainPageData.json";
   private currentUrl = 'login';
-  private _currentDocUrl;
+  private _currentDocUrl = "./app/tieapp.tieDoc.json";
 
 
 
