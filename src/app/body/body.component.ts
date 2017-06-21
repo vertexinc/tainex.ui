@@ -16,6 +16,7 @@ export class BodyComponent implements OnInit {
   @Input() language;
   @Output() emitSaveChangeAtBody = new EventEmitter<any>();
   @Output() emitDeleteMsgAtBody = new EventEmitter<any>();
+  @Output() emitSendAtBody = new EventEmitter<any>();
   timename: string;
   tempId = 0;
 
@@ -109,6 +110,9 @@ export class BodyComponent implements OnInit {
   }
   emitSaveChangeAtMessageDetail(model) {
     this.emitSaveChangeAtBody.emit(model);
+  }
+  emitSendMsgAtMessageDetail(msgId){
+    this.emitSendAtBody.emit(msgId);
   }
   emitDeleteMsgAtMessageDetail() {
     this.emitDeleteMsgAtBody.emit();

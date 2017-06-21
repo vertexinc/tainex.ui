@@ -27,7 +27,7 @@
 <!-- Tab panes -->
 <div class="tab-content">
   <div role="tabpanel" class="tab-pane fade in active" id="message">
-    <tieapp-message [messageDetail]="messageDetail" [languageList]="language" [attachedFile] = "attachedFile" (emitSaveChangeAtMessage)="emitSaveChangeAtMessage($event)" (emitDeleteMsgAtMessage)="emitDeleteMsgAtMessage($event)" ></tieapp-message>
+    <tieapp-message [messageDetail]="messageDetail" [languageList]="language" [attachedFile] = "attachedFile" (emitSaveChangeAtMessage)="emitSaveChangeAtMessage($event)" (emitDeleteMsgAtMessage)="emitDeleteMsgAtMessage($event)" (emitSendMsgAtMessage)= "emitSendMsgAtMessage($event)"></tieapp-message>
   </div>
   <div role="tabpanel" class="tab-pane fade" id="docs">
       <tieapp-doclist [messageDetail]="messageDetail" [currentDocId]="currentDoc.tieDocId" (emitCurrentDocId)="emitCurrentDocId($event)" (emitAttachedFile)="emitAttachedFile($event)" (emitDetachedDocIdList)="emitDetachedDocIdList($event)" ></tieapp-doclist>

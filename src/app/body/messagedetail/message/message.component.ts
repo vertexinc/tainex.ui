@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Input, Output } from '@angular/core';
 import { Message } from '../../message';
 import { TieappService } from "../../../tieapp.service";
 import { DatePipe } from '@angular/common';
-
+declare var $: any;
 @Component({
   selector: 'tieapp-message',
   templateUrl: './Message.component.html',
@@ -14,6 +14,7 @@ export class MessageComponent implements OnInit {
   @Input() languageList;
   @Output() emitSaveChangeAtMessage = new EventEmitter<any>();
   @Output() emitDeleteMsgAtMessage = new EventEmitter<any>();
+  @Output() emitSendMsgAtMessage = new EventEmitter<any>();
   @Input() attachedFile;
   saveCurrentMessage = false;
   checkAttachedFile = false;
@@ -23,7 +24,11 @@ export class MessageComponent implements OnInit {
   model = new Message();
   OECDMessageTypeList = ['CbC'];
   OECDMessageTypeIndicList = ['CBC401', 'CBC402']
-  lanList = ['en', 'es','fr', 'zh','gb']
+  lanList = ['en', 'es', 'fr', 'zh', 'gb']
+
+  errorName = "";
+  errorDescription = "";
+
   constructor(private _tieappService: TieappService) {
 
   }
@@ -50,17 +55,11 @@ export class MessageComponent implements OnInit {
 
   }
   ngOnInit() {
-
   }
 
   get diagnostic() { return JSON.stringify(this.model); }
 
   onSubmit() {
-
-    // this._tieappService.postSave(this.model)
-    //   .subscribe(saveReturnData => {
-    //     alert("returning: " + JSON.stringify(saveReturnData))
-    //   });
     this.msgSubmit = true;
     let dp = new DatePipe('en-US' /* locale .. */);
     this.timename = dp.transform(new Date(), 'yMdjm');
@@ -74,14 +73,20 @@ export class MessageComponent implements OnInit {
     this.emitDeleteMsgAtMessage.emit();
   }
   onSendMsg() {
-    this._tieappService.sendMessage(this.messageDetail.tieMsgId)
-      .subscribe(currentDocData => {
-        alert("Message sent")
-      })
-      ,
-      error => {
-        alert("No respond from server")
-      }
+    // this._tieappService.sendMessage(this.messageDetail.tieMsgId)
+    //   .subscribe(sendReturnData => {
+    //     if (sendReturnData.errorName != null) {
+    //       this.errorName = sendReturnData.errorName;
+    //       this.errorDescription = sendReturnData.errorDescription;
+    //       $('#errModalLong').modal('show');
+    //     } else {
+    //       alert("Message sent");
+    //     }
+    //   })
+    //   ,
+    //   error => {
+    //     alert("No respond from server")
+    //   }
+    this.emitSendMsgAtMessage.emit(this.messageDetail.tieMsgId);
   }
-
 }

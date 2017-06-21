@@ -8,7 +8,7 @@
   <div id='tieapp-body'>
 
     <div *ngIf="showApp">
-      <tieapp-body [body]="tieapp.body" [language]="tieapp.header.language" (emitSaveChangeAtBody) = "emitSaveChangeAtBody($event)" (emitDeleteMsgAtBody) = "emitDeleteMsgAtBody($event)"></tieapp-body>
+      <tieapp-body [body]="tieapp.body" [language]="tieapp.header.language" (emitSaveChangeAtBody) = "emitSaveChangeAtBody($event)" (emitDeleteMsgAtBody) = "emitDeleteMsgAtBody($event)" (emitSendAtBody) = "emitSendAtBody($event)"></tieapp-body>
     </div>
     <div *ngIf="showTraining">
       <tieapp-training></tieapp-training>

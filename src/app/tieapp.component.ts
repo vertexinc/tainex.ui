@@ -72,6 +72,19 @@ export class AppComponent {
         alert("Message saved!");
       });
   }
+  emitSendAtBody(msgId) {
+    this._tieappService.sendMessage(msgId)
+      .subscribe(saveReturnData => {
+        this.tieapp.body.messageList.messageSumList = saveReturnData.msgList;
+        this.tieapp.body.messageDetail = saveReturnData.currentMsg;
+        this.tieapp.body.currentDoc = saveReturnData.currentTieDoc;
+        alert("Message sent!");
+      },
+        error => {
+        alert("Message sending error!");
+        }
+    );
+  }
   emitDeleteMsgAtBody() {
     this._tieappService.deleteCurrentMsg()
       .subscribe(tieMsgData => {

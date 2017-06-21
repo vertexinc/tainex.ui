@@ -19,7 +19,7 @@
       </div>
       <div class="splitter-horizontal"></div>
       <div id='tieapp-messagedetail'>
-        <tieapp-messagedetail [messageDetail]="body.messageDetail" [language] = "language" [currentDoc]="body.currentDoc" [showTable]="showTable" (emitSaveChangeAtMessageDetail)="emitSaveChangeAtMessageDetail($event)" (emitDeleteMsgAtMessageDetail)="emitDeleteMsgAtMessageDetail($event)"></tieapp-messagedetail>
+        <tieapp-messagedetail [messageDetail]="body.messageDetail" [language] = "language" [currentDoc]="body.currentDoc" [showTable]="showTable" (emitSaveChangeAtMessageDetail)="emitSaveChangeAtMessageDetail($event)" (emitDeleteMsgAtMessageDetail)="emitDeleteMsgAtMessageDetail($event)" (emitSendMsgAtMessageDetail)="emitSendMsgAtMessageDetail($event)"></tieapp-messagedetail>
       </div>
     </div>
   </div>

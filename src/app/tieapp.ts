@@ -6,6 +6,4 @@ export class Tieapp {
   header;
   body: Body;
   footer: Footer;
-
-
 }
