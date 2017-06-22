@@ -69,7 +69,7 @@ export class DoclistComponent implements OnInit {
             this.errorName = docData.errorName;
             this.errorDescription = docData.errorDescription;
             this.loading = false;
-            $('#errModalLong').modal('show')
+            alert("Document Attachment Failed!" +   this.errorDescription);
           } else {
             alert("Document Attached!");
             this.emitAttachedFile.emit(docData);
