@@ -20,6 +20,7 @@ export class MessageComponent implements OnInit {
   checkAttachedFile = false;
   timename: string;
   msgSubmit = false;
+  isValid = true;
 
   model = new Message();
   OECDMessageTypeList = ['CbC'];
@@ -52,7 +53,11 @@ export class MessageComponent implements OnInit {
     this.model.transmittingCountry = this.messageDetail.transmittingCountry;
     this.model.receivingCountries = this.messageDetail.receivingCountries;
     this.model.description = this.messageDetail.description;
-
+    if (this.messageDetail.msgState == 'Sent') {
+      this.isValid = false;
+    } else {
+      this.isValid = true;
+    }
   }
   ngOnInit() {
   }
@@ -88,5 +93,9 @@ export class MessageComponent implements OnInit {
     //     alert("No respond from server")
     //   }
     this.emitSendMsgAtMessage.emit(this.messageDetail.tieMsgId);
+  }
+
+  isValidForm() {
+    return this.isValid;
   }
 }

@@ -155,9 +155,9 @@
         </div>
       </div>
     </div>
-    <button type="button" type="submit" class="btn btn-primary">Save</button>
+    <button [disabled]="!isValidForm()" type="button" type="submit" class="btn btn-primary">Save</button>
     <button type="button" class="btn btn-primary" (click) = "onDeleteMsg()">Delete</button>
-    <button type="button" class="btn btn-primary" (click) = "onSendMsg()">Send</button>
+    <button [disabled]="!isValidForm()" type="button" class="btn btn-primary" (click) = "onSendMsg()">Send</button>
   </form>
 </div>
 
