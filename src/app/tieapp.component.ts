@@ -61,6 +61,11 @@ export class AppComponent {
   trainingShowInfo(showTraining) {
     this.showTraining = showTraining
   }
+  logoutAtHeader(){
+    this._tieappService.logOut()
+    .subscribe(logoutData => {
+    });
+  }
   emitSaveChangeAtBody(model) {
     //alert("emit applied!");
     // alert(JSON.stringify(model));
@@ -80,10 +85,10 @@ export class AppComponent {
         this.tieapp.body.currentDoc = saveReturnData.currentTieDoc;
         alert("Message sent!");
       },
-        error => {
+      error => {
         alert("Message sending error!");
-        }
-    );
+      }
+      );
   }
   emitDeleteMsgAtBody() {
     this._tieappService.deleteCurrentMsg()

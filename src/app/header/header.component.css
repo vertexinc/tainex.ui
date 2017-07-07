@@ -30,6 +30,13 @@
   color: white;
   font-size: 11px;
 }
+#logout{
+  color: white;
+  font-size: 11px;
+}
+#logout:hover {
+  color: lightgreen;
+}
 
 .styled-select {
   float: right;

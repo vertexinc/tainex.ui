@@ -16,7 +16,7 @@
   </div>
 
   <div class="col-sm-4" id='headerright'>
-    <div id="user">  {{ 'TRANSLATE.WELCOME' | translate }} {{ header.userName }} !</div>
+    <div id="user">  {{ 'TRANSLATE.WELCOME' | translate }} {{ header.userName }} !  &nbsp; <a id="logout"(click)="logout()"> Log Out </a></div>
     <div id="language"> {{ 'TRANSLATE.LANGUAGE' | translate }}</div>
     <div class="styled-select">
       <select class="form-control" id="sel1" #langSelect (change)="translate.use(langSelect.value)">
