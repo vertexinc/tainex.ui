@@ -64,6 +64,10 @@ export class AppComponent {
   logoutAtHeader(){
     this._tieappService.logOut()
     .subscribe(logoutData => {
+      if(logoutData.logout != null){
+        alert("Log out success!")
+        window.location.href = "/TIEapp/"
+      }
     });
   }
   emitSaveChangeAtBody(model) {
