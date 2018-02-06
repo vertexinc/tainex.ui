@@ -34,8 +34,7 @@ To get more help on the `angular-cli` use `ng --help` or go check out the [Angul
 
 The MIT License (MIT)
 
-Copyright (c) 2017 Jesse Aronson, Sam Black, Jiggs Gatmaitan, Nancy Gerwig, John Hart,
-Tim Klein, Andrew LaRoche, Peter Vink
+Copyright (c) 2017 Vertex Incorporated
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
