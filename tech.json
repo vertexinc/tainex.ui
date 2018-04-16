@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Angular",
+    "id": "@angular/core",
+    "version": "~2.0.0"
+  },
+  {
+    "name": "Bootstrap",
+    "id": "bootstrap",
+    "version": "^4.0.0-alpha.5"
+  },
+  {
+    "name": "Font Awesome",
+    "id": "font-awesome",
+    "version": "^4.7.0"
+  },
+  {
+    "name": "RxJS",
+    "id": "rxjs",
+    "version": "5.0.0-beta.12"
+  },
+  {
+    "name": "Angular CLI",
+    "id": "@angular/cli",
+    "version": "1.0.0-beta.17"
+  },
+  {
+    "name": "TypeScript",
+    "id": "typescript",
+    "version": "2.0.2"
+  }
+]
